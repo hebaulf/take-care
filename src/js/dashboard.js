@@ -1,2 +1,0 @@
-// Dashboard
-console.log('dashboard')
