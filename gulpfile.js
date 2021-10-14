@@ -1,19 +1,51 @@
-'use strict';
+const { src, dest, watch, series } = require('gulp');
+const sass = require('gulp-sass')(require('sass'));
+const postcss = require('gulp-postcss');
+const cssnano = require('cssnano');
+const terser = require('gulp-terser');
+const browsersync = require('browser-sync').create();
 
-var gulp = require('gulp');
-var sass = require('gulp-sass')(require('sass'));
-
-function buildStyles() {
-    return gulp.src('./sass/**/*.scss')
-      .pipe(sass().on('error', sass.logError))
-      .pipe(gulp.dest('./css'));
-};
-exports.buildStyles = buildStyles;
-
-exports.watch = function () {
-  gulp.watch('.src/sass/**/*.scss', ['sass']);
-};
-
-exports.default = function() {
-  return src('src/js/*.js').pipe(dest('js/main.js'));
+// sass task
+function scssTask() {
+    return src('src/sass/styles.scss', { sourcemaps: true })
+        .pipe(sass())
+        .pipe(postcss([cssnano()]))
+        .pipe(dest('dist', { sourcemaps: '.' }));
 }
+
+// JavaScript Task
+function jsTask() {
+    return src('src/js/main.js', { sourcemaps: true })
+        .pipe(terser())
+        .pipe(dest('dist', { sourcemaps: '.' }));
+}
+
+// Browsersync Task
+function browsersyncServe(cb) {
+    browsersync.init({
+        server: {
+            baseDir: '.'
+        }
+    })
+    cb();
+}
+
+function browsersyncReload(cb) {
+    browsersync.reload();
+    cb();
+}
+
+// Watch Task 
+function watchTask() {
+    watch('*.html', browsersyncReload);
+    watch(['src/sass/**/*.scss', 'src/js/**/*.js'], series( scssTask, jsTask, browsersyncReload ))
+}
+
+// Default Gulp task
+exports.default = series(
+    scssTask,
+    jsTask,
+    browsersyncServe,
+    watchTask
+);
+

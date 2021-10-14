@@ -15,13 +15,21 @@
   "author": "Heba Farestveit Úlfarsdóttir, Arna Vala Sveinbjarnardóttir, Bryndís Sveinbjörnsdóttir, Kristrún Úlfarsdóttir, Tinna Hallsdóttir.",
   "license": "ISC",
   "homepage": "https://github.com/hebaulf/take-care#readme",
-  "devDependencies": {
-    "gulp": "^4.0.2"
-  },
   "bugs": {
     "url": "https://github.com/hebaulf/take-care/issues"
   },
   "scripts": {
     "build": "buildStyles"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.27.5",
+    "gulp": "^4.0.2"
+  },
+  "dependencies": {
+    "cssnano": "^5.0.8",
+    "gulp-postcss": "^9.0.1",
+    "gulp-sass": "^5.0.0",
+    "gulp-terser": "^2.1.0",
+    "sass": "^1.43.2"
   }
 }

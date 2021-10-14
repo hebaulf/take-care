@@ -1,1 +1,2 @@
 // Dashboard
+console.log('dashboard')
