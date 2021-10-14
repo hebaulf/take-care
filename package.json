@@ -1,0 +1,27 @@
+{
+  "name": "take-care",
+  "version": "1.0.0",
+  "description": "App for family and friends to collaborate in taking care of a loved one.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hebaulf/take-care.git"
+  },
+  "keywords": [
+    "care",
+    "takecare",
+    "ffamilycare"
+  ],
+  "author": "Heba Farestveit Úlfarsdóttir, Arna Vala Sveinbjarnardóttir, Bryndís Sveinbjörnsdóttir, Kristrún Úlfarsdóttir, Tinna Hallsdóttir.",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hebaulf/take-care/issues"
+  },
+  "homepage": "https://github.com/hebaulf/take-care#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2"
+  }
+}
