@@ -1,2 +1,2 @@
-console.log("mainJs");
+import signupPage from"./pages/signup";import loginPage from"./pages/login";import profilePage from"./pages/profile";import dashboardPage from"./pages/dashboard";import eventsPage from"./pages/events";
 //# sourceMappingURL=main.js.map

@@ -1,15 +1,11 @@
-// SPA - routes - pathnames - views - History API
-
-const routes = {
-  // profile
-  '/signup': signup, // create profile
-  '/login': login,
-  '/profile': profile, // edit profile
-  // app
-  '/': dashboard, // display username
-  '/create': create,  //create new: todo, appointments, events
-  '/events': events, // view events - create events - assign events
-  '/journal': journal, // view events - create events - assign events
-  '/todos': todos // view events - create events - assign events
-}
-
+// SPA - pages
+import signupPage from './pages/signup'
+import loginPage from './pages/login'
+import profilePage from './pages/profile'
+import dashboardPage from './pages/dashboard'
+// creates
+import eventsPage from './pages/events'
+// category template?? filter by id?
+// import journalPage from './pages/journal'
+// import todosPage from './pages/todos'
+// import createPage from './pages/create'

@@ -7,10 +7,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Take Care</title>
     <link rel="stylesheet" href="css/styles.css">
+    <script src="'./src/js/views/dashboard.js"></script>
+    <script src="'./src/js/views/login.js"></script>
+    <script src="'./src/js/views/profile.js"></script>
 </head>
 
-<body>
-    <script src="js/main.js"></script>
+<body class='app'>
+    <nav id='navtabs' class='nav-tabs hide'>
+        <!-- routes on dashboard  -->
+        <a href='#dashboard'>Dashboard</a>
+        <a href='#profile'>Profile</a>
+        <a href='#events'>Events</a>
+        <a href='#journal'>Journal</a>
+        <a href='#todos'>Todos</a>
+        <!-- functions - for testing routes/links  -->
+        <a href='#create'>Create new</a>
+        <a href='#login'>Login</a>
+        <a href='#signup'>Signup</a>
+    </nav>
+    <main id='content'>
+        Content
+    </main>
+    <script type='module' src="js/main.js"></script>
 </body>
 
 </html>
