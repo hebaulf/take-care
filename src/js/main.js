@@ -1,12 +1,20 @@
-// SPA - import pages
-import signupPage from './pages/signup'
-import loginPage from './pages/login'
-import profilePage from './pages/profile'
-import dashboardPage from './pages/dashboard'
-import eventsPage from './pages/events'
-// category template?? filter by id?
-// import journalPage from './pages/journal'
-// import todosPage from './pages/todos'
-// import createPage from './pages/create'
+import NavBar from "./components/navbar.js";
+import DashboardPage from "./pages/dashboard.js";
+import EventsPage from './pages/events.js';
+import JournalPage from "./pages/journal.js";
+import TodosPage from "./pages/todos.js";
+import _spaService from "./services/spa.js";
 
-// Import services (firebase)
+
+
+// Declare and init
+let navbar = new NavBar();
+let dashboardPage = new DashboardPage();
+let eventsPage = new EventsPage();
+let journalPage = new JournalPage();
+let todosPage = new TodosPage();
+
+
+
+// init services
+_spaService.init();

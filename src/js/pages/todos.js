@@ -1,16 +1,17 @@
-export default class DashboardPage {
+export default class TodosPage {
   constructor() {
     this.template();
   }
 
   template() {
     document.querySelector('#content').innerHTML += /*html*/ `
-      <section id="dashboard" class="page">
+      <section id="todos" class="page">
         <header class="topbar">
-          <h2>Dashboard</h2>
+          <h2>Todo</h2>
+          <p>
         </header>
-        <h3>SPA Template</h3>
-        <p>Dashboard view</p>
+        <h3>Todo</h3>
+        <p>list of TODO entries</p>
       </section>
     `;
   }
