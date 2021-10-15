@@ -9,8 +9,10 @@ export default class DashboardPage {
         <header class="topbar">
           <h2>Dashboard</h2>
         </header>
-        <h3>SPA Template</h3>
-        <p>Dashboard view</p>
+        <div>journal</div>
+        <div>events</div>
+        <div>todos</div>
+        <div>profile</div>
       </section>
     `;
   }
