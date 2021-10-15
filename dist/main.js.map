@@ -1,1 +1,1 @@
-{"version":3,"sources":["main.js"],"names":["signupPage","loginPage","profilePage","dashboardPage","eventsPage"],"mappings":"OACOA,eAAgB,wBAChBC,cAAe,uBACfC,gBAAiB,yBACjBC,kBAAmB,2BAEnBC,eAAgB","file":"main.js"}
+{"version":3,"sources":["main.js"],"names":["signupPage","loginPage","profilePage","dashboardPage","eventsPage"],"mappings":"OACOA,eAAgB,wBAChBC,cAAe,uBACfC,gBAAiB,yBACjBC,kBAAmB,2BACnBC,eAAgB","file":"main.js"}
