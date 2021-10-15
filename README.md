@@ -1,13 +1,5 @@
 # Take Care Web App
 
-
-
-## login modal
-- 
-
-
-- dashboard
-
 ### Folder setup
 
 #### components
@@ -21,15 +13,14 @@
 - todos.js
 - journal.js
 
-
 #### services
 - auth.js
 - event(-service).js
+  - CRUD
 - todo(-service).js
+  - CRUD
 - journal(-service).js
-
-
-
+  - CRUD
 
 #### base dir
 - firebase-config.js
