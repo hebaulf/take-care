@@ -1,2 +1,0 @@
-// Signup
-console.log('signup');
