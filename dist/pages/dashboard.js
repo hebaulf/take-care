@@ -1,0 +1,2 @@
+export default class DashboardPage{constructor(){this.template()}template(){document.querySelector("#content").innerHTML+='\n      <section id="dashboard" class="page">\n        <header class="topbar">\n          <h2>Dashboard</h2>\n        </header>\n        <div>journal</div>\n        <div>events</div>\n        <div>todos</div>\n        <div>profile</div>\n      </section>\n    '}}
+//# sourceMappingURL=dashboard.js.map

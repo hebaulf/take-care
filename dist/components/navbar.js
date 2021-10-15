@@ -1,0 +1,2 @@
+export default class NavBar{constructor(){this.template()}template(){document.querySelector("#app").innerHTML+='\n      <nav class="nav-links">\n        <a href="#dashboard">Dashboard</a>\n        <a href="#events">Events</a>\n        <a href="#journal">Journal</a>\n        <a href="#todos">Todos</a>\n      </nav>\n    '}}
+//# sourceMappingURL=navbar.js.map

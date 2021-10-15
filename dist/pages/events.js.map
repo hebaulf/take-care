@@ -1,0 +1,1 @@
+{"version":3,"sources":["pages/events.js"],"names":["EventsPage","constructor","this","template","document","querySelector","innerHTML"],"mappings":"eAAe,MAAMA,WACnBC,cACEC,KAAKC,WAGPA,WACEC,SAASC,cAAc,YAAYC,WAAsB","file":"pages/events.js"}
