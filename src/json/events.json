@@ -1,0 +1,14 @@
+[
+  {
+    "eventName": "Doctors appointment",
+    "category": "appointment",
+    "assigned": "user1",
+    "date": 24
+  },
+ {
+    "eventName": "Dinner with caretaker",
+    "category": "meetup",
+    "assigned": "user2",
+    "date": 21
+  }
+]
