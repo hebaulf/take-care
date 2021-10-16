@@ -1,0 +1,2 @@
+const username="vala";export default class DashboardPage{constructor(){this.template()}template(){document.querySelector("#content").innerHTML+='\n      <section id="dashboard" class="page">\n        <header class="topbar">\n          <h2 hidden>Dashboard</h2>\n          <h2>Hi, vala</h2>\n          <button>home icon</button>\n        </header>\n        <div>\n          unassigned event items template\n        </div>\n        <div>\n        last visit hardcode.\n        </div>\n      </section>\n    '}}
+//# sourceMappingURL=dashboard.js.map

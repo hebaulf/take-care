@@ -1,0 +1,2 @@
+export default class EventsPage{constructor(){this.template()}template(){document.querySelector("#content").innerHTML+='\n      <section id="events" class="page">\n        <header class="topbar">\n          <h2>Events</h2>\n        </header>\n        <h3>Display events</h3>\n        <p>categories: appointments and meetups</p>\n      </section>\n    '}}
+//# sourceMappingURL=events.js.map
