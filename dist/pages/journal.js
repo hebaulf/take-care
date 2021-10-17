@@ -1,0 +1,2 @@
+export default class JournalPage{constructor(){this.template()}template(){document.querySelector("#content").innerHTML+='\n      <section id="journal" class="page">\n        <header class="topbar">\n          <h2>Journal</h2>\n          <p>\n        </header>\n        <h3></h3>\n        <p>list of journal entries</p>\n      </section>\n    '}}
+//# sourceMappingURL=journal.js.map

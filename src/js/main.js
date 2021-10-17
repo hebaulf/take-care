@@ -6,7 +6,6 @@ import TodosPage from "./pages/todos.js";
 import _spaService from "./services/spa.js";
 
 
-
 // Declare and init
 let navbar = new NavBar();
 let dashboardPage = new DashboardPage();

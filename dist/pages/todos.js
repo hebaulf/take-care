@@ -1,0 +1,2 @@
+export default class TodosPage{constructor(){this.template()}template(){document.querySelector("#content").innerHTML+='\n      <section id="todos" class="page">\n        <header class="topbar">\n          <h2>Todo</h2>\n          <p>\n        </header>\n        <h3>Todo</h3>\n        <p>list of TODO entries</p>\n      </section>\n    '}}
+//# sourceMappingURL=todos.js.map
