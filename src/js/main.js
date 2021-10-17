@@ -1,6 +1,7 @@
 import _spaService from "./services/spa.js";
 import _eventService from "./services/event-service.js";
 import _todoService from "./services/todo-service.js";
+import _journalService from "./services/journal-service.js";
 // import "./services/calendar.js";
 import NavBar from "./components/navbar.js";
 import LoginPage from './pages/login.js';
@@ -22,5 +23,6 @@ let todosPage = new TodosPage();
 _spaService.init();
 _eventService.init();
 _todoService.init();
+_journalService.init();
 
  

@@ -41,7 +41,7 @@ class TodoService {
 				</div>
 			`;
   
-  		todoList.insertAdjacentHTML('beforeend', todoItem);
+  			todoList.insertAdjacentHTML('beforeend', todoItem);
 
 			// Click edit user
 			const btnEdit = document.querySelector(`[data-id='${doc.id}'] .edit-todo`);
@@ -135,7 +135,7 @@ class TodoService {
 			});
 			editModal.classList.remove('modal-show');
 		});
-  }
+  	}
 }
 
 const todoService = new TodoService();

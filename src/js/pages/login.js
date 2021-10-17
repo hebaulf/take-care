@@ -11,13 +11,21 @@ export default class LoginPage {
         <header class="topbar">
           <h2>Login</h2>
         </header>
-          <form class="form" autocomplete="off">
-             <input type="text" name="firstName" placeholder="First Name">
-             <input type="text" name="lastName" placeholder="Last Name">
-             <input type="password" name="password" placeholder="password">
-             <input type="email" name="email" placeholder="Email">
-             <button class="btn btn-modal">Submit</button>
-          </form>
+        <form class="form" autocomplete="off">
+          <label class="visuallyhidden" for="firstName">First Name</label>
+          <input type="text" name="firstName" placeholder="First Name">
+
+          <label class="visuallyhidden" for="lastName">Last Name</label>
+          <input type="text" name="lastName" placeholder="Last Name">
+          
+          <label class="visuallyhidden" for="email">Email</label>
+          <input type="email" name="email" placeholder="Email">
+
+          <label class="visuallyhidden" for="password">password</label>
+          <input type="password" name="password" placeholder="password" >
+
+          <button class="btn btn-modal">Submit</button>
+        </form>
       </section>
     `;  
   }

@@ -4,10 +4,10 @@ class EventService {
 	}
 	
 	init() {
-		this.renderEvent();
+		this.renderEvents();
 	}
 
-	renderEvent = doc => {
+	renderEvents = doc => {
 		// Get modals
 		const modalWrapper = document.querySelector('.event-modal-wrapper');
 		// Add modal
@@ -59,7 +59,6 @@ class EventService {
 			const month = months[dataDate.getMonth()];
 			const year = dataDate.getFullYear();
 			const formattedDate = `${day} ${monthDate}.${month} ${year}`;
-			console.log(dataDate);
 
 			const eventItem = /*html*/`
 				<div class="event__item" data-id='${doc.id}'>
