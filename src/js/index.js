@@ -1,35 +1,73 @@
 
-// Get all users
+// Get modals
 const modalWrapper = document.querySelector('.modal-wrapper');
-// modal add
+// Add modal
 const addModal = document.querySelector('.add-modal');
 const addModalForm = document.querySelector('.add-modal .form');
-
-// modal edit
+// Edit modal
 const editModal = document.querySelector('.edit-modal');
 const editModalForm = document.querySelector('.edit-modal .form');
-
+// Get event list
+const eventList = document.querySelector('.event__list');
+const eventsCollection = db.collection('events');
+// Add button on svent list
 const btnAdd = document.querySelector('.btn-add');
-
-const tableUsers = document.querySelector('.table-users');
 
 let id;
 
+const days = [
+  'Sun',
+  'Mon',
+  'Tue',
+  'Wed',
+  'Thu',
+  'Fri',
+  'Sat'
+];
+
+const months = [
+  'Jan',
+  'Feb',
+  'Mar',
+  'Apr',
+  'Mai',
+  'Jun',
+  'Jul',
+  'Aug',
+  'Sep',
+  'Oct',
+  'Nov',
+  'Dec'
+]
+
 // Create element and render users
 const renderUser = doc => {
-  const tr = /*html*/`
-    <tr data-id='${doc.id}'>
-      <td>${doc.data().firstName}</td>
-      <td>${doc.data().lastName}</td>
-      <td>${doc.data().email}</td>
-      <td>${doc.data().password}</td>
-      <td>
+  const data = doc.data();
+  const dataDate = new Date(data.date);
+
+  const day = days[dataDate.getDay()];
+  const monthDate = dataDate.getDate();
+  const month = months[dataDate.getMonth()];
+  const year = dataDate.getFullYear();
+  const formattedDate = `${day} ${monthDate}.${month} ${year}`;
+  console.log(dataDate);
+
+  const eventItem = /*html*/`
+    <div class="event__item" data-id='${doc.id}'>
+      <div>${data.title}</div>
+      <div>${data.description}</div>
+      <div>${data.location}</div>
+      <div>${formattedDate}</div>
+      <div>${data.assign}</div>
+      <div>${data.label}</div>
+      <div>
         <button class="btn btn-edit">Edit</button>
         <button class="btn btn-delete">Delete</button>
-      </td>
-    </tr>
+      </div>
+    </div>
   `;
-  tableUsers.insertAdjacentHTML('beforeend', tr);
+  
+  eventList.insertAdjacentHTML('beforeend', eventItem);
 
   // Click edit user
   const btnEdit = document.querySelector(`[data-id='${doc.id}'] .btn-edit`);
@@ -37,33 +75,34 @@ const renderUser = doc => {
     editModal.classList.add('modal-show');
 
     id = doc.id;
-    editModalForm.firstName.value = doc.data().firstName;
-    editModalForm.lastName.value = doc.data().lastName;
-    editModalForm.email.value = doc.data().email;
-    editModalForm.password.value = doc.data().password;
-
+    editModalForm.title.value = data.title;
+    editModalForm.description.value = data.description;
+    editModalForm.location.value = data.location;
+    editModalForm.date.value = data.date;
+    editModalForm.assign.value = data.assign;
+    editModalForm.label.value = data.label;
   });
 
   // Click delete user
   const btnDelete = document.querySelector(`[data-id='${doc.id}'] .btn-delete`);
   btnDelete.addEventListener('click', () => {
-    db.collection('users').doc(`${doc.id}`).delete().then(() => {
+    eventsCollection.doc(`${doc.id}`).delete().then(() => {
       console.log('Document succesfully deleted!');
     }).catch(err => {
       console.log('Error removing document', err);
     });
   });
-
 }
 
 // Click add user button
 btnAdd.addEventListener('click', () => {
   addModal.classList.add('modal-show');
-
-  addModalForm.firstName.value = '';
-  addModalForm.lastName.value = '';
-  addModalForm.email.value = '';
-  addModalForm.password.value = '';
+  addModalForm.title.value = '';
+  addModalForm.description.value = '';
+  addModalForm.location.value = '';
+  addModalForm.date.value = '';
+  addModalForm.assign.value = '';
+  addModalForm.label.value = '';
 });
 
 // User click anyware outside the modal
@@ -77,27 +116,27 @@ window.addEventListener('click', e => {
 });
 
 // Get all users
-// db.collection('users').get().then(querySnapshot => {
+// eventsCollection.get().then(querySnapshot => {
 //   querySnapshot.forEach(doc => {
 //     renderUser(doc);
 //   })
 // });
 
 // Real time listener
-db.collection('users').onSnapshot(snapshot => {
+eventsCollection.onSnapshot(snapshot => {
   snapshot.docChanges().forEach(change => {
     if(change.type === 'added') {
       renderUser(change.doc);
     }
     if(change.type === 'removed') {
-      let tr = document.querySelector(`[data-id='${change.doc.id}']`);
-      let tbody = tr.parentElement;
-      tableUsers.removeChild(tbody);
+      let eventItem = document.querySelector(`[data-id='${change.doc.id}']`); // .event__item with this data-id
+      let tbody = eventItem.parentElement; // .event__list
+      tbody.removeChild(eventItem);// Remove specific child of .event__list
     }
     if(change.type === 'modified') {
-      let tr = document.querySelector(`[data-id='${change.doc.id}']`);
-      let tbody = tr.parentElement;
-      tableUsers.removeChild(tbody);
+      let eventItem = document.querySelector(`[data-id='${change.doc.id}']`);
+      let tbody = eventItem.parentElement;
+      tbody.removeChild(eventItem);
       renderUser(change.doc);
     }
   })
@@ -106,11 +145,13 @@ db.collection('users').onSnapshot(snapshot => {
 // Click submit in add modal
 addModalForm.addEventListener('submit', e => {
   e.preventDefault();
-  db.collection('users').add({
-    firstName: addModalForm.firstName.value,
-    lastName: addModalForm.lastName.value,
-    email: addModalForm.email.value,
-    password: addModalForm.password.value,
+  eventsCollection.add({
+    title: addModalForm.title.value,
+    description: addModalForm.description.value,
+    location: addModalForm.location.value,
+    date: addModalForm.date.value,
+    assign: addModalForm.assign.value,
+    label: addModalForm.label.value,
   });
   modalWrapper.classList.remove('modal-show');
 });
@@ -118,11 +159,13 @@ addModalForm.addEventListener('submit', e => {
 // Click submit in edit modal
 editModalForm.addEventListener('submit', e => {
   e.preventDefault();
-  db.collection('users').doc(id).update({
-    firstName: editModalForm.firstName.value,
-    lastName: editModalForm.lastName.value,
-    email: editModalForm.email.value,
-    password: editModalForm.password.value,
+  eventsCollection.doc(id).update({
+    title: editModalForm.title.value,
+    description: editModalForm.description.value,
+    location: editModalForm.location.value,
+    date: editModalForm.date.value,
+    assign: editModalForm.assign.value,
+    label: editModalForm.label.value,
   });
   editModal.classList.remove('modal-show');
 });
