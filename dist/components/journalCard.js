@@ -1,0 +1,2 @@
+
+//# sourceMappingURL=journalCard.js.map

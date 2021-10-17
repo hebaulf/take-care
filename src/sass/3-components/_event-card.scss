@@ -1,0 +1,25 @@
+$border-radius-card: 16px;
+$card-color-appointment: $color-tertiary-orange-100;
+$card-color-meetup: $color-secondary-purple-100;
+
+.cards-list {
+  width: 100%;
+  min-width: 280px;
+
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: 1px solid $color-tertiary-orange-100;
+  border-radius: $border-radius-card;
+  padding: 16px;
+  box-shadow: 6px 6px $color-tertiary-orange-100;
+
+  &-top {
+    @include xsmall-card;
+    display: flex;
+
+  }
+}
