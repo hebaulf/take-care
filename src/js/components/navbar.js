@@ -4,13 +4,12 @@ export default class NavBar {
   }
 
   template() {
-    document.querySelector("#app").innerHTML += /*html*/ `
+    document.querySelector("#navbar").innerHTML += /*html*/ `
       <nav class="nav-links">
-        <a href='#login'>Login</a>
-        <a href="#dashboard">Dashboard</a>
-        <a href="#events">Events</a>
-        <a href="#journal">Journal</a>
-        <a href="#todos">Todos</a>
+        <a href="#events">E</a>
+        <a href="#journal">JL</a>
+        <a href="#journal">TD</a>
+        <a href="#todos">P</a>
       </nav>
     `;
   }

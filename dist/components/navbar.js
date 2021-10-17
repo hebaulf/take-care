@@ -1,2 +1,2 @@
-export default class NavBar{constructor(){this.template()}template(){document.querySelector("#app").innerHTML+='\n      <nav class="nav-links">\n        <a href=\'#login\'>Login</a>\n        <a href="#dashboard">Dashboard</a>\n        <a href="#events">Events</a>\n        <a href="#journal">Journal</a>\n        <a href="#todos">Todos</a>\n      </nav>\n    '}}
+export default class NavBar{constructor(){this.template()}template(){document.querySelector("#navbar").innerHTML+='\n      <nav class="nav-links">\n        <a href="#events">E</a>\n        <a href="#journal">JL</a>\n        <a href="#journal">TD</a>\n        <a href="#todos">P</a>\n      </nav>\n    '}}
 //# sourceMappingURL=navbar.js.map
