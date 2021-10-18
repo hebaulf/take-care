@@ -72,6 +72,8 @@ class JournalService {
 					</div>
 				</div>
 			`;
+
+			
   
       journalList.insertAdjacentHTML('beforeend', journalItem);
 

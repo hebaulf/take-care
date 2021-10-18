@@ -16,8 +16,14 @@ $border-radius-36: 36px;
   border-radius: $border-radius-8;
 }
 
-@mixin input-border {
+@mixin border-input {
   border: 2px solid;
   border-color: $color-black;
   border-radius: $border-radius-8;
 }
+
+@mixin card-border {
+  border: 1px solid;
+  border-radius: $border-radius-16;
+}
+
