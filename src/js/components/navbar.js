@@ -6,10 +6,10 @@ export default class NavBar {
   template() {
     document.querySelector("#navbar").innerHTML += /*html*/ `
       <nav class="nav-links">
-        <a href="#events">E</a>
-        <a href="#journal">JL</a>
-        <a href="#journal">TD</a>
-        <a href="#todos">P</a>
+        <a href="#events"><i class='tc-icons-calendar'></i><span class='nav-links__text'>Events</span></a>
+        <a href="#journal"><i class='tc-icons-profile'></i><span class='nav-links__text'>profile</span></a>
+        <a href="#todos"><i class='tc-icons-profile'></i><span class='nav-links__text'>profile</span></a>
+        <a href="#profile"><i class='tc-icons-profile'></i><span class='nav-links__text'>profile</span></a>
       </nav>
     `;
   }

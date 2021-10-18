@@ -69,61 +69,6 @@
   color: #fff;
 }
 
-/* Modal */
-.modal-wrapper {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  top: 0;
-  background: #24232354;
-  display: none;
-}
-
-.modal {
-  position: relative;
-  background: #fff;
-  text-align: center;
-  width: 25rem;
-  margin: 5rem auto;
-  -webkit-box-shadow: 0px 4px 22px -6px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0px 4px 22px -6px rgba(0, 0, 0, 0.75);
-  box-shadow: 0px 4px 22px -6px rgba(0, 0, 0, 0.75);
-  animation-name: animatetop;
-  animation-duration: 0.4s;
-}
-
-@keyframes animatetop {
-  from {
-    top: -300px;
-    opacity: 0;
-  }
-  to {
-    top: 0;
-    opacity: 1;
-  }
-}
-
-.modal-show {
-  display: block;
-}
-
-.modal-header {
-  margin-bottom: 1rem;
-  background: #f8fafb;
-  padding: 2rem;
-}
-
-.modal-body {
-  padding: 2rem;
-}
-
-.btn-modal {
-  background: var(--primary-color);
-  border: none;
-  color: #fff;
-  width: 9rem;
-}
 
 input {
   width: 100%;
@@ -132,77 +77,8 @@ input {
   text-indent: 0.5rem;
   outline: none;
 }
-/* ----- Base ----- */
-// for testing
 
-html {
-  height: 100%;
-  text-align: center;
-  width: 100%;
-}
 
-body {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  width: 100%;
-  align-items: center;
-  background: whitesmoke;
-}
-
-/* ----- Wrapper ----- */
-.wrapper {
-  margin: 0 auto;
-  max-height: 80vh;
-  width: 100%;
-  max-width: 1280px;
-  display: flex;
-  flex-direction: row;
-  border: 2px solid black;
-}
-
-main {
-  display: flex;
-  padding: 48px;
-  text-align: left;
-  background: white;
-  width: 100%;
-}
-/* ----- Pages ----- */
-.page {
-  display: none;
-  min-height: calc(100vh - 128px);
-  padding: 64px 0;
-  animation: fadeIn 0.3s;
-}
-
-/* ----- Nav-Tabs ----- */
-.nav-links {
-  background-color: lightgoldenrodyellow;
-  display: flex;
-  flex-direction: column;
-  gap: 48px;
-  text-align: left;
-  padding: 0 32px;
-  min-width: 180px;
-  height: 100%;
-  justify-content: center;
-
-  a {
-    color: black;
-    text-decoration: none;
-    font-size: 18px;
-
-    &:hover {
-      background-color: black;
-      color: white;
-    }
-
-    &.active {
-      border-bottom: 2px solid black;
-    }
-  }
-}
 
 /* ----- animations ----- */
 /* fade in */

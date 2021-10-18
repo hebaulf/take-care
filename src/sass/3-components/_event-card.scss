@@ -18,7 +18,7 @@ $card-color-meetup: $color-secondary-purple-100;
   box-shadow: 6px 6px $color-tertiary-orange-100;
 
   &-top {
-    @include xsmall-card;
+    @include text-xsmall-card;
     display: flex;
 
   }
