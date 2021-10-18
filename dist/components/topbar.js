@@ -1,2 +1,0 @@
-export default class TopBar{constructor(){this.template()}template(){document.querySelector("#topbar").innerHTML+="\n      <div>\n        <h2 class='heading-2'> TakeCare </h2>\n      </div>\n    "}}
-//# sourceMappingURL=topbar.js.map
