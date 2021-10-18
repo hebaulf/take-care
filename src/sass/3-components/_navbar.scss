@@ -1,0 +1,37 @@
+.navbar {
+  grid-area: navbar;
+  display: flex;
+  flex-shrink: 0;
+  position: sticky;
+  background-color: $color-white;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  width: 100%;
+  z-index: 5;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  justify-content: space-evenly;
+ 
+  a {
+    color: $color-black;
+    text-decoration: none;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+
+    i {
+      display: block;
+      margin-bottom: 4px;
+    }
+  }
+  
+   &__text {
+      @include text-nav;
+    }
+
+}

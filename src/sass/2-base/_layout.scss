@@ -30,11 +30,17 @@ body {
   animation: fadeIn 0.3s;
 }
 
+.hide {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s 0.4s, opacity 0.4s linear;
+}
+
 .wrapper {
   width: 100%;
   display: grid;
   min-height: 100vh;
-  grid-template-rows: 192px auto 64px;
+  grid-template-rows: 180px auto 64px;
   grid-template-columns: 180px auto;
   grid-template-areas: 
    'topbar topbar'

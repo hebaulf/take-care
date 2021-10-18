@@ -11,10 +11,10 @@
 
 .btn {
   @include btn-base;
+  padding: 12px 24px;
 }
 
 .btn-edit {
-  color: var(--primary-color);
   @include btn-border;
 }
 
