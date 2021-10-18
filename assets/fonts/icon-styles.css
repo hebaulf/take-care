@@ -1,10 +1,11 @@
 @font-face {
+ 
   font-family: 'tc-icons';
-  src:  url('fonts/tc-icons.eot?fsfjet');
-  src:  url('fonts/tc-icons.eot?fsfjet#iefix') format('embedded-opentype'),
-    url('fonts/tc-icons.ttf?fsfjet') format('truetype'),
-    url('fonts/tc-icons.woff?fsfjet') format('woff'),
-    url('fonts/tc-icons.svg?fsfjet#tc-icons') format('svg');
+  src:  url('./tc-icons.eot?fsfjet');
+  src:  url('./tc-icons.eot?fsfjet#iefix') format('embedded-opentype'),
+    url('./tc-icons.ttf?fsfjet') format('truetype'),
+    url('./tc-icons.woff?fsfjet') format('woff'),
+    url('./tc-icons.svg?fsfjet#tc-icons') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
