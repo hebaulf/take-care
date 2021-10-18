@@ -1,5 +1,1 @@
-<<<<<<< HEAD
-{"version":3,"sources":["pages/events.js"],"names":["event","date","category","location","title","description","EventsPage","constructor","this","template","document","querySelector","innerHTML"],"mappings":"AAAA,MAAMA,MAAQ,CACZC,KAAM,iBACNC,SAAU,cACVC,SAAU,yBACVC,MAAO,UACPC,YAAa,0DAGA,MAAMC,WACnBC,cACEC,KAAKC,WAGPA,WACEC,SAASC,cAAc,YAAYC,WAAsB","file":"pages/events.js"}
-=======
 {"version":3,"sources":["pages/events.js"],"names":["EventsPage","constructor","this","template","document","querySelector","innerHTML"],"mappings":"eAAe,MAAMA,WACnBC,cACEC,KAAKC,WAGPA,WACEC,SAASC,cAAc,YAAYC,WAAsB","file":"pages/events.js"}
->>>>>>> fdd98d012aa2d40663ce78f359df8f9499aa800d
