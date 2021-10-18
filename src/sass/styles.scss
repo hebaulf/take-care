@@ -1,11 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
-
 
 :root {
   --primary-color: #955df4;
   --secondary-color: #ff816c;
 }
-
 
 .container {
   max-width: 50rem;
@@ -15,7 +12,6 @@
   -moz-box-shadow: 0px 4px 22px -6px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 4px 22px -6px rgba(0, 0, 0, 0.75);
 }
-
 
 .table-users {
   width: 90%;
@@ -37,18 +33,13 @@
 }
 
 
-
-
-
-/* ----- animations ----- */
-/* fade in */
 @keyframes fadeIn {
   from {
-    opacity: 0
+    opacity: 0;
   }
 
   to {
-    opacity: 1
+    opacity: 1;
   }
 }
 
@@ -58,11 +49,9 @@
   transition: visibility 0s 0.4s, opacity 0.4s linear;
 }
 
-
-
 /// IMPORTS
 // 1-Theme
-@import './0-theme/theme';
+@import "./0-theme/theme";
 
 // Utils
 @import './1-utilities/animations';
@@ -73,7 +62,7 @@
 @import './1-utilities/inputs';
 
 // Base styles
-@import './2-base/layout';
+@import "./2-base/layout";
 
 // Components
 @import './3-components/event-card';
@@ -82,3 +71,4 @@
 @import './3-components/modal';
 @import "stylestoberemoved";
 // @use "calendar";
+
