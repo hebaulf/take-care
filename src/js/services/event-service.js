@@ -62,11 +62,11 @@ class EventService {
 			console.log(dataDate);
 
 			const eventItem = /*html*/`
-				<div class="event__item" data-id='${doc.id}'>
-					<div>${data.title}</div>
-					<div>${data.description}</div>
-					<div>${data.location}</div>
-					<div>${formattedDate}</div>
+				<div class="card event__item" data-id='${doc.id}'>
+					<h4 class='card-title'>${data.title}</h4>
+					<p class='card-description'>${data.description}</p>
+					<p class='card-location'>${data.location}</p>
+					<p class='card-date'> ${formattedDate}</p>
 					<div>${data.assign}</div>
 					<div>${data.label}</div>
 					<div>
