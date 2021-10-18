@@ -1,0 +1,155 @@
+$icomoon-font-family: "tc-icons-" !default;
+
+@font-face {
+  font-family: '#{$icomoon-font-family}';
+  src:  url('../../assets/fonts/#{$icomoon-font-family}.eot?2qr66e');
+  src:  url('../../assets/fonts/#{$icomoon-font-family}.eot?2qr66e#iefix') format('embedded-opentype'),
+    url('../../assets/fonts/#{$icomoon-font-family}.ttf?2qr66e') format('truetype'),
+    url('../../assets/fonts/#{$icomoon-font-family}.woff?2qr66e') format('woff'),
+    url('../../assets/fonts/#{$icomoon-font-family}.svg?2qr66e##{$icomoon-font-family}') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+$tc-icons-home-filled: "\e900";
+$tc-icons-happy-face: "\e901";
+$tc-icons-neutral-face: "\e902";
+$tc-icons-sad-face: "\e903";
+$tc-icons-add-description: "\e905";
+$tc-icons-arrow-right: "\e906";
+$tc-icons-big-plus: "\e907";
+$tc-icons-check-circle: "\e908";
+$tc-icons-home-outlined: "\e909";
+$tc-icons-journal: "\e90a";
+$tc-icons-location: "\e90b";
+$tc-icons-plus: "\e90c";
+$tc-icons-profile: "\e90d";
+$tc-icons-select-user: "\e90e";
+$tc-icons-time-date: "\e90f";
+$tc-icons-task-list: "\e910";
+$tc-icons-user-unknown-path1: "\e911";
+$tc-icons-user-unknown-path2: "\e912";
+$tc-icons-calendar: "\e913";
+
+i {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: '#{$icomoon-font-family}' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.tc-icons-home-filled {
+  &:before {
+    content: $tc-icons-home-filled; 
+  }
+}
+.tc-icons-happy-face {
+  &:before {
+    content: $tc-icons-happy-face;     
+    color: #30a644;
+  }
+}
+.tc-icons-neutral-face {
+  &:before {
+    content: $tc-icons-neutral-face;     
+    color: #f2c12e;
+  }
+}
+.tc-icons-sad-face {
+  &:before {
+    content: $tc-icons-sad-face;     
+    color: #f25d2e;
+  }
+}
+.tc-icons-add-description {
+  &:before {
+    content: $tc-icons-add-description; 
+  }
+}
+.tc-icons-arrow-right {
+  &:before {
+    content: $tc-icons-arrow-right; 
+  }
+}
+.tc-icons-big-plus {
+  &:before {
+    content: $tc-icons-big-plus; 
+  }
+}
+.tc-icons-check-circle {
+  &:before {
+    content: $tc-icons-check-circle;     
+    color: #c6c6c6;
+  }
+}
+.tc-icons-home-outlined {
+  &:before {
+    content: $tc-icons-home-outlined; 
+  }
+}
+.tc-icons-journal {
+  &:before {
+    content: $tc-icons-journal; 
+  }
+}
+.tc-icons-location {
+  &:before {
+    content: $tc-icons-location;     
+    color: #474747;
+  }
+}
+.tc-icons-plus {
+  &:before {
+    content: $tc-icons-plus;     
+    color: #b3b3b3;
+  }
+}
+.tc-icons-profile {
+  &:before {
+    content: $tc-icons-profile; 
+  }
+}
+.tc-icons-select-user {
+  &:before {
+    content: $tc-icons-select-user;     
+    color: #b3b3b3;
+  }
+}
+.tc-icons-time-date {
+  &:before {
+    content: $tc-icons-time-date;     
+    color: #474747;
+  }
+}
+.tc-icons-task-list {
+  &:before {
+    content: $tc-icons-task-list; 
+  }
+}
+.tc-icons-user-unknown .path1 {
+  &:before {
+    content: $tc-icons-user-unknown-path1;  
+    color: rgb(242, 93, 46);
+  }
+}
+.tc-icons-user-unknown .path2 {
+  &:before {
+    content: $tc-icons-user-unknown-path2;  
+    margin-left: -1em;  
+    color: rgb(255, 255, 255);
+  }
+}
+.tc-icons-calendar {
+  &:before {
+    content: $tc-icons-calendar; 
+  }
+}
