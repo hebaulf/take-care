@@ -8,21 +8,56 @@ class JournalService {
 	}
 
 	renderJournal = doc => {
+		const journal = document.querySelector('#journal');
 		// Get modals
-		const modalWrapper = document.querySelector('.journal-modal-wrapper');
+		const modalWrapper = journal.querySelector('.journal-modal-wrapper');
+		const modalInner = modalWrapper.querySelector('.modal');
 		// Add modal
-		const addModal = document.querySelector('.add-journal-modal');
-		const addModalForm = document.querySelector('.add-journal-modal .form');
+		const addModal = journal.querySelector('.add-journal-modal');
+		const addModalInner = addModal.querySelector('.modal');
+		const addModalForm = journal.querySelector('.add-journal-modal .form');
+		const addJournalClose = journal.querySelector('.add-journal-close');
 		// Edit modal
-		const editModal = document.querySelector('.edit-journal-modal');
-		const editModalForm = document.querySelector('.edit-journal-modal .form');
+		const editModal = journal.querySelector('.edit-journal-modal');
+		const editModalInner = editModal.querySelector('.modal');
+		const editModalForm = journal.querySelector('.edit-journal-modal .form');
+		const editJournalClose = journal.querySelector('.edit-journal-close');
 		// Get journal list
-		const journalList = document.querySelector('.journal__list');
+		const journalList = journal.querySelector('.journal__list');
 		const journalCollection = db.collection('journal');
 		// Add button on svent list
-		const btnAdd = document.querySelector('.add-journal');
+		const btnAdd = journal.querySelector('.add-journal');
 
 		let id;
+
+		const openAddModal = () => {
+			addModal.style.display = 'flex';
+			addModalInner.style.cssText = 'animation: slideUp .5s ease; animation-fill-mode: forwards;';
+		}
+
+		const closeAddModal = () => {
+			addModalInner.style.cssText = 'animation: slideDown .5s ease; animation-fill-mode: forwards;';
+			setTimeout(() => {
+				addModal.style.display = 'none';
+			}, 500);
+		}
+		const openEditModal = () => {
+			editModal.style.display = 'flex';
+			editModalInner.style.cssText = 'animation: slideUp .5s ease; animation-fill-mode: forwards;';
+		}
+
+		const closeEditModal = () => {
+			editModalInner.style.cssText = 'animation: slideDown .5s ease; animation-fill-mode: forwards;';
+			setTimeout(() => {
+				editModal.style.display = 'none';
+			}, 500);
+		}
+		const closeModal = () => {
+			modalInner.style.cssText = 'animation: slideDown .5s ease; animation-fill-mode: forwards;';
+			setTimeout(() => {
+				modalWrapper.style.display = 'none';
+			}, 500);
+		}
 
 		const days = [
 			'Sun',
@@ -75,12 +110,12 @@ class JournalService {
 
 			
   
-      journalList.insertAdjacentHTML('beforeend', journalItem);
+      		journalList.insertAdjacentHTML('beforeend', journalItem);
 
 			// Click edit user
 			const btnEdit = document.querySelector(`[data-id='${doc.id}'] .edit-journal`);
 			btnEdit.addEventListener('click', () => {
-				editModal.classList.add('modal-show');
+				openEditModal();
 
 				id = doc.id;
 				editModalForm.feeling.value = data.feeling;
@@ -99,23 +134,35 @@ class JournalService {
 				});
 			});
 		}
+
+
 		
-		// Click add user button
+		// Click add journal button
 		btnAdd.addEventListener('click', () => {
-			addModal.classList.add('modal-show');
+			openAddModal();
 			addModalForm.feeling.value = '';
 			addModalForm.entry.value = '';
 			addModalForm.date.value = '';
 			addModalForm.user.value = '';
 		});
 
+		// Click close button
+		addJournalClose.addEventListener('click', (e) => {
+			e.preventDefault();
+			closeAddModal();
+		});
+		editJournalClose.addEventListener('click', (e) => {
+			e.preventDefault();
+			closeEditModal();
+		});
+
 		// User click anyware outside the modal
 		window.addEventListener('click', e => {
 			if(e.target === addModal) {
-				addModal.classList.remove('modal-show');
+				closeAddModal();
 			}
 			if(e.target === editModal) {
-				editModal.classList.remove('modal-show');
+				closeEditModal();
 			}
 		});
 
@@ -155,7 +202,7 @@ class JournalService {
 				date: addModalForm.date.value,
 				user: addModalForm.user.value
 			});
-			modalWrapper.classList.remove('modal-show');
+			closeAddModal();
 		});
 
 		// Click submit in edit modal
@@ -167,7 +214,7 @@ class JournalService {
 				date: editModalForm.date.value,
 				user: editModalForm.user.value
 			});
-			editModal.classList.remove('modal-show');
+			closeEditModal();
 		});
   }
 }
