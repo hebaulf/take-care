@@ -5,7 +5,7 @@ class SpaService {
 
   init() {
     this.pages = document.querySelectorAll(".page");
-    this.navItems = document.querySelectorAll(".navtabs a");
+    this.navItems = document.querySelectorAll(".navbar-links a");
     window.addEventListener("hashchange", () => this.pageChange());
     this.pageChange();
   }

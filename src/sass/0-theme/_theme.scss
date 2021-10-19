@@ -13,30 +13,39 @@ $spacing-base: 0.5rem;
 
 /* Border Radius */
 $border-radius-base: 4px;
+$border-radius-8: calc($border-radius-base * 2);
+$border-radius-16: calc($border-radius-base * 4);
+$border-radius-24: calc($border-radius-base * 6);
+$border-radius-32: calc($border-radius-base * 8);
+$border-radius-36: calc($border-radius-base * 9);
+
 /* Color palette */
 
 /* Main colors */
 // Blues
-$color-primary-blue-100: hsl(232, 88%, 45%);
-$color-primary-blue-70: hsl(232, 85%, 76%);
-$color-primary-blue-30: hsl(232, 84%, 90%);
-$color-primary-blue-10: hsl(232, 85%, 95%);
+$color-primary-100: hsl(232, 88%, 45%);
+$color-primary-80: hsl(232, 62%, 59%);
+$color-primary-70: hsl(232, 85%, 76%);
+$color-primary-30: hsl(232, 84%, 90%);
+$color-primary-10: hsl(232, 85%, 95%);
+$color-primary-5: hsl(233, 80%, 98%);
 
 // Purples
-$color-secondary-purple-100: hsl(265, 71%, 33%);
-$color-secondary-purple-70: hsl(264, 46%, 56%);
-$color-secondary-purple-30: hsl(265, 71%, 80%);
-$color-secondary-purple-10: hsl(267, 69%, 95%);
+$color-secondary-100: hsl(265, 71%, 33%);
+$color-secondary-70: hsl(264, 46%, 56%);
+$color-secondary-30: hsl(265, 71%, 80%);
+$color-secondary-10: hsl(267, 69%, 95%);
+$color-secondary-5: hsl(262, 80%, 98%);
 
 // Oranges
-$color-tertiary-orange-100: hsl(32, 78%, 56%);
-$color-tertiary-orange-50: hsl(32, 78%, 80%);
-$color-tertiary-orange-30: hsl(33, 77%, 95%);
-$color-tertiary-orange-5: hsl(33, 77%, 95%);
+$color-tertiary-100: hsl(32, 78%, 56%);
+$color-tertiary-50: hsl(32, 78%, 80%);
+$color-tertiary-30: hsl(33, 77%, 95%);
+$color-tertiary-5: hsl(33, 77%, 95%);
 
 /* Grey Colors */
 $color-black: hsl(0, 0%, 0%); //black
-$color-grey-70: hsl(0, 0%, 28%); //dark-grey
+$color-grey-70: hsl(0, 0%, 43%); //dark-grey
 $color-grey-60: hsl(0, 0%, 33%); //grey
 $color-grey-50: hsl(0, 0%, 90%); //platinum-medium
 $color-grey-30: rgb(242, 242, 242); // light-grey
@@ -45,9 +54,9 @@ $color-white: hsl(0, 0%, 100%); // white
 
 /* Priority Colors */
 
-$color-priority-green: hsl(130, 55%, 42%);
-$color-priority-yellow: hsl(45, 88%, 56%);
-$color-priority-red: hsl(14, 88%, 56%);
+$color-priority-low: hsl(130, 55%, 42%);
+$color-priority-medium: hsl(45, 88%, 56%);
+$color-priority-high: hsl(14, 88%, 56%);
 
 
  

@@ -44,21 +44,7 @@
 }
 
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
 
-  to {
-    opacity: 1;
-  }
-}
-
-.hide {
-  visibility: hidden;
-  opacity: 0;
-  transition: visibility 0s 0.4s, opacity 0.4s linear;
-}
 
 /// IMPORTS
 // 1-Theme
@@ -68,15 +54,17 @@
 @import './1-utilities/animations';
 @import './1-utilities/icons';
 @import './1-utilities/borders';
+@import './1-utilities/color';
 @import './1-utilities/typography';
-@import './1-utilities/buttons';
-@import './1-utilities/inputs';
 
 // Base styles
 @import "./2-base/layout";
 
 // Components
+@import './3-components/buttons';
 @import './3-components/event-card';
+@import './3-components/cards';
+@import './3-components/inputs';
 @import './3-components/navbar';
 @import './3-components/topbar';
 @import './3-components/modal';

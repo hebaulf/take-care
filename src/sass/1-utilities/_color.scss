@@ -1,0 +1,19 @@
+/* Colors */
+$color-appointment: $color-tertiary-100; //orange
+$color-meetup: $color-secondary-100; //purple
+$color-todo-low: $color-priority-low; //purple
+$color-todo-medium: $color-priority-medium; //purple
+$color-todo-high: $color-priority-high; //purple
+
+
+$card-colors:  (
+  appointment: $color-appointment, //label : $card-color
+  meetup: $color-meetup,
+  todo-low: $color-todo-low,
+  todo-medium: $color-todo-medium,
+  todo-high: $color-todo-high
+);
+
+$bg-main: $color-grey-20;
+$bg-header: $color-white;
+$bg-nav: $color-white;

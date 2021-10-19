@@ -40,7 +40,7 @@ body {
   width: 100%;
   display: grid;
   min-height: 100vh;
-  grid-template-rows: 180px auto 64px;
+  grid-template-rows: 118px auto 64px;
   grid-template-columns: 180px auto;
   grid-template-areas: 
    'topbar topbar'
@@ -49,46 +49,30 @@ body {
 }
 
 main {
-  background-color: $color-grey-50;
+  @include border-content;
+  margin-top: 64px;
+  background-color: $bg-main;
   grid-area: content;
-
+  box-shadow: 0px -32px 0px $color-primary-80;
+  padding: 16px;
+  overflow-y: scroll;
 }
 
 .topbar {
   grid-area: topbar;
-}
-
-.navbar {
-  grid-area: navbar;
+  height: 118px;
   display: flex;
-  background-color: $color-white;
-  justify-content: center;
-  align-items: center;
-  height: auto;
-  width: 100%;
-}
-
-.nav-links {
-  display: flex;
-  gap: 20px;
-  width: 100%;
-  justify-content: space-evenly;
+  align-items: flex-end;
+  justify-content: space-between;
  
-  a {
-    color: $color-black;
-    text-decoration: none;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-
-    i {
-      display: block;
-      margin-bottom: 4px;
-    }
+  h1 {
+    @include heading-1;
+    padding-left: 16px;
   }
-  
-   &__text {
-      @include text-nav;
-    }
 
+  button i {
+    font-size: 20px;
+  }
 }
+
+

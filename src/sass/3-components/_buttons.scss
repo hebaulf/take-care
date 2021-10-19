@@ -1,0 +1,90 @@
+/* BUTTONS */
+
+.btn {
+  @include text-btn;
+  @include border-btn;
+  cursor: pointer;
+  padding: 8px 16px;
+  transition: all 0.5s ease;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  a {
+    text-decoration: none;
+    line-height: 20px;
+  }
+}
+
+.btn-primary {
+  @extend .btn;
+  border: 2px solid $color-black;
+  background-color: $color-black;
+  color: $color-white;
+
+  &:hover {
+    background-color: $color-white;
+    color: $color-black;
+  }
+}
+
+.btn-primary-add {
+  @extend .btn-primary;
+  padding-left: 8px;
+  
+  &:before {
+    @include icon;
+    content: "\e907";
+    font-size: 20px;
+    padding-right: 8px;
+    color: $color-white;
+  }
+}
+
+.btn-home {
+  height: 100%;
+  background: none;
+  padding-left: 8px;
+  padding-right: 32px;
+  padding: 10px 32px 8px 8px;
+  border: 1px solid $color-black;
+  border-right: none;
+  border-top-left-radius: $border-radius-8;
+  border-bottom-left-radius: $border-radius-8;
+  text-decoration: none;
+
+  i {
+    color: $color-black;
+    font-size: 20px;
+  }
+}
+
+.btn-secondary {
+  @extend .btn;
+  background-color: $color-white;
+  border-color: $color-black;
+  color: $color-black;
+}
+
+.btn-edit {
+  @include border-btn;
+}
+
+.btn-edit:hover {
+  background: $color-primary-100;
+  color: #fff;
+}
+
+.btn-delete {
+  color: var(--secondary-color);
+  border: 1px solid var(--secondary-color);
+}
+
+.btn-delete:hover {
+  background: var(--secondary-color);
+  color: #fff;
+}
+
+
+
+

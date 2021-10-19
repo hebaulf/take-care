@@ -12,7 +12,7 @@ export default class JournalPage {
         <div class="journal__wrapper table-wrapper">
           <div class="journal__list table-users">
           </div>
-          <button class="btn btn-add add-journal">Add Entry</button>
+          <button class="btn btn-primary-add add-journal">Add Entry</button>
         </div>
       
       <!-- Add Modal -->

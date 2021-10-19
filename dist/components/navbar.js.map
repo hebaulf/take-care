@@ -1,1 +1,1 @@
-{"version":3,"sources":["components/navbar.js"],"names":["NavBar","constructor","this","template","document","querySelector","innerHTML"],"mappings":"eAAe,MAAMA,OACnBC,cACEC,KAAKC,WAGPA,WACEC,SAASC,cAAc,WAAWC,WAAsB","file":"components/navbar.js"}
+{"version":3,"sources":["components/navbar.js"],"names":["NavBar","constructor","this","component","document","querySelector","innerHTML"],"mappings":"eAAe,MAAMA,OACnBC,cACEC,KAAKC,YAGPA,YACEC,SAASC,cAAc,WAAWC,WAAsB","file":"components/navbar.js"}

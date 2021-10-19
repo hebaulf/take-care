@@ -1,11 +1,28 @@
 // modal animation
-@keyframes animatetop {
+@keyframes slideUp {
+  0% {
+    transform: translateY(100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+// page fade in
+@keyframes fadeIn {
   from {
-    top: -300px;
     opacity: 0;
   }
   to {
-    top: 0;
     opacity: 1;
   }
 }
