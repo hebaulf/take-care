@@ -13,6 +13,12 @@ $spacing-base: 0.5rem;
 
 /* Border Radius */
 $border-radius-base: 4px;
+$border-radius-8: calc($border-radius-base * 2);
+$border-radius-16: calc($border-radius-base * 4);
+$border-radius-24: calc($border-radius-base * 6);
+$border-radius-32: calc($border-radius-base * 8);
+$border-radius-36: calc($border-radius-base * 9);
+
 /* Color palette */
 
 /* Main colors */
@@ -39,7 +45,7 @@ $color-tertiary-5: hsl(33, 77%, 95%);
 
 /* Grey Colors */
 $color-black: hsl(0, 0%, 0%); //black
-$color-grey-70: hsl(0, 0%, 28%); //dark-grey
+$color-grey-70: hsl(0, 0%, 43%); //dark-grey
 $color-grey-60: hsl(0, 0%, 33%); //grey
 $color-grey-50: hsl(0, 0%, 90%); //platinum-medium
 $color-grey-30: rgb(242, 242, 242); // light-grey

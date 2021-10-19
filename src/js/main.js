@@ -5,7 +5,6 @@ import _journalService from "./services/journal-service.js";
 // import "./services/calendar.js";
 import NavBar from "./components/navbar.js";
 import TopBar from './components/topbar.js';
-
 import LoginPage from './pages/login.js';
 import DashboardPage from "./pages/dashboard.js";
 import EventsPage from './pages/events.js';

@@ -1,16 +1,7 @@
 /** Radius **/
 // to do create functions/mixins
 
-/* Border Radius */
-$border-radius-base: 4px;
-$border-radius-8: 8px;
-$border-radius-12: 12px;
-$border-radius-16: 16px;
-$border-radius-24: 24px;
-$border-radius-32: 32px;
-$border-radius-36: 36px;
-
-@mixin btn-border {
+@mixin border-btn {
   border: 2px solid;
   border-color: $color-black;
   border-radius: $border-radius-8;
@@ -22,8 +13,13 @@ $border-radius-36: 36px;
   border-radius: $border-radius-8;
 }
 
-@mixin card-border {
+@mixin border-card {
   border: 1px solid;
   border-radius: $border-radius-16;
+}
+
+// slide up card
+@mixin border-content{
+  border-top-left-radius: $border-radius-36;
 }
 

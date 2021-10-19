@@ -1,7 +1,7 @@
-let username = 'Arna Vala'
+/* let username = 'Arna Vala'
 let matches = username.match(/\b(\w)/g);
 let acronym = matches.join('');
-console.log(acronym);
+console.log(acronym); */
 
 
 
@@ -13,11 +13,6 @@ export default class DashboardPage {
   template() {
     document.querySelector('#content').innerHTML += /*html*/ `
       <section id="dashboard" class="page">
-        <header class="topbar">
-          <h2 hidden>Dashboard</h2>
-          <h2>Hi, ${username}</h2>
-          <button>home icon</button>
-        </header>
         <div id='events' className="event__list">
           Events
         </div>
@@ -28,6 +23,7 @@ export default class DashboardPage {
           Journal
         </div>
       </section>
+  
     `;  
   }
 }

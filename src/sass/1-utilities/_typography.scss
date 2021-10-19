@@ -2,39 +2,38 @@
 $font-headings: $font-family-mono;
 $font-text: $font-family;
 
-/** Typography maps **/
 
 /**** TYPOGRAPHY MIXINS ****/
-@mixin heading-1 {
+@mixin display-lg {
   font-family: $font-headings;
   font-size: 68px;
   line-height: 72px;
   font-weight: 600;
+  text-rendering: optimizeLegibility;
 }
 
-@mixin heading-2 {
+@mixin heading-1 {
   font-family: $font-headings;
   font-size: 42px;
   line-height: 48px;
   font-weight: 400;
 }
 
-@mixin heading-3 {
+@mixin heading-2 {
   font-family: $font-headings;
   font-size: 26px;
   line-height: 48px;
   font-weight: 400;
 }
 
-@mixin heading-4 {
-  font-family: $font-headings;
+@mixin heading-3 {
+  font-family: $font-text;
   font-size: 16px;
   line-height: 24px;
-  font-weight: 500;
-  text-rendering: optimizeLegibility;
+  font-weight: 400;
 }
 
-@mixin paragraph {
+@mixin heading-4 {
   font-family: $font-text;
   font-size: 16px;
   line-height: 24px;
@@ -42,7 +41,15 @@ $font-text: $font-family;
   text-rendering: optimizeLegibility;
 }
 
-@mixin text-small {
+@mixin text-base {
+  font-family: $font-text;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 300;
+  text-rendering: optimizeLegibility;
+}
+
+@mixin text-sm {
   font-family: $font-text;
   font-size: 14px;
   line-height: 24px;
@@ -50,7 +57,7 @@ $font-text: $font-family;
   text-rendering: optimizeLegibility;
 }
 
-@mixin text-xsmall {
+@mixin text-xs {
   font-family: $font-headings;
   font-size: 12px;
   line-height: 16px; //133%
@@ -58,15 +65,7 @@ $font-text: $font-family;
   text-rendering: optimizeLegibility;
 }
 
-@mixin text-xsmall-card {
-  font-family: $font-headings;
-  font-size: 10px;
-  line-height: 16px;
-  font-weight: 500;
-  text-rendering: optimizeLegibility;
-}
-
-@mixin text-nav {
+@mixin text-navbar {
   font-family: $font-text;
   font-style: normal;
   font-size: 8px;
@@ -79,6 +78,61 @@ $font-text: $font-family;
   font-family: $font-text;
   font-style: normal;
   font-size: 12px;
+  line-height: 100%;
   font-weight: 500;
   text-rendering: optimizeLegibility;
 }
+
+h1 {
+  @include heading-1;
+}
+
+h2 {
+  @include heading-2;
+}
+
+h3 {
+  @include heading-3;
+}
+
+h4 {
+  @include heading-4;
+}
+
+p {
+  @include text-base;
+}
+
+.text-base {
+  @include text-base;
+}
+
+.text-sm {
+  @include text-sm;
+}
+
+.text-xs {
+  @include text-xs;
+}
+
+.text-day-count {
+  @include display-lg;
+}
+
+.card-title {
+  @include heading-3;
+  color: $color-black;
+}
+
+.card-label,
+.card-date,
+.card-location {
+  @include text-xs;
+  color: $color-grey-70;
+}
+
+.card-description {
+  @include text-xs;
+  color: $color-black;
+}
+

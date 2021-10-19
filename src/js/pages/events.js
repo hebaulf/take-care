@@ -10,7 +10,7 @@ export default class EventsPage {
           <h3>Events</h3>
         </header>
         <div class="event__wrapper table-wrapper">
-          <div class="event__list table-users card-list">
+          <div class="event__list table-users">
           </div>
           <button class="btn btn-add add-event">Add Event</button>
         </div>

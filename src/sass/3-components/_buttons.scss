@@ -1,0 +1,64 @@
+/* BUTTONS */
+
+.btn {
+  @include text-btn;
+  @include border-btn;
+  cursor: pointer;
+  transition: all 0.5s ease;
+}
+
+.btn-primary {
+  @extend .btn;
+  border: 2px solid $color-white;
+  background-color: $color-black;
+  color: $color-white;
+
+  &:hover {
+    border-color: $color-black;
+    background-color: $color-white;
+    color: $color-black;
+  }
+}
+
+.btn-primary-add {
+  @extend .btn-primary;
+}
+
+.btn-edit {
+  @include border-btn;
+}
+
+.btn-edit:hover {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+.btn-delete {
+  color: var(--secondary-color);
+  border: 1px solid var(--secondary-color);
+}
+
+.btn-delete:hover {
+  background: var(--secondary-color);
+  color: #fff;
+}
+
+
+.btn-add {
+  width: 6rem;
+  height: 2rem;
+  background: var(--primary-color);
+  border: none;
+  color: #fff;
+}
+
+.btn-home {
+  background: none;
+  padding-left: 8px;
+  padding-right: 32px;
+  padding: 8px 32px 8px 8px;
+  border: 1px solid $color-black;
+  border-right: none;
+  border-top-left-radius: $border-radius-8;
+  border-bottom-left-radius: $border-radius-8;
+}

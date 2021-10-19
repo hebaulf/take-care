@@ -30,8 +30,25 @@ $border-radius-card: 16px;
   }
 
   &-top {
-    @include text-xsmall-card;
+    @include text-xs;
     display: flex;
   }
 
+}
+
+.card-title {
+  @include heading-3;
+  color: $color-black;
+}
+
+.card-label,
+.card-date,
+.card-location {
+  @include text-xs;
+  color: $color-grey-70;
+}
+
+.card-description {
+  @include text-xs;
+  color: $color-black;
 }
