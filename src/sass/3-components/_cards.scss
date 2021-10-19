@@ -11,6 +11,9 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+  border: 1px solid;
+  padding: 16px;
+  width: 100%;
   border-radius: $border-radius-card;
 
   @each $label, $card-color in $card-colors {

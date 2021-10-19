@@ -61,14 +61,14 @@ class EventService {
 			const formattedDate = `${day} ${monthDate}.${month} ${year}`;
 
 			const eventItem = /*html*/`
-				<div class="card event__item" data-id='${doc.id}'>
+				<div class="card card-event card-${data.label}" data-id='${doc.id}'>
 					<h4 class='card-title'>${data.title}</h4>
 					<p class='card-description'>${data.description}</p>
 					<p class='card-location'>${data.location}</p>
 					<p class='card-date'> ${formattedDate}</p>
 					<div>${data.assign}</div>
-					<div>${data.label}</div>
-					<div>
+					<!-- <div>${data.label}</div> -->
+					<div hidden>
 						<button class="btn btn-edit edit-event">Edit</button>
 						<button class="btn btn-delete delete-event">Delete</button>
 					</div>

@@ -15,11 +15,13 @@ export default class TodosPage {
           <div class='content-top'>
             <a href='#' class='btn btn-primary-add'>new</a>
           </div>
+
           <div class="todo__list table-users">
           </div>
           <button class="btn btn-add add-todo">Add Todo</button>
         </div>
-  
+        
+
       <!-- Add Modal -->
         <div class="add-modal add-todo-modal modal-wrapper todo-modal-wrapper">
           <div class="modal">
