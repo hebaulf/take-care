@@ -1,11 +1,3 @@
- $card-colors:  (
-  appointment: $color-appointment, //label : $card-color
-  meetup: $color-meetup,
-  todo-Low: $color-todo-low,
-  todo-Medium: $color-todo-medium,
-  todo-High: $color-todo-high
-); 
-
 .card {
   background-color: $color-white;
   display: flex;

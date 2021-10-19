@@ -54,9 +54,13 @@ $color-white: hsl(0, 0%, 100%); // white
 
 /* Priority Colors */
 
-$color-priority-low: hsl(130, 55%, 42%);
-$color-priority-medium: hsl(45, 88%, 56%);
-$color-priority-high: hsl(14, 88%, 56%);
+$color-green: hsl(130, 55%, 42%);
+$color-yellow: hsl(45, 88%, 56%);
+$color-red: hsl(14, 88%, 56%);
+
+$bg-green: hsl(130, 55%, 75%);
+$bg-yellow: hsl(45, 88%, 80%);
+$bg-red: hsl(14, 88%, 70%);
 
 
  
