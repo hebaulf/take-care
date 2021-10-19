@@ -9,25 +9,3 @@
     opacity: 1;
   }
 }
-
-@keyframes animateUpFromBottom {
-  from {
-    bottom: -1000px;
-    opacity: 1;
-  }
-  to {
-    bottom: 0;
-    opacity: 1;
-  }
-}
-
-@keyframes animateDownFromTop {
-  from {
-    bottom: 0;
-    opacity: 1;
-  }
-  to {
-    bottom: -1000px;
-    opacity: 1;
-  }
-}
