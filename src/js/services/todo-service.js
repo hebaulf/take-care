@@ -21,15 +21,17 @@ class TodoService {
 		const todosCollection = db.collection('todo');
 		// Add button on svent list
 		const btnAdd = document.querySelector('.add-todo');
+		const btnClose = document.querySelector('.btn-close-modal');
 
 		let id;
 
 		// Create element and render users
 		const renderTodo = doc => {
 			const data = doc.data();
+			const priorityClass = `${(data.priority) === 'Low' ? 'low' : ''}${(data.priority) === 'Medium' ? 'med' : ''}${(data.priority) === 'High' ? 'high' : ''}`;
 
 			const todoItem = /*html*/`
-				<div class="todo__item" data-id='${doc.id}'>
+				<div class="card todo__item priority-${priorityClass}" data-id="${doc.id}">
 					<div>${data.title}</div>
 					<div>${data.list}</div>
 					<div>${data.assign}</div>
@@ -66,13 +68,18 @@ class TodoService {
 			});
 		}
 		
-		// Click add user button
+		// Click add todo button
 		btnAdd.addEventListener('click', () => {
 			addModal.classList.add('modal-show');
 			addModalForm.title.value = '';
 			addModalForm.list.value = '';
 			addModalForm.assign.value = '';
 			addModalForm.priority.value = '';
+		});
+
+		// Click close button
+		btnClose.addEventListener('click', () => {
+			modalWrapper.classList.remove('modal-show');
 		});
 
 		// User click anyware outside the modal

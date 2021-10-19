@@ -18,7 +18,10 @@ export default class EventsPage {
       <!-- Add Modal -->
         <div class="add-modal add-event-modal modal-wrapper event-modal-wrapper">
           <div class="modal">
-            <div class="modal-header"><h3>New Event</h3></div>
+            <div class="modal-header">
+              <h3>Create Event</h3>
+              <button class="btn btn-close-modal">Close</button>
+            </div>
             <div class="modal-body">
               <form class="form" autocomplete="off">
                 <label class="visuallyhidden" for="title">Title</label>
@@ -56,7 +59,10 @@ export default class EventsPage {
       <!-- Edit Modal -->
         <div class="edit-modal edit-event-modal modal-wrapper event-modal-wrapper">
           <div class="modal">
-            <div class="modal-header"><h3>New Event</h3></div>
+            <div class="modal-header">
+              <h3>Edit Event</h3>
+              <button class="btn btn-close-modal">Close</button>
+            </div>
             <div class="modal-body">
               <form class="form" autocomplete="off">
                 <label for="title">Title</label>
@@ -82,8 +88,8 @@ export default class EventsPage {
 
                 <label for="eventEditLabel">Label</label>
                 <select name="label" id="eventEditLabel">
-                  <option value="appointment">Appointment</option>
-                  <option value="meetup">Meetup</option>
+                  <option value="Appointment">Appointment</option>
+                  <option value="Meetup">Meetup</option>
                 </select>
                 <button class="btn btn-modal">Update</button>
               </form>

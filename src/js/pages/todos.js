@@ -18,7 +18,10 @@ export default class TodosPage {
       <!-- Add Modal -->
         <div class="add-modal add-todo-modal modal-wrapper todo-modal-wrapper">
           <div class="modal">
-            <div class="modal-header"><h3>New Todo</h3></div>
+            <div class="modal-header">
+              <h3>Create Todo</h3>
+              <button class="btn btn-close-modal">Close</button>
+            </div>
             <div class="modal-body">
               <form class="form" autocomplete="off">
                 <label for="title">Title</label>
@@ -29,6 +32,7 @@ export default class TodosPage {
 
                 <label for="todoAddAssign">Assign to</label>
                 <select name="assign" id="todoAddAssign">
+                  <option value="">Choose assignee</option>
                   <option value="Heba">Heba</option>
                   <option value="Vala">Vala</option>
                   <option value="Kristrun">Kristrun</option>
@@ -38,9 +42,9 @@ export default class TodosPage {
 
                 <label for="todoAddPriority">Priority</label>
                 <select name="priority" id="todoAddPriority">
-                  <option value="low">Low</option>
-                  <option value="medium">Medium</option>
-                  <option value="high">High</option>
+                  <option value="Low">Low</option>
+                  <option value="Medium">Medium</option>
+                  <option value="High">High</option>
                 </select>
                 <button class="btn btn-modal">Add</button>
               </form>
@@ -51,7 +55,10 @@ export default class TodosPage {
       <!-- Edit Modal -->
         <div class="edit-modal edit-todo-modal modal-wrapper todo-modal-wrapper">
           <div class="modal">
-            <div class="modal-header"><h3>New Todo</h3></div>
+            <div class="modal-header">
+              <h3>Edit Todo</h3>
+              <button class="btn btn-close-modal">Close</button>
+            </div>
             <div class="modal-body">
             <form class="form" autocomplete="off">
             <label for="title">Title</label>
@@ -71,9 +78,10 @@ export default class TodosPage {
 
             <label for="todoEditPriority">Priority</label>
             <select name="priority" id="todoEditPriority">
-              <option value="low">Low</option>
-              <option value="medium">Medium</option>
-              <option value="high">High</option>
+              <option value="">Choose priority</option>
+              <option value="Low">Low</option>
+              <option value="Medium">Medium</option>
+              <option value="High">High</option>
             </select>
             <button class="btn btn-modal">Update</button>
           </form>

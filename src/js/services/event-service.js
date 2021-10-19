@@ -19,8 +19,9 @@ class EventService {
 		// Get event list
 		const eventList = document.querySelector('.event__list');
 		const eventsCollection = db.collection('events');
-		// Add button on svent list
+		// Add/close button on event list
 		const btnAdd = document.querySelector('.btn-add.add-event');
+		const btnClose = document.querySelector('.btn-close-modal');
 
 		let id;
 
@@ -52,8 +53,9 @@ class EventService {
 		// Create element and render users
 		const renderEvent = doc => {
 			const data = doc.data();
-			const dataDate = new Date(data.date);
+			const labelClass = `${(data.label) === 'Appointment' ? 'appointment' : 'meetup'}`;
 
+			const dataDate = new Date(data.date);
 			const day = days[dataDate.getDay()];
 			const monthDate = dataDate.getDate();
 			const month = months[dataDate.getMonth()];
@@ -61,7 +63,8 @@ class EventService {
 			const formattedDate = `${day} ${monthDate}.${month} ${year}`;
 
 			const eventItem = /*html*/`
-				<div class="card event__item" data-id='${doc.id}'>
+				<div class='card event__item label-${labelClass}' data-id='${doc.id}'>
+					${console.log(data.label)}
 					<h4 class='card-title'>${data.title}</h4>
 					<p class='card-description'>${data.description}</p>
 					<p class='card-location'>${data.location}</p>
@@ -75,7 +78,7 @@ class EventService {
 				</div>
 			`;
   
-  		eventList.insertAdjacentHTML('beforeend', eventItem);
+  			eventList.insertAdjacentHTML('beforeend', eventItem);
 
 			// Click edit user
 			const btnEdit = document.querySelector(`[data-id='${doc.id}'] .edit-event`);
@@ -111,6 +114,11 @@ class EventService {
 			addModalForm.date.value = '';
 			addModalForm.assign.value = '';
 			addModalForm.label.value = '';
+		});
+
+		// Click close button
+		btnClose.addEventListener('click', () => {
+			modalWrapper.classList.remove('modal-show');
 		});
 
 		// User click anyware outside the modal
