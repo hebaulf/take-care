@@ -20,7 +20,7 @@ export default class EventsPage {
           <div class="modal">
             <div class="modal-header">
               <h3>Create Event</h3>
-              <button class="btn btn-close-modal">Close</button>
+              <button class="btn add-event-close">Close</button>
             </div>
             <div class="modal-body">
               <form class="form" autocomplete="off">
@@ -61,7 +61,7 @@ export default class EventsPage {
           <div class="modal">
             <div class="modal-header">
               <h3>Edit Event</h3>
-              <button class="btn btn-close-modal">Close</button>
+              <button class="btn edit-event-close">Close</button>
             </div>
             <div class="modal-body">
               <form class="form" autocomplete="off">

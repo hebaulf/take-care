@@ -18,7 +18,10 @@ export default class JournalPage {
       <!-- Add Modal -->
         <div class="add-modal add-journal-modal modal-wrapper journal-modal-wrapper">
           <div class="modal">
-            <div class="modal-header"><h3>New Journal entry</h3></div>
+            <div class="modal-header">
+              <h3>Create Journal</h3>
+              <button class="btn add-journal-close">Close</button>
+            </div>
             <div class="modal-body">
               <form class="form" autocomplete="off">
                 <label for="feeling">Feeling</label>
@@ -52,7 +55,10 @@ export default class JournalPage {
       <!-- Edit Modal -->
         <div class="edit-modal edit-journal-modal modal-wrapper journal-modal-wrapper">
           <div class="modal">
-            <div class="modal-header"><h3>Update Entry</h3></div>
+            <div class="modal-header">
+              <h3>Edit Journal</h3>
+              <button class="btn edit-journal-close">Close</button>
+            </div>
             <div class="modal-body">
               <form class="form" autocomplete="off">
                 <label for="feeling">Feeling</label>

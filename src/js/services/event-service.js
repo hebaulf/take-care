@@ -8,22 +8,57 @@ class EventService {
 	}
 
 	renderEvents = doc => {
+		const events = document.querySelector('#events');
 		// Get modals
-		const modalWrapper = document.querySelector('.event-modal-wrapper');
+		const modalWrapper = events.querySelector('.event-modal-wrapper');
+		const modalInner = modalWrapper.querySelector('.modal');
 		// Add modal
-		const addModal = document.querySelector('.add-event-modal');
-		const addModalForm = document.querySelector('.add-event-modal .form');
+		const addModal = events.querySelector('.add-event-modal');
+		const addModalInner = addModal.querySelector('.modal');
+		const addModalForm = events.querySelector('.add-event-modal .form');
+		const addEventClose = events.querySelector('.add-event-close');
 		// Edit modal
-		const editModal = document.querySelector('.edit-event-modal');
-		const editModalForm = document.querySelector('.edit-event-modal .form');
+		const editModal = events.querySelector('.edit-event-modal');
+		const editModalInner = editModal.querySelector('.modal');
+		const editModalForm = events.querySelector('.edit-event-modal .form');
+		const editEventClose = events.querySelector('.edit-event-close');
 		// Get event list
-		const eventList = document.querySelector('.event__list');
+		const eventList = events.querySelector('.event__list');
 		const eventsCollection = db.collection('events');
 		// Add/close button on event list
-		const btnAdd = document.querySelector('.btn-add.add-event');
-		const btnClose = document.querySelector('.btn-close-modal');
+		const btnAdd = events.querySelector('.btn-add.add-event');
+		// const btnClose = document.querySelector('.btn-close-modal');
 
 		let id;
+
+		const openAddModal = () => {
+			addModal.style.display = 'flex';
+			addModalInner.style.cssText = 'animation: slideUp .5s ease; animation-fill-mode: forwards;';
+		}
+
+		const closeAddModal = () => {
+			addModalInner.style.cssText = 'animation: slideDown .5s ease; animation-fill-mode: forwards;';
+			setTimeout(() => {
+				addModal.style.display = 'none';
+			}, 500);
+		}
+		const openEditModal = () => {
+			editModal.style.display = 'flex';
+			editModalInner.style.cssText = 'animation: slideUp .5s ease; animation-fill-mode: forwards;';
+		}
+
+		const closeEditModal = () => {
+			editModalInner.style.cssText = 'animation: slideDown .5s ease; animation-fill-mode: forwards;';
+			setTimeout(() => {
+				editModal.style.display = 'none';
+			}, 500);
+		}
+		const closeModal = () => {
+			modalInner.style.cssText = 'animation: slideDown .5s ease; animation-fill-mode: forwards;';
+			setTimeout(() => {
+				modalWrapper.style.display = 'none';
+			}, 500);
+		}
 
 		const days = [
 		'Sun',
@@ -64,7 +99,6 @@ class EventService {
 
 			const eventItem = /*html*/`
 				<div class='card event__item label-${labelClass}' data-id='${doc.id}'>
-					${console.log(data.label)}
 					<h4 class='card-title'>${data.title}</h4>
 					<p class='card-description'>${data.description}</p>
 					<p class='card-location'>${data.location}</p>
@@ -83,7 +117,7 @@ class EventService {
 			// Click edit user
 			const btnEdit = document.querySelector(`[data-id='${doc.id}'] .edit-event`);
 			btnEdit.addEventListener('click', () => {
-				editModal.classList.add('modal-show');
+				openEditModal();
 
 				id = doc.id;
 				editModalForm.title.value = data.title;
@@ -107,7 +141,7 @@ class EventService {
 		
 		// Click add user button
 		btnAdd.addEventListener('click', () => {
-			addModal.classList.add('modal-show');
+			openAddModal();
 			addModalForm.title.value = '';
 			addModalForm.description.value = '';
 			addModalForm.location.value = '';
@@ -117,17 +151,22 @@ class EventService {
 		});
 
 		// Click close button
-		btnClose.addEventListener('click', () => {
-			modalWrapper.classList.remove('modal-show');
+		addEventClose.addEventListener('click', (e) => {
+			e.preventDefault();
+			closeAddModal();
+		});
+		editEventClose.addEventListener('click', (e) => {
+			e.preventDefault();
+			closeEditModal();
 		});
 
 		// User click anyware outside the modal
 		window.addEventListener('click', e => {
 			if(e.target === addModal) {
-				addModal.classList.remove('modal-show');
+				closeAddModal();
 			}
 			if(e.target === editModal) {
-				editModal.classList.remove('modal-show');
+				closeEditModal();
 			}
 		});
 
@@ -169,7 +208,7 @@ class EventService {
 				assign: addModalForm.assign.value,
 				label: addModalForm.label.value,
 			});
-			modalWrapper.classList.remove('modal-show');
+			closeAddModal();
 		});
 
 		// Click submit in edit modal
@@ -183,7 +222,7 @@ class EventService {
 				assign: editModalForm.assign.value,
 				label: editModalForm.label.value,
 			});
-			editModal.classList.remove('modal-show');
+			closeEditModal();
 		});
   }
 }
