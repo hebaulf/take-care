@@ -24,6 +24,13 @@
   @extend .btn-primary;
 }
 
+.btn-secondary {
+  @extend .btn;
+  background-color: $color-white;
+  border-color: $color-black;
+  color: $color-black;
+}
+
 .btn-edit {
   @include border-btn;
 }

@@ -44,15 +44,7 @@
 }
 
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
 
-  to {
-    opacity: 1;
-  }
-}
 
 /// IMPORTS
 // 1-Theme
@@ -71,6 +63,7 @@
 // Components
 @import './3-components/buttons';
 @import './3-components/event-card';
+@import './3-components/cards';
 @import './3-components/inputs';
 @import './3-components/navbar';
 @import './3-components/topbar';

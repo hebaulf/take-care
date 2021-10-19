@@ -63,8 +63,8 @@ class JournalService {
 			const journalItem = /*html*/`
 				<div class="journal__item" data-id='${doc.id}'>
 					<div>${data.feeling}</div>
-					<div>${data.entry}</div>
-					<div>${formattedDate}</div>
+					<p class='card-description'>${data.entry}</p>
+					<p class='card-date'>${formattedDate}</p>
 					<div>${data.user}</div>
 					<div>
 							<button class="btn btn-edit edit-journal">Edit</button>

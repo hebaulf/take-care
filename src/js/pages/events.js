@@ -5,6 +5,7 @@ export default class EventsPage {
 
   template() {
     document.querySelector('#content').innerHTML += /*html*/ `
+     
       <section id="events" class="page">
         <header>
           <h3>Events</h3>

@@ -1,0 +1,2 @@
+export default class SettingsPage{constructor(){this.template()}template(){document.querySelector("#content").innerHTML+='\n      <section id="settings" class="page">\n       \n        <h2>settings page</h2>\n      </section>\n  \n    '}}
+//# sourceMappingURL=settings.js.map

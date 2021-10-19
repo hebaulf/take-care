@@ -119,20 +119,3 @@ p {
   @include display-lg;
 }
 
-.card-title {
-  @include heading-3;
-  color: $color-black;
-}
-
-.card-label,
-.card-date,
-.card-location {
-  @include text-xs;
-  color: $color-grey-70;
-}
-
-.card-description {
-  @include text-xs;
-  color: $color-black;
-}
-
