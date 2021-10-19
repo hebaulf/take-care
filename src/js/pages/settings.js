@@ -11,8 +11,8 @@ export default class SettingsPage {
   template() {
     document.querySelector('#content').innerHTML += /*html*/ `
       <section id="settings" class="page">
-       
-        <h2>settings page</h2>
+        <h1>settings page</h1>
+        <a href="#dashboard" class='btn-home'><i class='tc-icons-home-filled'></i></a>
       </section>
   
     `;  

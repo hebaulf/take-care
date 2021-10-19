@@ -4,17 +4,25 @@
   @include text-btn;
   @include border-btn;
   cursor: pointer;
+  padding: 8px 16px;
   transition: all 0.5s ease;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  a {
+    text-decoration: none;
+    line-height: 20px;
+  }
 }
 
 .btn-primary {
   @extend .btn;
-  border: 2px solid $color-white;
+  border: 2px solid $color-black;
   background-color: $color-black;
   color: $color-white;
 
   &:hover {
-    border-color: $color-black;
     background-color: $color-white;
     color: $color-black;
   }
@@ -22,6 +30,33 @@
 
 .btn-primary-add {
   @extend .btn-primary;
+  padding-left: 8px;
+  
+  &:before {
+    @include icon;
+    content: "\e907";
+    font-size: 20px;
+    padding-right: 8px;
+    color: $color-white;
+  }
+}
+
+.btn-home {
+  height: 100%;
+  background: none;
+  padding-left: 8px;
+  padding-right: 32px;
+  padding: 10px 32px 8px 8px;
+  border: 1px solid $color-black;
+  border-right: none;
+  border-top-left-radius: $border-radius-8;
+  border-bottom-left-radius: $border-radius-8;
+  text-decoration: none;
+
+  i {
+    color: $color-black;
+    font-size: 20px;
+  }
 }
 
 .btn-secondary {
@@ -36,7 +71,7 @@
 }
 
 .btn-edit:hover {
-  background: var(--primary-color);
+  background: $color-primary-100;
   color: #fff;
 }
 
@@ -51,21 +86,5 @@
 }
 
 
-.btn-add {
-  width: 6rem;
-  height: 2rem;
-  background: var(--primary-color);
-  border: none;
-  color: #fff;
-}
 
-.btn-home {
-  background: none;
-  padding-left: 8px;
-  padding-right: 32px;
-  padding: 8px 32px 8px 8px;
-  border: 1px solid $color-black;
-  border-right: none;
-  border-top-left-radius: $border-radius-8;
-  border-bottom-left-radius: $border-radius-8;
-}
+

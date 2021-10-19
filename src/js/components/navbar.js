@@ -1,9 +1,9 @@
 export default class NavBar {
   constructor() {
-    this.template();
+    this.component();
   }
 
-  template() {
+  component() {
     document.querySelector("#navbar").innerHTML += /*html*/ `
       <nav class="navbar-links">
         <a href="#events"><i class='tc-icons-calendar'></i><span class='navbar-links__text'>Events</span></a>

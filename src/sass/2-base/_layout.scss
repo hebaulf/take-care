@@ -58,5 +58,21 @@ main {
   overflow-y: scroll;
 }
 
+.topbar {
+  grid-area: topbar;
+  height: 118px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+ 
+  h1 {
+    @include heading-1;
+    padding-left: 16px;
+  }
+
+  button i {
+    font-size: 20px;
+  }
+}
 
 
