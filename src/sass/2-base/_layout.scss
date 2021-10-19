@@ -12,17 +12,18 @@ html {
   font-size: 16px;
 }
 
+a {
+  text-decoration: none;
+}
 
 body {
   background-color: $color-white;
   margin: 0 auto;
   font-family: $font-text;
   font-size: $font-size-base;
-  height: 100%;
-  width: 100%;
   overflow-x: hidden;
-  
 }
+
 
 /* page hidden for SPA */
 .page {
@@ -37,42 +38,56 @@ body {
 }
 
 .wrapper {
-  width: 100%;
+  width: 100vw;
   display: grid;
-  min-height: 100vh;
-  grid-template-rows: 118px auto 64px;
-  grid-template-columns: 180px auto;
+  height: 100vh;
+  grid-template-rows: auto 64px;
+  grid-template-columns: '180px auto';
   grid-template-areas: 
-   'topbar topbar'
-   'content content'
+   'main main'
    'navbar navbar';
 }
 
-main {
-  @include border-content;
-  margin-top: 64px;
+/*main {
+  width: 100vw;
+  grid-area: main;
+  display: grid;
+  grid-template-rows: 118px auto 64px;
+  grid-template-areas: 
+   'topbar topbar'
+   'main-content main-content';
+  overflow: scroll;
+}
+
+.main-content {
+
   background-color: $bg-main;
-  grid-area: content;
-  box-shadow: 0px -32px 0px $color-primary-80;
+  grid-area: main-content;
   padding: 16px;
   overflow-y: scroll;
 }
 
 .topbar {
   grid-area: topbar;
-  height: 118px;
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  min-height: 120px;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: space-between;
  
   h1 {
     @include heading-1;
     padding-left: 16px;
   }
-
-  button i {
-    font-size: 20px;
-  }
 }
 
+.page-content {
+    box-shadow: 0px -32px 0px $color-primary-80;
+    @include border-content;
+    margin-top: 64px;
+    width: 100%;
+}
+ */
 

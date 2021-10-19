@@ -3,13 +3,19 @@ export default class JournalPage {
     this.template();
   }
 
+
   template() {
+    document.pageTitle = 'Journal'
     document.querySelector('#content').innerHTML += /*html*/ `
-      <section id="journal" class="page">
-        <header>
-          <h3>Journal</h3>
-        </header>
-        <div class="journal__wrapper table-wrapper">
+      <section id="journal" class="page page-journal">
+        <div class='topbar'>
+          <h1>${document.pageTitle}</h1>
+          <a href="#dashboard" class='btn-home'><i class='tc-icons-home-filled'></i></a>
+        </div>
+        <div class="main-content">
+          <div class='content-top'>
+            <a href='#' class='btn btn-primary-add'>new</a>
+          </div>
           <div class="journal__list table-users">
           </div>
           <button class="btn btn-primary-add add-journal">Add Entry</button>
@@ -43,7 +49,7 @@ export default class JournalPage {
                   <option value="Tinna">Tinna</option>
                 </select>
 
-                <button class="btn btn-modal">Add</button>
+                <button class="btn btn-modal btn-primary-add ">Add</button>
               </form>
             </div>
           </div>

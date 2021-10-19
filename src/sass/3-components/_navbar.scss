@@ -1,13 +1,17 @@
-.navbar {
-  grid-area: navbar;
-  display: flex;
-  flex-shrink: 0;
+
+header {
   position: sticky;
+  width: 100%;
+  bottom: 0;
+  grid-area: navbar,
+}
+.navbar {
+  bottom: 0;
+  left: 0;
+  display: flex;
   background-color: $color-white;
   justify-content: center;
   align-items: top;
-  height: auto;
-  width: 100%;
   border-top: 1px solid $color-grey-50;
   z-index: 5;
 
