@@ -62,15 +62,18 @@ class TodoService {
 		// Create element and render users
 		const renderTodo = doc => {
 			const data = doc.data();
-			const priorityClass = `${(data.priority) === 'Low' ? 'low' : ''}${(data.priority) === 'Medium' ? 'med' : ''}${(data.priority) === 'High' ? 'high' : ''}`;
+			//const priorityClass = `${(data.priority) === 'Low' ? 'low' : ''}${(data.priority) === 'Medium' ? 'med' : ''}${(data.priority) === 'High' ? 'high' : ''}`;
+			//<div class="card todo__item priority-${priorityClass}" data-id="${doc.id}">
+
 
 			const todoItem = /*html*/`
-				<div class="card todo__item priority-${priorityClass}" data-id="${doc.id}">
-					<div>${data.title}</div>
-					<div>${data.list}</div>
+				<div class="card card-todo card-todo-${data.priority}" data-id='${doc.id}'>
+					<h4 class='card-title'>${data.title}</h4>
+					<p class='card-description'>${data.list}</p>
+				
 					<div>${data.assign}</div>
-					<div>${data.priority}</div>
-					<div>
+					<!-- <div>${data.priority}</div> -->
+					<div hidden>
 						<button class="btn btn-edit edit-todo">Edit</button>
 						<button class="btn btn-delete delete-todo">Delete</button>
 					</div>

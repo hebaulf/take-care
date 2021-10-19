@@ -58,3 +58,18 @@ fieldset {
     }
   }
 }
+.form-user-profile {
+  max-width: 320px;
+
+  label {
+    @include text-xs;
+  }
+
+  input {
+    border: 2px solid;
+    border-color: $color-black;
+    border-radius: 8px;
+    height: 48px;
+    width: 100%;
+  }
+}

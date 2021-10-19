@@ -1,19 +1,68 @@
 /* Colors */
-$color-appointment: $color-tertiary-100; //orange
-$color-meetup: $color-secondary-100; //purple
-$color-todo-low: $color-priority-low; //purple
-$color-todo-medium: $color-priority-medium; //purple
-$color-todo-high: $color-priority-high; //purple
-
-
-$card-colors:  (
-  appointment: $color-appointment, //label : $card-color
-  meetup: $color-meetup,
-  todo-low: $color-todo-low,
-  todo-medium: $color-todo-medium,
-  todo-high: $color-todo-high
-);
-
 $bg-main: $color-grey-20;
 $bg-header: $color-white;
 $bg-nav: $color-white;
+
+// PAGE BACKGROUND COLORS
+$bg-todo: $color-primary-5; // create todos
+$bg-events: $color-secondary-5; // create events
+$bg-journal: $color-tertiary-5;
+$bg-settings: $color-primary-5;
+
+// PAGE MAIN COLORS
+$color-dashboard: $color-secondary-70;
+$color-events: $color-primary-80;
+$color-journal: $color-tertiary-100;
+$color-todo-low: $bg-green;
+$color-todo-medium: $bg-yellow;
+$color-todo-high: $bg-red;
+
+/* LABEL COLORS*/
+
+// Todo labels
+$color-low: $color-green;
+$color-medium: $color-yellow; 
+$color-high: $color-red; 
+
+// Event labels
+$color-appointment: $color-tertiary-100; //orange
+$color-meetup: $color-secondary-100; //purple
+
+// Journal labels
+$color-happy: $color-green;
+$color-ok: $color-yellow;
+$color-sad: $color-red;
+
+
+
+// CARD COLOR MAPS
+$card-todo: (
+  Low: $color-low,
+  Medium: $color-medium,
+  High: $color-high
+);
+
+$card-event: (
+  appointment: $color-appointment,
+  meetup: $color-meetup,
+);
+
+$card-journal: (
+  happy: $color-happy,
+  ok: $color-ok,
+  sad: $color-sad,
+);
+
+// ALL CARDS MAP
+$card-colors:  (
+  appointment: $color-appointment, //label : $card-color
+  meetup: $color-meetup,
+  todo-Low: $color-low,
+  todo-Medium: $color-medium,
+  todo-High: $color-high,
+  happy: $color-happy,
+  ok: $color-ok,
+  sad: $color-sad,
+);
+
+

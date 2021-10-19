@@ -4,17 +4,24 @@ export default class TodosPage {
   }
 
   template() {
+    document.pageTitle = "ToDo's"
     document.querySelector('#content').innerHTML += /*html*/ `
-      <section id="todos" class="page">
-        <header>
-          <h3>Todos</h3>
-        </header>
-        <div class="todo__wrapper table-wrapper">
+      <section id="todos" class="page page-todo">
+        <div class='topbar'>
+          <h1>${document.pageTitle}</h1>
+          <a href="#dashboard" class='btn-home'><i class='tc-icons-home-filled'></i></a>
+        </div>
+        <div class="main-content">
+          <div class='content-top'>
+            <a href='#' class='btn btn-primary-add'>new</a>
+          </div>
+
           <div class="todo__list table-users">
           </div>
           <button class="btn btn-add add-todo">Add Todo</button>
         </div>
-  
+        
+
       <!-- Add Modal -->
         <div class="add-modal add-todo-modal modal-wrapper todo-modal-wrapper">
           <div class="modal">

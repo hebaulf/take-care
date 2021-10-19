@@ -1,15 +1,10 @@
-/* $card-colors:  (
-  appointment: $color-appointment, //label : $card-color
-  meetup: $color-meetup,
-  todo-low: $color-todo-low,
-  todo-medium: $color-todo-medium,
-  todo-high: $color-todo-high
-); */
-
 .card {
   background-color: $color-white;
   display: flex;
   flex-direction: column;
+  width: 100%;
+  border: 1px solid;
+  padding: 16px;
   width: 100%;
   border-radius: $border-radius-card;
 

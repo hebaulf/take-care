@@ -88,8 +88,8 @@ class EventService {
 		// Create element and render users
 		const renderEvent = doc => {
 			const data = doc.data();
-			const labelClass = `${(data.label) === 'Appointment' ? 'appointment' : 'meetup'}`;
-
+			//const labelClass = `${(data.label) === 'Appointment' ? 'appointment' : 'meetup'}`;
+			//<div class='card event__item label-${labelClass}' data-id='${doc.id}'></div>
 			const dataDate = new Date(data.date);
 			const day = days[dataDate.getDay()];
 			const monthDate = dataDate.getDate();
@@ -97,15 +97,16 @@ class EventService {
 			const year = dataDate.getFullYear();
 			const formattedDate = `${day} ${monthDate}.${month} ${year}`;
 
+
 			const eventItem = /*html*/`
-				<div class='card event__item label-${labelClass}' data-id='${doc.id}'>
+				<div class="card card-event card-${data.label}" data-id='${doc.id}'>
 					<h4 class='card-title'>${data.title}</h4>
 					<p class='card-description'>${data.description}</p>
 					<p class='card-location'>${data.location}</p>
 					<p class='card-date'> ${formattedDate}</p>
 					<div>${data.assign}</div>
-					<div>${data.label}</div>
-					<div>
+					<!-- <div>${data.label}</div> -->
+					<div hidden>
 						<button class="btn btn-edit edit-event">Edit</button>
 						<button class="btn btn-delete delete-event">Delete</button>
 					</div>
