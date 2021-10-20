@@ -24,12 +24,7 @@ export default class EventsPage {
             </div>
           </div>
           <div class="event__list cards">
-            <div>hello</div>
-            <div>hello</div>
-            <div>hello</div>
-            <div>hello</div>
-            <div>hello</div>
-            <div>hello</div>
+          
           </div>
 				</div>
       

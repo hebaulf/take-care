@@ -1,12 +1,41 @@
+const days = [
+		'Sun',
+		'Mon',
+		'Tue',
+		'Wed',
+		'Thu',
+		'Fri',
+		'Sat'
+		];
+
+		const months = [
+		'Jan',
+		'Feb',
+		'Mar',
+		'Apr',
+		'Mai',
+		'Jun',
+		'Jul',
+		'Aug',
+		'Sep',
+		'Oct',
+		'Nov',
+		'Dec'
+		];
+
+
 class EventService {
 	constructor() {
 		this.defaultPage = "events";
 	}
+
+	
 	
 	init() {
 		this.renderEvents();
 	}
 
+	
 	renderEvents = doc => {
 		const events = document.querySelector('#events');
 		// Get modals
@@ -23,8 +52,8 @@ class EventService {
 		const editModalForm = events.querySelector('.edit-event-modal .form');
 		const editEventClose = events.querySelector('.edit-event-close');
 		// Get event list
-		const eventList = events.querySelector('.event__list');
-		const eventsCollection = db.collection('events');
+		/* const eventList = events.querySelector('.event__list'); */
+	/* 	const eventsCollection = db.collection('events'); */
 		// Add/close button on event list
 		const btnAdd = events.querySelector('.btn-add.add-event');
 		// const btnClose = document.querySelector('.btn-close-modal');
@@ -60,34 +89,108 @@ class EventService {
 			}, 500);
 		}
 
-		const days = [
-		'Sun',
-		'Mon',
-		'Tue',
-		'Wed',
-		'Thu',
-		'Fri',
-		'Sat'
-		];
-
-		const months = [
-		'Jan',
-		'Feb',
-		'Mar',
-		'Apr',
-		'Mai',
-		'Jun',
-		'Jul',
-		'Aug',
-		'Sep',
-		'Oct',
-		'Nov',
-		'Dec'
-		];
-
+		
 		// Create element and render users
-		const renderEvent = doc => {
+		
+		
+		// Click add user button
+		btnAdd.addEventListener('click', () => {
+			openAddModal();
+			addModalForm.title.value = '';
+			addModalForm.description.value = '';
+			addModalForm.location.value = '';
+			addModalForm.date.value = '';
+			addModalForm.assign.value = '';
+			addModalForm.label.value = '';
+		});
+
+		// Click close button
+		addEventClose.addEventListener('click', (e) => {
+			e.preventDefault();
+			closeAddModal();
+		});
+		editEventClose.addEventListener('click', (e) => {
+			e.preventDefault();
+			closeEditModal();
+		});
+
+		// User click anyware outside the modal
+		window.addEventListener('click', e => {
+			if(e.target === addModal) {
+				closeAddModal();
+			}
+			if(e.target === editModal) {
+				closeEditModal();
+			}
+		});
+
+		// Get all users
+		// eventsCollection.get().then(querySnapshot => {
+		//   querySnapshot.forEach(doc => {
+		//     renderEvent(doc);
+		//   })
+		// });
+
+		// Real time listener
+	/* 	eventsCollection.onSnapshot(snapshot => {
+			snapshot.docChanges().forEach(change => {
+				if(change.type === 'added') {
+					renderEvent(change.doc);
+					console.log('add item');
+				} // prufa að commenta út
+				if(change.type === 'removed') {
+					let eventItem = document.querySelector(`[data-id='${change.doc.id}']`); // .event__item with this data-id
+					let tbody = eventItem.parentElement; // .event__list
+					tbody.removeChild(eventItem);// Remove specific child of .event__list
+				}
+				if(change.type === 'modified') {
+					let eventItem = document.querySelector(`[data-id='${change.doc.id}']`);
+					let tbody = eventItem.parentElement;
+					tbody.removeChild(eventItem);
+					renderEvent(change.doc);
+					console.log('breyta')
+				}
+			})
+		}) */
+
+		// Click submit in add modal
+		addModalForm.addEventListener('submit', e => {
+			console.log('adding card');
+			e.preventDefault();
+			eventsCollection.add({
+				title: addModalForm.title.value,
+				description: addModalForm.description.value,
+				location: addModalForm.location.value,
+				date: addModalForm.date.value,
+				assign: addModalForm.assign.value,
+				label: addModalForm.label.value,
+			});
+			closeAddModal();
+		});
+
+		// Click submit in edit modal
+		editModalForm.addEventListener('submit', e => {
+			console.log('edit card');
+
+			e.preventDefault();
+			eventsCollection.doc(id).update({
+				title: editModalForm.title.value,
+				description: editModalForm.description.value,
+				location: editModalForm.location.value,
+				date: editModalForm.date.value,
+				assign: editModalForm.assign.value,
+				label: editModalForm.label.value,
+			});
+			closeEditModal();
+		});
+  }
+}
+
+const eventService = new EventService();
+const renderEvent = doc => {
+			const eventList = events.querySelector('.event__list');
 			const data = doc.data();
+			console.log('hello its me', data);
 			//const labelClass = `${(data.label) === 'Appointment' ? 'appointment' : 'meetup'}`;
 			//<div class='card event__item label-${labelClass}' data-id='${doc.id}'></div>
 			const dataDate = new Date(data.date);
@@ -164,95 +267,29 @@ class EventService {
 				});
 			});
 		}
+
+const eventsCollection = db.collection('events');
+eventsCollection.onSnapshot(snapshot => {
+	snapshot.docChanges().forEach(change => {
+		if (change.type === 'added') {
+			renderEvent(change.doc);
+			console.log('add item', change.doc);
+
+		} // prufa að commenta út
+		if (change.type === 'removed') {
+			let eventItem = document.querySelector(`[data-id='${change.doc.id}']`); // .event__item with this data-id
+			let tbody = eventItem.parentElement; // .event__list
+			tbody.removeChild(eventItem);// Remove specific child of .event__list
+		}
+		if (change.type === 'modified') {
+			let eventItem = document.querySelector(`[data-id='${change.doc.id}']`);
+			let tbody = eventItem.parentElement;
+			tbody.removeChild(eventItem);
+			renderEvent(change.doc);
+			console.log('breyta')
+		}
+	})
+});
 		
-		// Click add user button
-		btnAdd.addEventListener('click', () => {
-			openAddModal();
-			addModalForm.title.value = '';
-			addModalForm.description.value = '';
-			addModalForm.location.value = '';
-			addModalForm.date.value = '';
-			addModalForm.assign.value = '';
-			addModalForm.label.value = '';
-		});
-
-		// Click close button
-		addEventClose.addEventListener('click', (e) => {
-			e.preventDefault();
-			closeAddModal();
-		});
-		editEventClose.addEventListener('click', (e) => {
-			e.preventDefault();
-			closeEditModal();
-		});
-
-		// User click anyware outside the modal
-		window.addEventListener('click', e => {
-			if(e.target === addModal) {
-				closeAddModal();
-			}
-			if(e.target === editModal) {
-				closeEditModal();
-			}
-		});
-
-		// Get all users
-		// eventsCollection.get().then(querySnapshot => {
-		//   querySnapshot.forEach(doc => {
-		//     renderEvent(doc);
-		//   })
-		// });
-
-		// Real time listener
-		eventsCollection.onSnapshot(snapshot => {
-			snapshot.docChanges().forEach(change => {
-				if(change.type === 'added') {
-					renderEvent(change.doc);
-				} // prufa að commenta út
-				if(change.type === 'removed') {
-					let eventItem = document.querySelector(`[data-id='${change.doc.id}']`); // .event__item with this data-id
-					let tbody = eventItem.parentElement; // .event__list
-					tbody.removeChild(eventItem);// Remove specific child of .event__list
-				}
-				if(change.type === 'modified') {
-					let eventItem = document.querySelector(`[data-id='${change.doc.id}']`);
-					let tbody = eventItem.parentElement;
-					tbody.removeChild(eventItem);
-					renderEvent(change.doc);
-					console.log()
-				}
-			})
-		})
-
-		// Click submit in add modal
-		addModalForm.addEventListener('submit', e => {
-			e.preventDefault();
-			eventsCollection.add({
-				title: addModalForm.title.value,
-				description: addModalForm.description.value,
-				location: addModalForm.location.value,
-				date: addModalForm.date.value,
-				assign: addModalForm.assign.value,
-				label: addModalForm.label.value,
-			});
-			closeAddModal();
-		});
-
-		// Click submit in edit modal
-		editModalForm.addEventListener('submit', e => {
-			e.preventDefault();
-			eventsCollection.doc(id).update({
-				title: editModalForm.title.value,
-				description: editModalForm.description.value,
-				location: editModalForm.location.value,
-				date: editModalForm.date.value,
-				assign: editModalForm.assign.value,
-				label: editModalForm.label.value,
-			});
-			closeEditModal();
-		});
-  }
-}
-
-const eventService = new EventService();
 export default eventService;
+
