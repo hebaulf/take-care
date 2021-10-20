@@ -55,7 +55,7 @@ class EventService {
 		/* const eventList = events.querySelector('.event__list'); */
 	/* 	const eventsCollection = db.collection('events'); */
 		// Add/close button on event list
-		const btnAdd = events.querySelector('.btn-add.add-event');
+		const btnAdd = events.querySelector('.add-event');
 		// const btnClose = document.querySelector('.btn-close-modal');
 
 		let id;
@@ -91,7 +91,59 @@ class EventService {
 
 		
 		// Create element and render users
-		
+		const renderEvent = doc => {
+			const data = doc.data();
+			//const labelClass = `${(data.label) === 'Appointment' ? 'appointment' : 'meetup'}`;
+			//<div class='card event__item label-${labelClass}' data-id='${doc.id}'></div>
+			const dataDate = new Date(data.date);
+			const day = days[dataDate.getDay()];
+			const monthDate = dataDate.getDate();
+			const month = months[dataDate.getMonth()];
+			const year = dataDate.getFullYear();
+			const formattedDate = `${day} ${monthDate}.${month} ${year}`;
+
+
+			const eventItem = /*html*/`
+				<div class="card card-event card-${data.label}" data-id='${doc.id}'>
+					<h4 class='card-title'>${data.title}</h4>
+					<p class='card-description'>${data.description}</p>
+					<p class='card-location'>${data.location}</p>
+					<p class='card-date'> ${formattedDate}</p>
+					<div>${data.assign}</div>
+					<!-- <div>${data.label}</div> -->
+					<div>
+						<button class="btn btn-edit edit-event">Edit</button>
+						<button class="btn btn-delete delete-event">Delete</button>
+					</div>
+				</div>
+			`;
+  
+  			eventList.insertAdjacentHTML('beforeend', eventItem);
+
+			// Click edit user
+			const btnEdit = document.querySelector(`[data-id='${doc.id}'] .edit-event`);
+			btnEdit.addEventListener('click', () => {
+				openEditModal();
+
+				id = doc.id;
+				editModalForm.title.value = data.title;
+				editModalForm.description.value = data.description;
+				editModalForm.location.value = data.location;
+				editModalForm.date.value = data.date;
+				editModalForm.assign.value = data.assign;
+				editModalForm.label.value = data.label;
+			});
+
+			// Click delete user
+			const btnDelete = document.querySelector(`[data-id='${doc.id}'] .delete-event`);
+			btnDelete.addEventListener('click', () => {
+				eventsCollection.doc(`${doc.id}`).delete().then(() => {
+					console.log('Document succesfully deleted!');
+				}).catch(err => {
+					console.log('Error removing document', err);
+				});
+			});
+		}
 		
 		// Click add user button
 		btnAdd.addEventListener('click', () => {

@@ -10,7 +10,7 @@ $border-radius-card: 16px;
 
 @mixin border-input {
   border: 2px solid;
-  border-color: $color-black;
+  border-color: $color-grey-60;
   border-radius: $border-radius-8;
 }
 
@@ -20,7 +20,6 @@ $border-radius-card: 16px;
 }
 
 // slide up card
-@mixin border-content{
+@mixin border-content {
   border-top-left-radius: $border-radius-36;
 }
-

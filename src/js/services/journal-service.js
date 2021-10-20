@@ -94,10 +94,7 @@ class JournalService {
 			const month = months[dataDate.getMonth()];
 			const year = dataDate.getFullYear();
 			const formattedDate = `${day} ${monthDate}.${month} ${year}`;
-			const username = data.user;
-			const matches = username.match(/\b(\w)/g);
-			const initials = matches.join('');
-
+			
 			const journalItem = /*html*/`
 				<div class="journal__item" data-id='${doc.id}'>
 					<div>${data.feeling}</div>
@@ -119,7 +116,7 @@ class JournalService {
 			const btnEdit = document.querySelector(`[data-id='${doc.id}'] .edit-journal`);
 			btnEdit.addEventListener('click', () => {
 				openEditModal();
-
+				console.log(data.user);
 				id = doc.id;
 				editModalForm.feeling.value = data.feeling;
 				editModalForm.entry.value = data.entry;

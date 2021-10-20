@@ -191,7 +191,6 @@ class TodoService {
 			snapshot.docChanges().forEach(change => {
 				if(change.type === 'added') {
 					renderTodo(change.doc);
-					console.log("added todo item")
 				}
 				if(change.type === 'removed') {
 					let todoItem = document.querySelector(`[data-id='${change.doc.id}']`); // .todo__item with this data-id

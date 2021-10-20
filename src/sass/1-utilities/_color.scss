@@ -21,8 +21,8 @@ $color-todo-high: $bg-red;
 
 // Todo labels
 $color-low: $color-green;
-$color-medium: $color-yellow; 
-$color-high: $color-red; 
+$color-medium: $color-yellow;
+$color-high: $color-red;
 
 // Event labels
 $color-appointment: $color-tertiary-100; //orange
@@ -33,13 +33,17 @@ $color-happy: $color-green;
 $color-ok: $color-yellow;
 $color-sad: $color-red;
 
+/* FORM COLORS */
 
+// Input colors
+$color-input-background: $color-white;
+$color-input-border: $color-grey-60;
 
 // CARD COLOR MAPS
 $card-todo: (
   Low: $color-low,
   Medium: $color-medium,
-  High: $color-high
+  High: $color-high,
 );
 
 $card-event: (
@@ -54,8 +58,9 @@ $card-journal: (
 );
 
 // ALL CARDS MAP
-$card-colors:  (
-  appointment: $color-appointment, //label : $card-color
+$card-colors: (
+  appointment: $color-appointment,
+  //label : $card-color
   meetup: $color-meetup,
   Low: $color-low,
   Medium: $color-medium,
@@ -64,5 +69,3 @@ $card-colors:  (
   ok: $color-ok,
   sad: $color-sad,
 );
-
-
