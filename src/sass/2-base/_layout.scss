@@ -17,13 +17,19 @@ a {
 }
 
 body {
-  background-color: $color-white;
-  margin: 0 auto;
+  background-color: $color-grey-50;
+  margin: 0;
   font-family: $font-text;
   font-size: $font-size-base;
-  overflow-x: hidden;
 }
 
+h1 {
+  @include heading-1;
+}
+
+h2 {
+  @include heading-2;
+}
 
 /* page hidden for SPA */
 .page {
@@ -31,13 +37,44 @@ body {
   animation: fadeIn 0.3s;
 }
 
+/* APP WRAPPER */
+
+.wrapper {
+  height: 100vh;
+  /* grid container */
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows:  auto 1fr auto;
+  grid-template-areas:
+  'head'
+  'main'
+  'navbar';
+
+  .head {
+    grid-area: head;
+    background: blue;
+  };
+
+  .main {
+    grid-area: main;
+    padding: 0;
+  };
+
+  .navbar {
+    grid-area: navbar;
+    height: 64px;
+  }
+}
+
+
+
 .hide {
   visibility: hidden;
   opacity: 0;
   transition: visibility 0s 0.4s, opacity 0.4s linear;
 }
 
-.wrapper {
+/* .wrapper {
   width: 100vw;
   display: grid;
   height: 100vh;
@@ -46,9 +83,8 @@ body {
   grid-template-areas: 
    'main main'
    'navbar navbar';
-  background-color: $color-grey-70;
 }
-
+ */
 /*main {
   width: 100vw;
   grid-area: main;

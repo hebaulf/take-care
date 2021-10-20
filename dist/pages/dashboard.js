@@ -1,2 +1,2 @@
-export default class DashboardPage{constructor(){this.template()}template(){document.querySelector("#content").innerHTML+='\n   \n      <div id="dashboard" class="page">\n        <div>\n          <h1>Dashboard</h1>\n        </div>  \n      <section>\n          hello\n      </section>\n      \n      </div>\n    '}}
+export default class DashboardPage{constructor(){this.template()}template(){document.querySelector("#content").innerHTML+="\n      <div id=\"dashboard\" class=\"page\">\n        <header id='head' class='head' title='title'>\n          <h1 id='page-title'>Dashboard</h1>\n        </header>\n        <main class='main'>\n          hello\n\n        </main>\n      </div>\n    "}}
 //# sourceMappingURL=dashboard.js.map
