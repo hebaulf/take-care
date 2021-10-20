@@ -4,7 +4,7 @@ export default class EventsPage {
   }
 
   template() {
-    document.pageTitle = 'Events'
+    document.pageTitle = 'Events';
     document.querySelector('#content').innerHTML += /*html*/ `
       <section id="events" class="page page-event">
         <div class='topbar'>
@@ -31,10 +31,10 @@ export default class EventsPage {
               <form class="form" autocomplete="off">
                 <fieldset class="radio-btns">
                   <legend><h4 class="font-light">Event Type</h4></legend>
-                  <input id="appointment" type="radio" name="label" value="appointment">
-                  <label for="appointment">Appointment</label>
-                  <input id="meetup" type="radio" name="label" value="meetup">
-                  <label for="meetup">Meetup</label>
+                  <input id="eventAddAppointment" type="radio" name="label" value="appointment">
+                  <label class="first-btn" for="eventAddAppointment">Appointment</label>
+                  <input id="eventAddMeetup" type="radio" name="label" value="meetup">
+                  <label class="last-btn" for="eventAddMeetup">Meetup</label>
                 </fieldset>
 
                 <fieldset class="text-input">
@@ -87,9 +87,9 @@ export default class EventsPage {
                 <fieldset class="radio-btns">
                   <legend><h4 class="font-light">Event Type</h4></legend>
                   <input id="appointment" type="radio" name="label" value="appointment">
-                  <label for="appointment">Appointment</label>
+                  <label class="first-btn" for="appointment">Appointment</label>
                   <input id="meetup" type="radio" name="label" value="meetup">
-                  <label for="meetup">Meetup</label>
+                  <label class="last-btn" for="meetup">Meetup</label>
                 </fieldset>
 
                 <fieldset class="text-input">
@@ -113,14 +113,14 @@ export default class EventsPage {
                 </fieldset>
 
                 <fieldset class="dropdown">
-                  <label for="eventAddAssign">Assign to</label>
-                  <select name="assign" id="eventAddAssign">
-                  <option value="">Assignee</option>
-                  <option value="HU">Heba</option>
-                  <option value="AS">Vala</option>
-                  <option value="KU">Kristrun</option>
-                  <option value="BS">Bryndís</option>
-                  <option value="TH">Tinna</option>
+                  <label for="eventEditAssign">Assign to</label>
+                  <select name="assign" id="eventEditAssign">
+                    <option value="">Assignee</option>
+                    <option value="HU">Heba</option>
+                    <option value="AS">Vala</option>
+                    <option value="KU">Kristrun</option>
+                    <option value="BS">Bryndís</option>
+                    <option value="TH">Tinna</option>
                   </select>
                 </fieldset>
 

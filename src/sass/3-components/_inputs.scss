@@ -11,9 +11,7 @@ select {
   height: 48px;
   width: 100%;
   padding: 10px;
-  border: 2px solid;
-  border-color: #b3b3b3;
-  border-radius: 8px;
+  @include border-input;
 }
 
 label {
@@ -34,27 +32,40 @@ fieldset {
       width: 0;
     }
 
+    input[type="radio"] + label {
+      background-color: $color-input-background;
+      border-color: $color-input-border;
+    }
+
     label {
       display: inline-block;
-      background-color: #ddd;
+      background-color: $bg-main;
       padding: 10px 20px;
       font-family: sans-serif, Arial;
       font-size: 16px;
       border: 2px solid #444;
-      border-radius: 4px;
+      border-radius: 0;
+
+      &.btn-first {
+        border-radius: $border-radius-8 0 0 $border-radius-8;
+      }
+
+      &.btn-last {
+        border-radius: 0 $border-radius-8 $border-radius-8 0;
+      }
     }
 
     input[type="radio"]:checked + label {
-      background-color: #bfb;
-      border-color: #4c4;
+      background-color: $bg-green;
+      border-color: $color-grey-70;
     }
 
     input[type="radio"]:focus + label {
-      border: 2px dashed #444;
+      border: 2px solid $color-grey-70;
     }
 
     label:hover {
-      background-color: #dfd;
+      background-color: $color-grey-50;
     }
   }
 }
@@ -66,10 +77,8 @@ fieldset {
   }
 
   input {
-    border: 2px solid;
-    border-color: $color-black;
-    border-radius: 8px;
     height: 48px;
     width: 100%;
+    @include border-input;
   }
 }

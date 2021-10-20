@@ -26,7 +26,7 @@ class EventService {
 		const eventList = events.querySelector('.event__list');
 		const eventsCollection = db.collection('events');
 		// Add/close button on event list
-		const btnAdd = events.querySelector('.btn-add.add-event');
+		const btnAdd = events.querySelector('.add-event');
 		// const btnClose = document.querySelector('.btn-close-modal');
 
 		let id;
@@ -106,7 +106,7 @@ class EventService {
 					<p class='card-date'> ${formattedDate}</p>
 					<div>${data.assign}</div>
 					<!-- <div>${data.label}</div> -->
-					<div hidden>
+					<div>
 						<button class="btn btn-edit edit-event">Edit</button>
 						<button class="btn btn-delete delete-event">Delete</button>
 					</div>
