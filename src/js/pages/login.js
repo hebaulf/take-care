@@ -36,7 +36,7 @@ export default class LoginPage {
               <input type="password" name="password" placeholder="password" >
             </fieldset>
 
-            <a href="/#dashboard" class="form-button">Submit</button>
+            <a href="#dashboard" class="form-button">Submit</button>
           </form>
         </div>
       </section>

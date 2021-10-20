@@ -9,7 +9,7 @@ export default class LandingPage {
 		document.querySelector('#content').innerHTML += /*html*/ `
 			<section id="landing" class="page">
 				<div class="landing__logo">
-					<a href="/#login">
+					<a href="#login">
 						<svg width="224" height="235" viewBox="0 0 224 235" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<path d="M51.3499 153.326C22.9901 114.314 31.6254 59.6989 70.6374 31.3392L113.748 -6.6444e-06L172.65 81.0265C201.01 120.038 192.375 174.654 153.363 203.014L110.252 234.353L51.3499 153.326Z" fill="black"/>
 							<path d="M41.7441 112.122C41.7441 63.8907 80.8429 24.792 129.074 24.792H182.372V124.966C182.372 173.196 143.273 212.295 95.042 212.295H41.7441V112.122Z" fill="#8C9BF6"/>
