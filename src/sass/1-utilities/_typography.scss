@@ -2,9 +2,9 @@
 $font-headings: $font-family-mono;
 $font-text: $font-family;
 
-
 /**** TYPOGRAPHY MIXINS ****/
 @mixin display-lg {
+  // From 68/72 to 112/118
   font-family: $font-headings;
   font-size: 68px;
   line-height: 72px;
@@ -13,6 +13,7 @@ $font-text: $font-family;
 }
 
 @mixin heading-1 {
+  // From 42/48 to 112/118
   font-family: $font-headings;
   font-size: 42px;
   line-height: 48px;
@@ -69,7 +70,7 @@ $font-text: $font-family;
   font-family: $font-text;
   font-style: normal;
   font-size: 8px;
-  line-height: 160%; 
+  line-height: 160%;
   font-weight: 500;
   text-rendering: optimizeLegibility;
 }
@@ -118,4 +119,3 @@ p {
 .text-day-count {
   @include display-lg;
 }
-

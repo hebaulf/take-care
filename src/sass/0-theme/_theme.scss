@@ -34,26 +34,26 @@ $color-primary-5: hsl(233, 80%, 98%);
 $color-secondary-100: hsl(265, 71%, 33%);
 $color-secondary-70: hsl(264, 46%, 56%);
 $color-secondary-30: hsl(265, 71%, 80%);
-$color-secondary-10: hsl(267, 69%, 95%);
+$color-secondary-10: hsl(265, 71%, 98%);
 $color-secondary-5: hsl(262, 80%, 98%);
 
 // Oranges
 $color-tertiary-100: hsl(32, 78%, 56%);
 $color-tertiary-50: hsl(32, 78%, 80%);
-$color-tertiary-30: hsl(33, 77%, 95%);
-$color-tertiary-5: hsl(33, 77%, 95%);
+$color-tertiary-30: hsl(32, 78%, 95%);
+$color-tertiary-5: hsl(32, 78%, 97%);
 
 /* Grey Colors */
 $color-black: hsl(0, 0%, 0%); //black
+$color-grey-90: hsl(0, 0%, 28%); //black
 $color-grey-70: hsl(0, 0%, 43%); //dark-grey
 $color-grey-60: hsl(0, 0%, 70%); //grey
 $color-grey-50: hsl(0, 0%, 90%); //platinum-medium
-$color-grey-30: rgb(242, 242, 242); // light-grey
-$color-grey-20: rgb(250, 250, 250); // platinum-light
+$color-grey-30: hsl(0, 0%, 95%); // light-grey
+$color-grey-20: hsl(0, 0%, 98%); // platinum-light
 $color-white: hsl(0, 0%, 100%); // white
 
 /* Priority Colors */
-
 $color-green: hsl(130, 55%, 42%);
 $color-yellow: hsl(45, 88%, 56%);
 $color-red: hsl(14, 88%, 56%);
