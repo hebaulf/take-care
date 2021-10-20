@@ -142,13 +142,16 @@ class TodoService {
 		//   })
 		// });
 
+
+		let tooSoon = false; //the first time it is not too soon
 		// Real time listener
 		todosCollection.onSnapshot(snapshot => {
+			if(tooSoon) return;
+            tooSoon = true;
+            setTimeout(() => { tooSoon = false });
 			snapshot.docChanges().forEach(change => {
 				if(change.type === 'added') {
-					setTimeout(() => {
-						renderTodo(change.doc);
-					}, 500);
+					renderTodo(change.doc);
 				}
 				if(change.type === 'removed') {
 					let todoItem = document.querySelector(`[data-id='${change.doc.id}']`); // .todo__item with this data-id

@@ -1,1 +1,1 @@
-{"version":3,"sources":["services/firebase-configuration.js"],"names":["firebaseConfig","apiKey","authDomain","projectId","storageBucket","messagingSenderId","appId","firebase","initializeApp","db","firestore"],"mappings":"AACA,MAAMA,eAAiB,CACnBC,OAAQ,0CACRC,WAAY,kCACZC,UAAW,kBACXC,cAAe,8BACfC,kBAAmB,eACnBC,MAAO,6CAILC,SAAWA,SAASC,cAAcR,gBAClCS,GAAKF,SAASG","file":"services/firebase-configuration.js"}
+{"version":3,"sources":[],"names":[],"mappings":"","file":"services/firebase-configuration.js"}

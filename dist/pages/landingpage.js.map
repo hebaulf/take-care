@@ -1,0 +1,1 @@
+{"version":3,"sources":["pages/landingpage.js"],"names":["LandingPage","constructor","this","template","document","querySelector","innerHTML"],"mappings":"eACe,MAAMA,YACpBC,cACCC,KAAKC,WAINA,WACCC,SAASC,cAAc,YAAYC,WAAsB","file":"pages/landingpage.js"}
