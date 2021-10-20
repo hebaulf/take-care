@@ -9,7 +9,7 @@ export default class LoginPage {
     document.querySelector('#content').innerHTML += /*html*/ `
       <section id="login" class="page">
         <div class="logo">
-          <img src="../assets/img/take-care-logo.svg" alt="Take care logo"/>
+          <img src="assets/img/take-care-logo.svg" alt="Take care logo"/>
         </div>
         <div class="login__form">
           <header class="topbar">
