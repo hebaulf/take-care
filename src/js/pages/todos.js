@@ -4,20 +4,27 @@ export default class TodosPage {
   }
 
   template() {
-    document.pageTitle = "ToDo's"
+    document.pageTitle = "ToDo's";
     document.querySelector('#content').innerHTML += /*html*/ `
       <section id="todos" class="page page-todo">
-        <div class='topbar'>
-          <h1>${document.pageTitle}</h1>
-          <a href="#dashboard" class='btn-home'><i class='tc-icons-home-filled'></i></a>
+        <div class='page__head'>
+          <div class='heading'>
+            <h1>${document.pageTitle}</h1>
+            <a href="#dashboard" class='btn-home'><i class='tc-icons-home-filled'></i></a>
+          </div>
         </div>
-        <div class="main-content">
-          <div class='content-top'>
-            <a href='#' class='btn btn-primary-add'>new</a>
+        <div class="page__contents page__contents--todo">
+          <button class='btn btn-add add-todo btn-primary-add btn-home-add'>New</button>
+          <div class="page__tabs">
+            <div class='tabs'>
+              <button class='tabs__link'>low</button>
+              <button class='tabs__link'>medium</button>
+              <button class='tabs__link'>high</button>
+            </div>
           </div>
           <div class="todo__list cards">
+            
           </div>
-          <button class="btn btn-add add-todo">Add Todo</button>
         </div>
         
 

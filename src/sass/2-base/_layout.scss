@@ -23,6 +23,8 @@ body {
   font-family: $font-text;
   font-size: $font-size-base;
   overflow-x: hidden;
+  height: 100%;
+
 }
 
 
@@ -30,6 +32,8 @@ body {
 .page {
   display: none;
   animation: fadeIn 0.3s;
+  width: 100%;
+
 }
 
 .hide {
@@ -39,42 +43,127 @@ body {
 }
 
 .wrapper {
-  width: 100vw;
+  min-width: 100vw;
   display: grid;
   height: 100vh;
   grid-template-rows: auto 64px;
-  grid-template-columns: 180px auto;
+  grid-template-columns: 1fr;
   grid-template-areas: 
-   'main main'
-   'navbar navbar';
+   'main'
+   'navbar';
 }
 
 main {
-  width: 100%;
-  grid-area: main;
-  
-}
-
-
-
-/*main {
-  width: 100vw;
   grid-area: main;
   display: grid;
-  grid-template-rows: 118px auto 64px;
-  grid-template-areas: 
-   'topbar topbar'
-   'main-content main-content';
-  overflow: scroll;
+  height: 100%;
+  width: 100%;
+  grid-template-rows: 116px auto;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+  'head'
+  'contents';
 }
 
-.main-content {
+.page__head {
+  grid-area: head;
+  padding-top: 56px;
+  padding-bottom: 16px;
+  background-color: $color-white;
+  width: 100%;
+  display: flex;
+  position: fixed;
+  justify-content: flex-end;
+  top: 0;
+  right: 0;
+  z-index: 3;
+}
 
+.heading {
+    height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+  h1 {
+    @include heading-1;
+    align-content: flex-end;
+    padding-left: 24px;
+    border-bottom: 2px solid inherit;
+  }
+
+  .btn-home {
+    height: auto;
+  }
+}
+
+.page__contents {
+  grid-area: contents;
+  @include border-content;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-top: calc(116px + 64px);
   background-color: $bg-main;
-  grid-area: main-content;
-  padding: 16px;
-  overflow-y: scroll;
+  box-shadow: 0px -32px 0px $color-primary-80;
+  z-index: 4;
+  padding-top: 32px;
+
+  .page__tabs {
+    display: flex;
+    position: sticky;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 16px;
+  }
+
+  .btn-home-add {
+    position: absolute;
+    right: 24px;
+    top: -52px;
+  }
+
+  @each $label, $card-color in $card-colors {
+    &-#{$label} {
+      border-color: $card-color;
+        box-shadow: 0px -32px 0px $card-color;
+    }
+  }
+
 }
+
+.tabs {
+  display: flex;
+  gap: 40px;
+  width: 100%;
+  padding: 0px 24px;
+
+  &__link {
+    @include heading-3;
+    border: none;
+    border-bottom: 2px solid transparent;
+    padding: 0px 8px;
+    background: none;
+    text-transform: capitalize;
+    color: $color-grey-70;
+    line-height: 24px;
+    transition: all 0.3s ease-in-out;
+
+    &:active,
+    &:hover {
+      content: '';
+      position: relative;
+      color: $color-black;
+      border-bottom: 2px solid $color-black;
+    }
+  }
+}
+
+
+/* 
 
 .topbar {
   grid-area: topbar;

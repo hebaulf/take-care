@@ -5,20 +5,33 @@ export default class EventsPage {
 
   template() {
     document.pageTitle = 'Events'
+    const pageName = 'events'
     document.querySelector('#content').innerHTML += /*html*/ `
       <section id="events" class="page page-event">
-        <div class='topbar'>
-          <h1>${document.pageTitle}</h1>
-          <a href="#dashboard" class='btn-home'><i class='tc-icons-home-filled'></i></a>
+        <div class='page__head'>
+          <div class='heading'>
+            <h1>${document.pageTitle}</h1>
+            <a href="#dashboard" class='btn-home'><i class='tc-icons-home-filled'></i></a>
+          </div>
         </div>
-        <div class="main-content">
-          <div class='content-top'>
-            <a href='#' class='btn btn-add add-event btn-primary-add'>new</a>
+        <div class="page__contents">
+          <button class='btn btn-add add-event btn-primary-add btn-home-add'>New</button>
+          <div class="page__tabs">
+            <div class='tabs'>
+              <button class='tabs__link'>low</button>
+              <button class='tabs__link'>medium</button>
+              <button class='tabs__link'>high</button>
+            </div>
           </div>
           <div class="event__list cards">
+            <div>hello</div>
+            <div>hello</div>
+            <div>hello</div>
+            <div>hello</div>
+            <div>hello</div>
+            <div>hello</div>
           </div>
-          <button class="btn btn-add add-event">Add Event</button>
-        </div>
+				</div>
       
       <!-- Add Modal -->
         <div class="add-modal add-event-modal modal-wrapper event-modal-wrapper">
@@ -31,7 +44,6 @@ export default class EventsPage {
               <form class="form" autocomplete="off">
                 <label class="visuallyhidden" for="title">Title</label>
                 <input type="text" name="title" placeholder="Title">
-
                 <label class="visuallyhidden" for="description">Description</label>
                 <textarea type="text" name="description" placeholder="Description"></textarea>
 
