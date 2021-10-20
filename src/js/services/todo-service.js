@@ -28,54 +28,98 @@ class TodoService {
 		// Add button on svent list
 		const btnAdd = todos.querySelector('.add-todo');
 
-		let id;
+		let id;w
 
 		const openAddModal = () => {
 			addModal.style.display = 'flex';
 			addModalInner.style.cssText = 'animation: slideUp .5s ease; animation-fill-mode: forwards;';
-		}
+		};
 
 		const closeAddModal = () => {
 			addModalInner.style.cssText = 'animation: slideDown .5s ease; animation-fill-mode: forwards;';
 			setTimeout(() => {
 				addModal.style.display = 'none';
 			}, 500);
-		}
+		};
+
 		const openEditModal = () => {
 			editModal.style.display = 'flex';
 			editModalInner.style.cssText = 'animation: slideUp .5s ease; animation-fill-mode: forwards;';
-		}
+		};
 
 		const closeEditModal = () => {
 			editModalInner.style.cssText = 'animation: slideDown .5s ease; animation-fill-mode: forwards;';
 			setTimeout(() => {
 				editModal.style.display = 'none';
 			}, 500);
-		}
+		};
+
 		const closeModal = () => {
 			modalInner.style.cssText = 'animation: slideDown .5s ease; animation-fill-mode: forwards;';
 			setTimeout(() => {
 				modalWrapper.style.display = 'none';
 			}, 500);
-		}
+		};
+
 
 		// Create element and render users
 		const renderTodo = doc => {
 			const data = doc.data();
 			//const priorityClass = `${(data.priority) === 'Low' ? 'low' : ''}${(data.priority) === 'Medium' ? 'med' : ''}${(data.priority) === 'High' ? 'high' : ''}`;
 			//<div class="card todo__item priority-${priorityClass}" data-id="${doc.id}">
+			const username = data.assign;
+			const matches = username.match(/\b(\w)/g);
+			const initials = matches.join('');
+
+			const avatarColors = ['#C6A8F0', '#D0D6FB', '#F4CFA4', '#FBEEDF', '#909EF5', '#F1E9FB', '#F4CFA4','#F1E9FB','#D0D6FB'];
+
+			const numberFromInitials = (text) => {
+				const charCodes = text
+					.split('')
+					.map(char => char.charCodeAt(0))
+					.join('')
+				return parseInt(charCodes, 11);
+			};
+			
+			const avatars = document.querySelectorAll('.avatar');
+			avatars.forEach(avatar => {
+				const text = avatar.innerText;
+				avatar.style.backgroundColor = avatarColors[numberFromInitials(text) % avatarColors.length];
+			});
+
+			const toggleDescs = document.querySelectorAll('.card-content.card-toggle');
+			const description = document.querySelectorAll('.description');
+
+			toggleDescs.forEach(function (toggleDesc, index) {
+				toggleDesc.addEventListener('click', function () {
+					description[index].classList.toggle('open-card');
+						});
+				}); 
 
 
 			const todoItem = /*html*/`
-				<div class="card card-todo card-todo-${data.priority}" data-id='${doc.id}'>
-					<h4 class='card-title'>${data.title}</h4>
-					<p class='card-description'>${data.list}</p>
-				
-					<div>${data.assign}</div>
-					<!-- <div>${data.priority}</div> -->
-					<div hidden>
-						<button class="btn btn-edit edit-todo">Edit</button>
-						<button class="btn btn-delete delete-todo">Delete</button>
+				<div class="card card-todo card-${data.priority}" data-id='${doc.id}'>
+					<div class='card-${data.priority}-line'></div>
+					<div class="card-container">
+						<div class="card-content card-toggle">
+							<div class="card-info">
+								<p class='card-label'>ToDo's</p>
+								<p class='card-priority'>${data.priority}</p>
+							</div>
+							<div class='card-details'>
+								<h4 class='card-title'>${data.title}</h4>
+							</div>
+							<div class='description'>
+									<p>${data.list}</p>
+							</div>
+						</div>
+	
+						<div class='card-bottom'>
+							<button class="btn btn-edit edit-todo btn-circle">e</button>
+							<button class="btn btn-delete delete-todo btn-circle">x</button>
+							<div class='btn avatar'>${initials}</div>
+						</div>
+
 					</div>
 				</div>
 			`;

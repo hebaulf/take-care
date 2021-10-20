@@ -5,20 +5,28 @@ export default class EventsPage {
 
   template() {
     document.pageTitle = 'Events'
+    const pageName = 'events'
     document.querySelector('#content').innerHTML += /*html*/ `
       <section id="events" class="page page-event">
-        <div class='topbar'>
-          <h1>${document.pageTitle}</h1>
-          <a href="#dashboard" class='btn-home'><i class='tc-icons-home-filled'></i></a>
-        </div>
-        <div class="main-content">
-          <div class='content-top'>
-            <a href='#' class='btn btn-primary-add'>new</a>
+        <div class='page__head'>
+          <div class='heading'>
+            <h1>${document.pageTitle}</h1>
+            <a href="#dashboard" class='btn-home'><i class='tc-icons-home-filled'></i></a>
           </div>
-          <div class="event__list table-users">
-          </div>
-          <button class="btn btn-add add-event">Add Event</button>
         </div>
+        <div class="page__contents">
+          <button class='btn btn-add add-event btn-primary-add btn-home-add'>New</button>
+          <div class="page__tabs">
+            <div class='tabs'>
+              <button class='tabs__link'>low</button>
+              <button class='tabs__link'>medium</button>
+              <button class='tabs__link'>high</button>
+            </div>
+          </div>
+          <div class="event__list cards">
+          
+          </div>
+				</div>
       
       <!-- Add Modal -->
         <div class="add-modal add-event-modal modal-wrapper event-modal-wrapper">

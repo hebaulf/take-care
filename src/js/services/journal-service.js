@@ -94,13 +94,16 @@ class JournalService {
 			const month = months[dataDate.getMonth()];
 			const year = dataDate.getFullYear();
 			const formattedDate = `${day} ${monthDate}.${month} ${year}`;
+			const username = data.user;
+			const matches = username.match(/\b(\w)/g);
+			const initials = matches.join('');
 
 			const journalItem = /*html*/`
 				<div class="journal__item" data-id='${doc.id}'>
 					<div>${data.feeling}</div>
 					<p class='card-description'>${data.entry}</p>
 					<p class='card-date'>${formattedDate}</p>
-					<div>${data.user}</div>
+					<div>${initials}</div>
 					<div>
 							<button class="btn btn-edit edit-journal">Edit</button>
 							<button class="btn btn-delete delete-journal">Delete</button>

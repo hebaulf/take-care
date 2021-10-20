@@ -16,7 +16,7 @@ export default class JournalPage {
           <div class='content-top'>
             <a href='#' class='btn btn-primary-add'>new</a>
           </div>
-          <div class="journal__list table-users">
+          <div class="journal__list cards">
           </div>
           <button class="btn btn-add add-journal">Add Entry</button>
         </div>
