@@ -52,7 +52,7 @@ export default class TodosPage {
                 </fieldset>
 
                 <fieldset class="dropdown">
-                  <label class="button-text" for="todoAddssign">Assign to</label>
+                  <label class="button-text" for="todoAddAssign">Assign to</label>
                   <select name="assign" id="todoAddAssign">
                     <option value="">Assignee</option>
                     <option value="HU">Heba</option>
