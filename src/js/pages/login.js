@@ -24,7 +24,7 @@ export default class LoginPage {
           <label class="visuallyhidden" for="password">password</label>
           <input type="password" name="password" placeholder="password" >
 
-          <button class="btn btn-modal">Submit</button>
+          <button class="btn" onclick="">Submit</button>
         </form>
       </section>
     `;  

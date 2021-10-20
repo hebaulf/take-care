@@ -182,7 +182,9 @@ class EventService {
 		eventsCollection.onSnapshot(snapshot => {
 			snapshot.docChanges().forEach(change => {
 				if(change.type === 'added') {
-					renderEvent(change.doc);
+					setTimeout(() => {
+						renderEvent(change.doc);
+					}, 500);
 				}
 				if(change.type === 'removed') {
 					let eventItem = document.querySelector(`[data-id='${change.doc.id}']`); // .event__item with this data-id

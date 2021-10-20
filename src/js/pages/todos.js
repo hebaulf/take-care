@@ -33,7 +33,7 @@ export default class TodosPage {
               <form class="form" autocomplete="off">
                 <fieldset class="radio-btns">
                   <legend><h4 class="font-light">Priority</h4></legend>
-                  <input id="todoAddLow" type="radio" name="priority" value="Low">
+                  <input id="todoAddLow" type="radio" name="priority" value="Low" checked>
                   <label class="btn btn-first btn-low" for="todoAddLow">Low</label>
                   <input id="todoAddMedium" type="radio" name="priority" value="Medium">
                   <label class="btn btn-medium" for="todoAddMedium">Medium</label>

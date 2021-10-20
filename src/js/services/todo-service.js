@@ -73,7 +73,7 @@ class TodoService {
 				
 					<div>${data.assign}</div>
 					<!-- <div>${data.priority}</div> -->
-					<div hidden>
+					<div>
 						<button class="btn btn-edit edit-todo">Edit</button>
 						<button class="btn btn-delete delete-todo">Delete</button>
 					</div>
@@ -146,7 +146,9 @@ class TodoService {
 		todosCollection.onSnapshot(snapshot => {
 			snapshot.docChanges().forEach(change => {
 				if(change.type === 'added') {
-					renderTodo(change.doc);
+					setTimeout(() => {
+						renderTodo(change.doc);
+					}, 500);
 				}
 				if(change.type === 'removed') {
 					let todoItem = document.querySelector(`[data-id='${change.doc.id}']`); // .todo__item with this data-id

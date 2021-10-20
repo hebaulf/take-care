@@ -31,7 +31,7 @@ export default class EventsPage {
               <form class="form" autocomplete="off">
                 <fieldset class="radio-btns">
                   <legend><h4 class="font-light">Event Type</h4></legend>
-                  <input id="eventAddAppointment" type="radio" name="label" value="appointment">
+                  <input id="eventAddAppointment" type="radio" name="label" value="appointment" checked>
                   <label class="first-btn" for="eventAddAppointment">Appointment</label>
                   <input id="eventAddMeetup" type="radio" name="label" value="meetup">
                   <label class="last-btn" for="eventAddMeetup">Meetup</label>
