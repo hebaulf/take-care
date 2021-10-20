@@ -23,8 +23,6 @@ body {
   font-family: $font-text;
   font-size: $font-size-base;
   overflow-x: hidden;
-  height: 100%;
-
 }
 
 
@@ -43,7 +41,6 @@ body {
 }
 
 .wrapper {
-  min-width: 100vw;
   display: grid;
   height: 100vh;
   grid-template-rows: auto 64px;
@@ -56,8 +53,6 @@ body {
 main {
   grid-area: main;
   display: grid;
-  height: 100%;
-  width: 100%;
   grid-template-rows: 116px auto;
   grid-template-columns: 1fr;
   grid-template-areas:
