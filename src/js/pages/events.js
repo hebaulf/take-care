@@ -13,9 +13,9 @@ export default class EventsPage {
         </div>
         <div class="main-content">
           <div class='content-top'>
-            <a href='#' class='btn btn-primary-add'>new</a>
+            <a href='#' class='btn btn-add add-event btn-primary-add'>new</a>
           </div>
-          <div class="event__list table-users">
+          <div class="event__list cards">
           </div>
           <button class="btn btn-add add-event">Add Event</button>
         </div>
@@ -43,9 +43,9 @@ export default class EventsPage {
 
                 <label for="eventAddAssign">Assign to</label>
                 <select name="assign" id="eventAddAssign">
-                  <option value="heba">Heba</option>
-                  <option value="vala">Vala</option>
-                  <option value="kristrun">Kristrun</option>
+                  <option value="Heba">Heba</option>
+                  <option value="Vala">Vala</option>
+                  <option value="Kristrun">Kristrun</option>
                   <option value="Bryndis">Bryndís</option>
                   <option value="Tinna">Tinna</option>
                 </select>
@@ -93,8 +93,8 @@ export default class EventsPage {
 
                 <label for="eventEditLabel">Label</label>
                 <select name="label" id="eventEditLabel">
-                  <option value="Appointment">Appointment</option>
-                  <option value="Meetup">Meetup</option>
+                  <option value="appointment">Appointment</option>
+                  <option value="meetup">Meetup</option>
                 </select>
                 <button class="btn btn-modal">Update</button>
               </form>

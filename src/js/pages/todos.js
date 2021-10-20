@@ -15,8 +15,7 @@ export default class TodosPage {
           <div class='content-top'>
             <a href='#' class='btn btn-primary-add'>new</a>
           </div>
-
-          <div class="todo__list table-users">
+          <div class="todo__list cards">
           </div>
           <button class="btn btn-add add-todo">Add Todo</button>
         </div>
@@ -76,9 +75,9 @@ export default class TodosPage {
 
             <label for="todoEditAssign">Assign to</label>
             <select name="assign" id="todoEditAssign">
-              <option value="heba">Heba</option>
-              <option value="vala">Vala</option>
-              <option value="kristrun">Kristrun</option>
+              <option value="Heba">Heba</option>
+              <option value="Vala">Vala</option>
+              <option value="Kristrun">Kristrun</option>
               <option value="Bryndis">Bryndís</option>
               <option value="Tinna">Tinna</option>
             </select>

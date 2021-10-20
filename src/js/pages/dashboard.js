@@ -1,7 +1,4 @@
-/* let username = 'Arna Vala'
-let matches = username.match(/\b(\w)/g);
-let acronym = matches.join('');
-console.log(acronym); */
+
 
 export default class DashboardPage {
   constructor() {

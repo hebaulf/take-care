@@ -88,7 +88,6 @@ class EventService {
 		// Create element and render users
 		const renderEvent = doc => {
 			const data = doc.data();
-			//const labelClass = `${(data.label) === 'Appointment' ? 'appointment' : 'meetup'}`;
 			//<div class='card event__item label-${labelClass}' data-id='${doc.id}'></div>
 			const dataDate = new Date(data.date);
 			const day = days[dataDate.getDay()];
@@ -96,19 +95,52 @@ class EventService {
 			const month = months[dataDate.getMonth()];
 			const year = dataDate.getFullYear();
 			const formattedDate = `${day} ${monthDate}.${month} ${year}`;
-
-
+			
+			// Create initials for users
+			const username = data.assign;
+			const matches = username.match(/\b(\w)/g);
+			const initials = matches.join('');
+			// Add colored background to avatar from initials
+			const avatarColors = ['#C6A8F0', '#D0D6FB', '#F4CFA4', '#FBEEDF', '#909EF5', '#F1E9FB'];
+			
+			const numberFromInitials = (text) => {
+				const charCodes = text
+					.split('')
+					.map(char => char.charCodeAt(0))
+					.join('')
+				return parseInt(charCodes, 10);
+			};
+			const avatars = document.querySelectorAll('.avatar');
+			avatars.forEach(avatar => {
+				const text = avatar.innerText;
+				avatar.style.backgroundColor = avatarColors[numberFromInitials(text) % avatarColors.length];
+			});
+			
 			const eventItem = /*html*/`
 				<div class="card card-event card-${data.label}" data-id='${doc.id}'>
-					<h4 class='card-title'>${data.title}</h4>
-					<p class='card-description'>${data.description}</p>
-					<p class='card-location'>${data.location}</p>
-					<p class='card-date'> ${formattedDate}</p>
-					<div>${data.assign}</div>
-					<!-- <div>${data.label}</div> -->
-					<div hidden>
-						<button class="btn btn-edit edit-event">Edit</button>
-						<button class="btn btn-delete delete-event">Delete</button>
+
+					<div class='card-${data.label}-line'></div>
+					<div class='card__content'>
+						<div class='card__top card-toggle'>
+							<div class='card__details'>
+								<div class='card__details--row'>
+									<p class='card__details--label'>${data.label}</p>
+									<p class='card__details--date'> ${formattedDate}</p>
+								</div>
+								<div class='card__details--row'>
+									<h4 class='card__details--title'>${data.title}</h4>
+									<p class='card__details--location'>${data.location}</p>
+								</div>
+								<div class='card__details--description'>
+									<p>${data.description}</p>
+								</div>
+							</div>
+						</div>
+						<div class='card__bottom'>
+							<button class="btn btn-edit edit-event btn-circle">Edit</button>
+							<button class="btn btn-delete delete-event btn-circle">Delete</button>
+							<div class='avatar'>${initials}</div>
+						</div>
 					</div>
 				</div>
 			`;
