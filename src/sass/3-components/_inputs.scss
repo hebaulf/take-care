@@ -1,7 +1,7 @@
 .form {
   display: flex;
   flex-direction: column;
-  color: #6d6d6d;
+  color: $color-grey-70;
 }
 
 input[type="text"],
@@ -18,7 +18,7 @@ select {
 
 label {
   display: block;
-  padding-bottom: 6px;
+  @include text-base;
 }
 
 fieldset {
