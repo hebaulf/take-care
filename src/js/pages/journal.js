@@ -52,7 +52,7 @@ export default class JournalPage {
 
                 <fieldset class="dropdown">
                   <label for="eventAddAssign">Assign to</label>
-                  <select name="assign" id="journalAddAssign">
+                  <select name="user" id="journalAddAssign">
                     <option value="">Assignee</option>
                     <option value="HU">Heba</option>
                     <option value="AS">Vala</option>
@@ -99,7 +99,7 @@ export default class JournalPage {
 
                 <fieldset class="dropdown">
                   <label for="eventAddAssign">Assign to</label>
-                  <select name="assign" id="journalEditAssign">
+                  <select name="user" id="journalEditAssign">
                   <option value="">Assignee</option>
                   <option value="HU">Heba</option>
                   <option value="AS">Vala</option>
