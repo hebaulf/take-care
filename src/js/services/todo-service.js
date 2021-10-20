@@ -67,9 +67,9 @@ class TodoService {
 			const data = doc.data();
 			//const priorityClass = `${(data.priority) === 'Low' ? 'low' : ''}${(data.priority) === 'Medium' ? 'med' : ''}${(data.priority) === 'High' ? 'high' : ''}`;
 			//<div class="card todo__item priority-${priorityClass}" data-id="${doc.id}">
-			const username = data.assign;
+			/* const username = data.assign;
 			const matches = username.match(/\b(\w)/g);
-			const initials = matches.join('');
+			const initials = matches.join(''); */
 
 			const avatarColors = ['#C6A8F0', '#D0D6FB', '#F4CFA4', '#FBEEDF', '#909EF5', '#F1E9FB', '#F4CFA4','#F1E9FB','#D0D6FB'];
 
@@ -78,7 +78,7 @@ class TodoService {
 					.split('')
 					.map(char => char.charCodeAt(0))
 					.join('')
-				return parseInt(charCodes, 11);
+				return parseInt(charCodes, 10);
 			};
 			
 			const avatars = document.querySelectorAll('.avatar');
