@@ -119,11 +119,11 @@ class JournalService {
                 <div class='see-more'>
                 	<hr></hr>
                   <!--<button class="btn btn-secondary btn-open">See more</button>-->
-									<div class='button-flex'>
-										<div class='avatar'><p>${data.user}</p></div>
-										<button class="delete-journal btn-circle--delete"></button>
-										<button class="edit-journal btn-circle--edit"></button>
-									</div>
+					<div class='button-flex'>
+						<div class='avatar'><p>${data.user}</p></div>
+						<button class="delete-journal btn-circle--delete"></button>
+						<button class="edit-journal btn-circle--edit"></button>
+					</div>
                 </div>
 
               </div>

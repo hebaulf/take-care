@@ -33,6 +33,7 @@ h2 {
 
 *::-webkit-scrollbar {
   width: 0.6rem;
+  height: 0.6rem;
   background: $bg-main;
 }
 
@@ -41,7 +42,7 @@ h2 {
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: $color-dashboard;
+  background-color: $color-grey-50;
   outline: none;
   border-radius: 5px;
 }
@@ -441,14 +442,45 @@ h2 {
 }
 
 #dashboard {
+  .main {
+    padding-top: 180px;
+    overflow-x: hidden;
+  }
+
+  .dashboard__wrap {
+    width: 100%;
+  }
+
   .dashboard__lists {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 
     &__itemwrap {
-      .btn {
-        display: block;
-        height: auto;
+      max-width: 700px;
+      min-width: 320px;
+
+      p,
+      a {
+        display: inline-flex;
       }
+
+      .btn-primary-dashboard {
+        height: auto;
+        padding-left: 8px;
+        background-color: #000;
+        border: 2px solid #000;
+        color: #fff;
+      }
+    }
+  }
+
+  .dashboard__list {
+    max-width: 700px;
+    min-width: 250px;
+    &__top {
+      display: flex;
+      justify-content: space-between;
     }
   }
 }

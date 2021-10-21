@@ -28,12 +28,26 @@ class DashboardService {
 			const formattedDate = `${day} ${monthDate}.${month} ${year}`;
             
             const eventItem = /*html*/`
-                <div class="card card-event card-${data.label}" data-id='${doc.id}'>
-                    <h4 class='card-title'>${data.title}</h4>
-                    <p class='card-description'>${data.description}</p>
-                    <p class='card-location'>${data.location}</p>
-                    <p class='card-date'> ${formattedDate}</p>
-                    <div>${data.assign}</div>
+                <div class="card card--event card--${data.label}" data-id='${doc.id}'>
+                    <div class='card--${data.label}__line'></div>
+                    <div class='card__container card-toggle'>
+                        <div class='card__header'>
+                            <p class='card__header--label'>${data.label}</p>
+                            <p class='card__header--date'>${formattedDate}</p>
+                        </div>
+                        <div class='card-content'>
+                            <div class='card-content__details'>
+                                <h4 class='card-content__details--title'>${data.title}</h4>
+                                <p class='card-content__details--location'>${data.location}</p>
+                                <div id='description' class="card-content__details--description">
+                                    <p>${data.description}</p>
+                                </div>
+                            </div>
+                            <div class='card-content__footer'>
+                                <div class='avatar'><p>${data.assign}</p></div>
+                            </div>	
+                        </div>
+                    </div>
                 </div>
             `;
 
@@ -43,11 +57,23 @@ class DashboardService {
         const renderTodo = doc => {
 			const data = doc.data();
 			const todoItem = /*html*/`
-				<div class="card card-todo card-todo-${data.priority}" data-id='${doc.id}'>
-					<h4 class='card-title'>${data.title}</h4>
-					<p class='card-description'>${data.list}</p>
-					<div>${data.assign}</div>
-				</div>
+                <div class="card card--todo card--todo-${data.priority}" data-id='${doc.id}'>
+                    <div class='card--${data.priority}__line'></div>
+                    <div class='card__container card-toggle'>
+                        <div class='card__header'>
+                            <p class='card__header--label'>To Do's</p>
+                            <p class='card__header--date'>${data.priority} Priority</p>
+                        </div>
+                        <div class='card-content'>
+                            <div class='card-content__details'>
+                                <h4 class='card-content__details--title'>${data.title}</h4>
+                                <div id='description' class="card-content__details--description">
+                                    <p>${data.list}</p>
+                                </div>
+                            </div>	
+                        </div>
+                    </div>
+                </div>
 			`;
             dbTodoList.insertAdjacentHTML('beforeend', todoItem);
         }
@@ -61,12 +87,24 @@ class DashboardService {
 			const year = dataDate.getFullYear();
 			const formattedDate = `${day} ${monthDate}.${month} ${year}`;
 			const journalItem = /*html*/`
-				<div class="journal__item" data-id='${doc.id}'>
-					<div>${data.feeling}</div>
-					<p class='card-description'>${data.entry}</p>
-					<p class='card-date'>${formattedDate}</p>
-					<div>${data.user}</div>
-				</div>
+                <div class="card card--journal" data-id='${doc.id}'>
+                    <div class='card__container'>
+                        <div class='card__header'>
+                            <hr hidden></hr>
+                            <p class='card__header--date'>${formattedDate}</p>
+                        </div>
+                        <div class='card-content'>
+                            <div title='Feeling ${data.feeling}' class='card-content__feeling'>
+                                <i class='tc-icons-${data.feeling}'></i>
+                            </div>
+                            <div id='description' class="card-content__entry">
+                                <div>
+                                    <p>${data.entry}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 			`;
             dbJournalList.insertAdjacentHTML('beforeend', journalItem);
         }
