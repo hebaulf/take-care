@@ -1,5 +1,4 @@
 /* BUTTONS */
-
 .btn {
   @include text-btn;
   @include border-btn;
@@ -174,12 +173,12 @@
 }
 
 .btn-circle--delete {
-   @extend .btn-circle;
-   height: 27px;
-   width: 27px;
-   border: 2px solid $bg-red;
-   border-radius: 14px;
-   vertical-align: center;
+  @extend .btn-circle;
+  height: 27px;
+  width: 27px;
+  border: 2px solid $bg-red;
+  border-radius: 14px;
+  vertical-align: center;
 
   &:before {
     @include icon;
