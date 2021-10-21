@@ -11,14 +11,25 @@ export default class DashboardPage {
   }
 
   template() {
+    const userName = 'Smári';
     document.querySelector('#content').innerHTML += /*html*/ `
       <div id="dashboard" class="page">
-        <header id='head' class='head' title='title'>
-          <h1 id='page-title'>Dashboard</h1>
+        <header id='head' class='head'>
+          <div class='head__title'>
+            <h1 id='page-title' class='page-title'>Hi, ${userName}</h1>
+            <a role='navigation' href="#dashboard" class='btn-home'><i class='tc-icons-home-filled'></i></a>
+          </div>
+          <div class='page__tabs event-tabs'>
+            <button class='btn  btn-add add-event btn-primary-add'>New</button> 
+            <div class='tabs'>
+              <button class='tabs__link'>Appointments</button>
+              <button class='tabs__link'>Meetups</button>
+              <button class='tabs__link'>All</button>
+            </div>
+          </div>
         </header>
-        <main class='main'>
-          hello
-
+        <main class="main">
+          
         </main>
       </div>
     `;  

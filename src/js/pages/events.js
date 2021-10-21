@@ -6,19 +6,25 @@ export default class EventsPage {
   template() {
     document.pageTitle = 'Events';
     document.querySelector('#content').innerHTML += /*html*/ `
-      <section id="events" class="page page-event">
-        <div class='topbar'>
-          <h1>${document.pageTitle}</h1>
-          <a href="#dashboard" class='btn-home'><i class='tc-icons-home-filled'></i></a>
-        </div>
-        <div class="main-content">
-          <div class='content-top'>
-            <a href='#' class='btn btn-primary-add'>new</a>
+      <div id="events" class="page page-event">
+        <header id='head' class='head'>
+          <div class='head__title'>
+            <h1 id='page-title' class='page-title'>${document.pageTitle}</h1>
+            <a role='navigation' href="#dashboard" class='btn-home'><i class='tc-icons-home-filled'></i></a>
           </div>
-          <div class="event__list table-users">
+          <div class='page__tabs event-tabs'>
+            <button class='btn  btn-add add-event btn-primary-add'>New</button> 
+            <div class='tabs'>
+              <button class='tabs__link'>Appointments</button>
+              <button class='tabs__link'>Meetups</button>
+              <button class='tabs__link'>All</button>
+            </div>
           </div>
-          <button class="btn btn-add add-event">Add Event</button>
-        </div>
+        </header>
+        <main class="main">
+          <div class="event__list card__list">
+          </div>
+        </main>
       
       <!-- Add Modal -->
         <div class="add-modal add-event-modal modal-wrapper event-modal-wrapper">
@@ -129,7 +135,7 @@ export default class EventsPage {
             </div>
           </div>
         </div>
-      </section>
+      </div>
     `;
   }
 }

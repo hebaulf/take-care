@@ -7,19 +7,26 @@ export default class JournalPage {
   template() {
     document.pageTitle = 'Journal'
     document.querySelector('#content').innerHTML += /*html*/ `
-      <section id="journal" class="page page-journal">
-        <div class='topbar'>
-          <h1>${document.pageTitle}</h1>
-          <a href="#dashboard" class='btn-home'><i class='tc-icons-home-filled'></i></a>
-        </div>
-        <div class="main-content">
-          <div class='content-top'>
-            <a href='#' class='btn btn-primary-add'>new</a>
+      <div id="journal" class="page page-journal">
+        <header id='head' class='head'>
+          <div class='head__title'>
+            <h1 id='page-title' class='page-title'>${document.pageTitle}</h1>
+            <a role='navigation' href="#dashboard" class='btn-home'><i class='tc-icons-home-filled'></i></a>
           </div>
-          <div class="journal__list table-users">
+          <div class='page__tabs journal-tabs'>
+            <button class='btn  btn-add add-journal btn-primary-add'>New</button> 
+            <div class='tabs'>
+              <button class='tabs__link'>Appointments</button>
+              <button class='tabs__link'>Meetups</button>
+              <button class='tabs__link'>All</button>
+            </div>
           </div>
-          <button class="btn btn-add add-journal">Add Entry</button>
-        </div>
+        </header>
+        <main class="main">
+          <div class="journal__list card__list">
+          </div>
+        </main>
+         
       
       <!-- Add Modal -->
         <div class="add-modal add-journal-modal modal-wrapper journal-modal-wrapper">
@@ -114,7 +121,7 @@ export default class JournalPage {
             </div>
           </div>
         </div>
-      </section>
+      </div>
     `;
   }
 }
