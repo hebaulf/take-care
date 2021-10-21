@@ -1,1 +1,1 @@
-{"version":3,"sources":["pages/settings.js"],"names":["SettingsPage","constructor","this","template","document","pageTitle","querySelector","innerHTML"],"mappings":"eAKe,MAAMA,aACnBC,cACEC,KAAKC,WAGPA,WACEC,SAASC,UAAY,WACrBD,SAASE,cAAc,YAAYC,WAAsB,kLAIRH,SAASC","file":"pages/settings.js"}
+{"version":3,"sources":["pages/settings.js"],"names":["SettingsPage","constructor","this","template","document","pageTitle","querySelector","innerHTML"],"mappings":"eAKe,MAAMA,aACnBC,cACEC,KAAKC,WAGPA,WACEC,SAASC,UAAY,WACrBD,SAASE,cAAc,YAAYC,WAAsB,8KAIRH,SAASC","file":"pages/settings.js"}

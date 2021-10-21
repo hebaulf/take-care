@@ -24,7 +24,6 @@
   color: $color-white;
   height: 100%;
 
-
   &:hover {
     background-color: $color-white;
     color: $color-black;
@@ -36,7 +35,6 @@
   padding-left: 8px;
   height: 100%;
 
-  
   &:before {
     @include icon;
     content: "\e907";
@@ -49,7 +47,6 @@
   &:hover:before {
     color: $color-black;
   }
-
 }
 
 .btn-secondary {
@@ -65,7 +62,8 @@
   }
 }
 
-.btn-home {
+.btn-home,
+.btn-close {
   height: 100%;
   background: none;
   padding-left: 8px;
@@ -95,6 +93,13 @@
   }
 }
 
+.btn-close {
+  position: absolute;
+  height: auto;
+  top: 45px;
+  right: 0px;
+}
+
 .btn-edit {
   @include border-btn;
 }
@@ -109,7 +114,7 @@
   border: 1px solid $color-red;
 
   :before {
-    content: '';
+    content: "";
     color: inherit;
   }
 }
@@ -118,7 +123,3 @@
   background: $color-red;
   color: $color-white;
 }
-
-
-
-

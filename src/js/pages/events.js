@@ -31,7 +31,8 @@ export default class EventsPage {
           <div class="modal">
             <div class="modal-header">
               <h2>Create Event</h2>
-              <button class="btn btn-close add-event-close">Close</button>
+              <a role='navigation' href="#dashboard" class='btn-close add-event-close'><i class='tc-icons-close'></i></a>
+              
             </div>
             <div class="modal-body">
               <form class="form" autocomplete="off">
