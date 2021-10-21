@@ -11,7 +11,7 @@ export default class SettingsPage {
   template() {
     document.pageTitle = 'Settings'
     document.querySelector('#content').innerHTML += /*html*/ `
-      <div id='settings' class='page'>
+      <section id="settings" class="page">
         <header id='head' class='head'>
           <div class='head__title'>
             <h1 id='page-title' class='page-title'>${document.pageTitle}</h1>
@@ -19,15 +19,53 @@ export default class SettingsPage {
           </div>
         </header>
         <main class='main'>
-          <div class="form-user-profile">
-            <form>
-            <label for='username'>Username</label>
-            <input id='username' type='text'>
-            </form>
+          <div class="settings__content-wrap">
+          <div>
+            <div class="user-icon h1">GT</div>
           </div>
-          <button class="btn btn-primary-add">New user</button>
+          <div>
+            <h3>Profile Info</h3>
+            <div class="settings__infobox">
+              <div>
+                <div>First Name</div>
+                <div><p>Guðrún</p></div>
+                <div><i class="arrow-right"></i></div>
+              </div>
+              <div>
+                <div>Last Name</div>
+                <div><p>Tryggvadóttir</p></div>
+                <div><i class=""></i></div>
+              </div>
+              <div>
+                <div>Email</div>
+                <div><p>gudruntryggva@gmail.com</p></div>
+                <div><i class=""></i></div>
+              </div>
+            </div>
+          </div>
+          <div class="settings__infobox">
+            <h3>Account</h3>
+            <div>
+              <div>
+                <div><p>Change Password</p></div>
+                <div><i class=""></i></div>
+              </div>
+              <div>
+                <div><p>Notifications</p></div>
+                <div><i class=""></i></div>
+              </div>
+              <div>
+                <div><p>My Team</p></div>
+                <div><i class=""></i></div>
+              </div>
+            </div>
+          </div>
+          <div class="form__button">
+            <a href="#dashboard" class="button">Log Out</a>
+          </div>
+          </div>
         </main>
-      </div>
+      </section>
     `;  
   }
 }

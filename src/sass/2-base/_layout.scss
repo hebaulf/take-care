@@ -31,9 +31,25 @@ h2 {
   @include heading-2;
 }
 
+*::-webkit-scrollbar {
+  width: 0.6rem;
+  background: $bg-main;
+}
+
+*::-webkit-scrollbar-track {
+  background: $bg-main;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: $color-dashboard;
+  outline: none;
+  border-radius: 5px;
+}
+
 /* page hidden for SPA */
 .page {
   display: none;
+  height: 100%;
   animation: fadeIn 0.3s;
 }
 
@@ -212,6 +228,17 @@ h2 {
   transition: visibility 0s 0.4s, opacity 0.4s linear;
 }
 
+main {
+  width: 100vw;
+  grid-area: main;
+  display: grid;
+  grid-template-rows: 118px auto 64px;
+  grid-template-areas:
+    "topbar topbar"
+    "main-content main-content";
+  overflow: scroll;
+}
+
 /* .wrapper {
   width: 100vw;
   display: grid;
@@ -222,8 +249,7 @@ h2 {
    'main main'
    'navbar navbar';
 }
- */
-/*main {
+main {
   width: 100vw;
   grid-area: main;
   display: grid;
@@ -280,19 +306,19 @@ h2 {
 
 #landing {
   background-color: $bg-main;
-}
 
-.landing__logo {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  .landing__logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 
-  svg {
-    transition: all 0.3s ease-in-out;
+    svg {
+      transition: all 0.3s ease-in-out;
 
-    &:hover {
-      transform: scale(1.2);
+      &:hover {
+        transform: scale(1.2);
+      }
     }
   }
 }
@@ -368,6 +394,27 @@ h2 {
 #dashboard {
   .dashboard__lists {
     display: flex;
-    padding: 2rem;
+
+    &__itemwrap {
+      .btn {
+        display: block;
+        height: auto;
+      }
+    }
+  }
+}
+
+#settings {
+  main {
+    background-color: $color-white;
+    flex-direction: column;
+    padding-top: 130px;
+  }
+
+  .settings__content-wrap {
+    height: 100%;
+    padding: 36px 29px;
+    background-color: $color-primary-5;
+    border-top-left-radius: 36px;
   }
 }

@@ -30,6 +30,4 @@ _eventService.init();
 _todoService.init();
 _journalService.init();
 _dashboardService.init();
-
-
  
