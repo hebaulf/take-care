@@ -2,6 +2,7 @@ import _spaService from "./services/spa.js";
 import _eventService from "./services/event-service.js";
 import _todoService from "./services/todo-service.js";
 import _journalService from "./services/journal-service.js";
+import _dashboardService from "./services/dashboard-service.js";
 // import * from "./services/calendar.js";
 import NavBar from "./components/navbar.js";
 //import TopBar from './components/topbar.js';
@@ -29,5 +30,7 @@ _spaService.init();
 _eventService.init();
 _todoService.init();
 _journalService.init();
+_dashboardService.init();
+
 
  

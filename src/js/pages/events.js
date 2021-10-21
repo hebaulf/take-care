@@ -13,11 +13,10 @@ export default class EventsPage {
         </div>
         <div class="main-content">
           <div class='content-top'>
-            <a href='#' class='btn btn-primary-add'>new</a>
+            <button class="btn btn-primary-add btn-add add-event">Add Event</button>
           </div>
-          <div class="event__list table-users">
+          <div class="event__list">
           </div>
-          <button class="btn btn-add add-event">Add Event</button>
         </div>
       
       <!-- Add Modal -->

@@ -189,3 +189,10 @@ body {
     }
   }
 }
+
+#dashboard {
+  .dashboard__lists {
+    display: flex;
+    padding: 2rem;
+  }
+}

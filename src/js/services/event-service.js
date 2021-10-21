@@ -35,55 +35,21 @@ class EventService {
 			addModal.style.display = 'flex';
 			addModalInner.style.cssText = 'animation: slideUp .5s ease; animation-fill-mode: forwards;';
 		}
-
 		const closeAddModal = () => {
 			addModalInner.style.cssText = 'animation: slideDown .5s ease; animation-fill-mode: forwards;';
-			setTimeout(() => {
-				addModal.style.display = 'none';
-			}, 500);
+			setTimeout(() => { addModal.style.display = 'none'; }, 500);
 		}
 		const openEditModal = () => {
 			editModal.style.display = 'flex';
 			editModalInner.style.cssText = 'animation: slideUp .5s ease; animation-fill-mode: forwards;';
 		}
-
 		const closeEditModal = () => {
 			editModalInner.style.cssText = 'animation: slideDown .5s ease; animation-fill-mode: forwards;';
-			setTimeout(() => {
-				editModal.style.display = 'none';
-			}, 500);
-		}
-		const closeModal = () => {
-			modalInner.style.cssText = 'animation: slideDown .5s ease; animation-fill-mode: forwards;';
-			setTimeout(() => {
-				modalWrapper.style.display = 'none';
-			}, 500);
+			setTimeout(() => { editModal.style.display = 'none'; }, 500);
 		}
 
-		const days = [
-		'Sun',
-		'Mon',
-		'Tue',
-		'Wed',
-		'Thu',
-		'Fri',
-		'Sat'
-		];
-
-		const months = [
-		'Jan',
-		'Feb',
-		'Mar',
-		'Apr',
-		'Mai',
-		'Jun',
-		'Jul',
-		'Aug',
-		'Sep',
-		'Oct',
-		'Nov',
-		'Dec'
-		];
+		const days = [ 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat' ];
+        const months = [ 'Jan', 'Feb', 'Mar', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec' ];
 
 		// Create element and render users
 		const renderEvent = doc => {
@@ -227,7 +193,7 @@ class EventService {
 			});
 			closeEditModal();
 		});
-  }
+  	}
 }
 
 const eventService = new EventService();
