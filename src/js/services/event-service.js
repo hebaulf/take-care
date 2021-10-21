@@ -95,11 +95,11 @@ class EventService {
 								<p class='card-content__details--location'>${data.location}</p>
 								<div id='description' class="card-content__details--description">
 									<p>${data.description}</p>
-									<button class="edit-event btn-circle--edit"></button>
 								</div>
 							</div>
 					
 							<div class='card-content__footer'>
+								<button class="edit-event btn-circle--edit"></button>
 								<button class="delete-event btn-circle--complete"></button>
 								<div class='avatar'><p>${data.assign}</p></div>
 							</div>	

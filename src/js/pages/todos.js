@@ -71,7 +71,7 @@ export default class TodosPage {
           <div class="modal">
             <div class="modal-header">
               <h3>Create Todo</h3>
-              <button class="btn add-todo-close">Close</button>
+              <button class='btn-close add-todo-close'><i class='tc-icons-close'></i></button>
             </div>
             <div class="modal-body">
               <form class="form" autocomplete="off">
@@ -118,7 +118,7 @@ export default class TodosPage {
           <div class="modal">
             <div class="modal-header">
               <h3>Edit Todo</h3>
-              <button class="btn edit-todo-close">Close</button>
+              <button class='btn-close edit-todo-close'><i class='tc-icons-close'></i></button>
             </div>
             <div class="modal-body">
               <form class="form" autocomplete="off">

@@ -186,7 +186,6 @@ h2 {
       }
     }
   }
-  
 
   .page-journal .main {
     padding-top: 160px;
@@ -245,8 +244,7 @@ h2 {
     width: 100%;
     grid-template-columns: 80px 1fr;
     grid-template-rows: 1fr;
-    grid-template-areas:
-    'navbar content';
+    grid-template-areas: "navbar content";
 
     .content {
       grid-area: content;
@@ -257,10 +255,7 @@ h2 {
         width: 100%;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr auto;
-        grid-template-areas: 
-        'head',
-        'main';
-
+        grid-template-areas: "head", "main";
       }
       .head {
         grid-area: head;
@@ -268,19 +263,15 @@ h2 {
         width: calc(100% - 80px);
 
         .page__tabs {
-
           .tabs {
             padding-left: 48px;
             gap: 64px;
 
             button {
               @include text-base;
-
             }
           }
-
         }
-        
       }
 
       .main {
@@ -290,17 +281,15 @@ h2 {
         flex-wrap: wrap;
         padding-right: 48px;
         padding-left: 48px;
-        
+
         .event__list,
         .journal__list,
         .card__list,
         .todo__list {
-          
           padding-left: 0;
           padding-right: 0;
         }
       }
-     
     }
 
     .navbar {
@@ -318,37 +307,33 @@ h2 {
         padding-bottom: 64px;
 
         a {
-        width: 100%;
-        padding-top: 16px;
-        padding-bottom: 16px;
-        color: $color-grey-70;
+          width: 100%;
+          padding-top: 16px;
+          padding-bottom: 16px;
+          color: $color-grey-70;
 
-        &:hover,
-        &:active {
-          color: $color-black;
+          &:hover,
+          &:active {
+            color: $color-black;
 
-          &:before {
-            content: "";
-            position: absolute;
-            right: 0;
-            border-top: none;
-            border-right: 2px solid black;
-            height: 100%;
+            &:before {
+              content: "";
+              position: absolute;
+              right: 0;
+              border-top: none;
+              border-right: 2px solid black;
+              height: 100%;
+            }
+          }
+
+          i {
+            font-size: 28px;
+            height: auto;
           }
         }
-
-        i {
-          font-size: 28px;
-          height: auto;
-        }
-
       }
-
     }
-
   }
-}
-
 }
 
 .hide {
@@ -356,7 +341,6 @@ h2 {
   opacity: 0;
   transition: visibility 0s 0.4s, opacity 0.4s linear;
 }
-
 
 #landing,
 #login {
@@ -461,7 +445,6 @@ h2 {
   .main {
     padding-top: 180px;
     overflow-x: hidden;
-   
   }
 
   .dashboard__wrap {
@@ -472,10 +455,12 @@ h2 {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
- 
+
     &__itemwrap {
-      max-width: 700px;
+      width: 100%;
+      max-width: 500px;
       min-width: 320px;
+      margin: 0 auto;
 
       p,
       a {
@@ -493,8 +478,6 @@ h2 {
   }
 
   .dashboard__list {
-    max-width: 700px;
-    min-width: 250px;
     &__top {
       display: flex;
       justify-content: space-between;

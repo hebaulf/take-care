@@ -6,8 +6,8 @@
   width: 100%;
   padding: 16px;
   width: 100%;
-  max-width: 400px;
-
+  max-width: 500px;
+  margin: 0 auto;
 
   &:hover {
     cursor: pointer;
@@ -29,19 +29,17 @@
     }
   }
 
-
   &__container {
     display: flex;
     flex-direction: column;
     width: 100%;
-
   }
 
   &__header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
+
     &--location,
     &--label,
     &--date {
@@ -56,7 +54,6 @@
     justify-content: space-between;
 
     &__details {
-
       &--title {
         @include heading-3;
         width: 100%;
@@ -90,13 +87,9 @@
       align-items: flex-end;
       gap: 8px;
       margin-top: 24px;
-      
     }
   }
 }
-
-
-
 
 /* Can be deleted later */
 .card-title {
@@ -119,7 +112,6 @@
 .page-journal {
   .card {
     min-height: none;
-
   }
 }
 
@@ -131,7 +123,6 @@
   width: 100%;
   min-height: none;
   padding-top: 16px;
- 
 
   .card-container {
     display: flex;
@@ -160,16 +151,16 @@
     gap: 24px;
     align-items: center;
     padding: 16px;
-   
-     &__feeling {
-        @include heading-3;
-        width: 100%;
-        padding: 8px 0;
-        flex: 0;
-        
-        i {
-          font-size: 80px;
-        }
+
+    &__feeling {
+      @include heading-3;
+      width: 100%;
+      padding: 8px 0;
+      flex: 0;
+
+      i {
+        font-size: 80px;
+      }
     }
 
     &__entry {
@@ -183,8 +174,7 @@
         //-webkit-box-orient: vertical;
         /* truncate to 3 lines */
         //-webkit-line-clamp: 2;
-        }
-        
+      }
     }
   }
   .see-more {

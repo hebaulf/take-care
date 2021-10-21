@@ -36,7 +36,7 @@ export default class JournalPage {
           <div class="modal">
             <div class="modal-header">
               <h3>Create Journal</h3>
-              <button class="btn add-journal-close">Close</button>
+              <button class='btn-close add-journal-close'><i class='tc-icons-close'></i></button>
             </div>
             <div class="modal-body">
               <form class="form" autocomplete="off">
@@ -83,7 +83,7 @@ export default class JournalPage {
           <div class="modal">
             <div class="modal-header">
               <h3>Edit Journal</h3>
-              <button class="btn edit-journal-close">Close</button>
+              <button class='btn-close edit-journal-close'><i class='tc-icons-close'></i></button>
             </div>
             <div class="modal-body">
               <form class="form" autocomplete="off">

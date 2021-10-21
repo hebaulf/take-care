@@ -44,8 +44,7 @@ export default class EventsPage {
           <div class="modal">
             <div class="modal-header">
               <h2>Create Event</h2>
-              <a role='navigation' href="#dashboard" class='btn-close add-event-close'><i class='tc-icons-close'></i></a>
-              
+              <button class='btn-close add-event-close'><i class='tc-icons-close'></i></button>
             </div>
             <div class="modal-body">
               <form class="form" autocomplete="off">
@@ -100,7 +99,7 @@ export default class EventsPage {
           <div class="modal">
             <div class="modal-header">
               <h3>Edit Event</h3>
-              <button class="btn edit-event-close">Close</button>
+              <button class='btn-close edit-event-close'><i class='tc-icons-close'></i></button>
             </div>
             <div class="modal-body">
               <form class="form" autocomplete="off">
