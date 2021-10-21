@@ -111,7 +111,6 @@ h2 {
       }
 
       .page__tabs {
-        background: red;
         border-top-left-radius: 36px;
         position: relative;
         padding-top: 32px;
@@ -267,6 +266,20 @@ h2 {
         grid-area: head;
         position: fixed;
         width: calc(100% - 80px);
+
+        .page__tabs {
+
+          .tabs {
+            padding-left: 48px;
+            gap: 64px;
+
+            button {
+              @include text-base;
+
+            }
+          }
+
+        }
         
       }
 
@@ -275,13 +288,16 @@ h2 {
         width: auto;
         height: auto;
         flex-wrap: wrap;
+        padding-right: 48px;
+        padding-left: 48px;
         
         .event__list,
         .journal__list,
         .card__list,
         .todo__list {
-          padding: 48px;
-
+          
+          padding-left: 0;
+          padding-right: 0;
         }
       }
      
@@ -445,6 +461,7 @@ h2 {
   .main {
     padding-top: 180px;
     overflow-x: hidden;
+   
   }
 
   .dashboard__wrap {
@@ -454,8 +471,8 @@ h2 {
   .dashboard__lists {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
-
+    justify-content: space-between;
+ 
     &__itemwrap {
       max-width: 700px;
       min-width: 320px;
@@ -468,9 +485,9 @@ h2 {
       .btn-primary-dashboard {
         height: auto;
         padding-left: 8px;
-        background-color: #000;
-        border: 2px solid #000;
-        color: #fff;
+        background-color: $color-black;
+        border: 2px solid $color-black;
+        color: $color-white;
       }
     }
   }
