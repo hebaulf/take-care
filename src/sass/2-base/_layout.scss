@@ -66,8 +66,8 @@ h2 {
     "navbar";
 
   .content {
-      grid-area: content;
-      overflow: auto;
+    grid-area: content;
+    overflow: auto;
 
     .page {
       height: 100%;
@@ -135,6 +135,14 @@ h2 {
           }
         }
 
+        &.settings-tabs {
+          background: $color-primary-5;
+
+          .tabs {
+            background: $color-primary-5;
+          }
+        }
+
         .btn-primary-add {
           position: absolute;
           top: -20px;
@@ -155,7 +163,6 @@ h2 {
             @include text-sm;
           }
         }
-
       }
     }
     .main {
@@ -176,7 +183,6 @@ h2 {
         flex-direction: column;
         gap: 24px;
         height: 100%;
-    
       }
     }
   }
@@ -277,17 +283,6 @@ h2 {
   opacity: 0;
   transition: visibility 0s 0.4s, opacity 0.4s linear;
 }
-
-/* main {
-  width: 100vw;
-  grid-area: main;
-  display: grid;
-  grid-template-rows: 118px auto 64px;
-  grid-template-areas:
-    "topbar topbar"
-    "main-content main-content";
-  overflow: scroll;
-} */
 
 /* .wrapper {
   width: 100vw;
@@ -455,16 +450,73 @@ main {
 }
 
 #settings {
-  main {
-    background-color: $color-white;
-    flex-direction: column;
-    padding-top: 130px;
+  .main {
+    background: $color-primary-5;
+    padding-top: 140px;
   }
 
-  .settings__content-wrap {
-    height: 100%;
-    padding: 36px 29px;
-    background-color: $color-primary-5;
-    border-top-left-radius: 36px;
+  .user-icon {
+    display: inline-block;
+    padding: 14px;
+    background: $color-secondary-30;
+    color: $color-grey-70;
+    font-family: $font-text;
+    font-weight: 300;
+    font-size: 42px;
+    border: 2px solid $color-white;
+    border-radius: 50%;
+
+    &__wrap {
+      text-align: center;
+    }
+  }
+
+  h3 {
+    margin-bottom: 0.6rem;
+  }
+
+  .settings {
+    &__infobox {
+      background: $color-white;
+      border: 1px solid $color-grey-50;
+      border-radius: $border-radius-8;
+      padding: 5px 0;
+
+      &__line {
+        display: flex;
+        align-items: center;
+        height: 2rem;
+        margin-left: 2.4rem;
+        border-bottom: 1px solid $color-grey-50;
+
+        &:last-child {
+          border: none;
+        }
+      }
+
+      span {
+        display: block;
+        width: 5rem;
+        margin-left: -2rem;
+        font-family: $font-text;
+        color: $color-grey-70;
+      }
+    }
+  }
+
+  .form__button {
+    text-align: right;
+  }
+
+  .btn-primary-logout {
+    height: auto;
+    padding-left: 8px;
+    background-color: #000;
+    border: 2px solid #000;
+    color: #fff;
+
+    i {
+      padding-right: 10px;
+    }
   }
 }

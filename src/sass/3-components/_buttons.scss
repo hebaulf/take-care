@@ -24,7 +24,6 @@
   color: $color-white;
   height: 100%;
 
-
   &:hover {
     background-color: $color-white;
     color: $color-black;
@@ -64,7 +63,8 @@
   }
 }
 
-.btn-home {
+.btn-home,
+.btn-close {
   height: 100%;
   background: none;
   padding-left: 8px;
@@ -94,6 +94,13 @@
   }
 }
 
+.btn-close {
+  position: absolute;
+  height: auto;
+  top: 45px;
+  right: 0px;
+}
+
 .btn-edit {
   @extend .btn-secondary;
 }
@@ -111,7 +118,7 @@
   border: 1px solid $color-red;
 
   :before {
-    content: '';
+    content: "";
     color: inherit;
   }
 }
@@ -133,7 +140,7 @@
 }
 
 .btn-circle--edit {
- @extend .btn-circle;
+  @extend .btn-circle;
   height: 20px;
   width: 20px;
   &:before {
@@ -150,8 +157,8 @@
   }
 }
 
-.btn-circle--complete{
-   @extend .btn-circle;
+.btn-circle--complete {
+  @extend .btn-circle;
   &:before {
     @include icon;
     content: "\e908";
@@ -195,7 +202,7 @@
   background-color: $color-primary-30;
   border-radius: 14px;
   text-align: center;
-  
+
   p {
     @include text-xs;
     font-weight: bold;
@@ -203,5 +210,3 @@
     color: $color-grey-90;
   }
 }
-
-
