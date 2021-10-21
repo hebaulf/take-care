@@ -15,11 +15,6 @@ export default class JournalPage {
           </div>
           <div class='page__tabs journal-tabs'>
             <button class='btn  btn-add add-journal btn-primary-add'>New</button> 
-            <div class='tabs'>
-              <button class='tabs__link'>Appointments</button>
-              <button class='tabs__link'>Meetups</button>
-              <button class='tabs__link'>All</button>
-            </div>
           </div>
         </header>
         <main class="main">

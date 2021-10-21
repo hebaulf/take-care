@@ -65,19 +65,50 @@ class TodoService {
 			//const priorityClass = `${(data.priority) === 'Low' ? 'low' : ''}${(data.priority) === 'Medium' ? 'med' : ''}${(data.priority) === 'High' ? 'high' : ''}`;
 			//<div class="card todo__item priority-${priorityClass}" data-id="${doc.id}">
 
+			// Add colored background to avatar from initials
+			const avatarColors = ['#C6A8F0', '#D0D6FB', '#F4CFA4', '#FBEEDF', '#909EF5', '#F1E9FB'];
+			
+			const numberFromInitials = (text) => {
+				const charCodes = text
+					.split('')
+					.map(char => char.charCodeAt(0))
+					.join('')
+				return parseInt(charCodes, 17);
+			};
+			const avatars = document.querySelectorAll('.avatar');
+			avatars.forEach(avatar => {
+				const text = avatar.innerText;
+				avatar.style.backgroundColor = avatarColors[numberFromInitials(text) % avatarColors.length];
+			});
+
+
 
 			const todoItem = /*html*/`
-				<div class="card card-todo card-todo-${data.priority}" data-id='${doc.id}'>
-					<h4 class='card-title'>${data.title}</h4>
-					<p class='card-description'>${data.list}</p>
-				
-					<div>${data.assign}</div>
-					<!-- <div>${data.priority}</div> -->
-					<div>
-						<button class="btn btn-edit edit-todo">Edit</button>
-						<button class="btn btn-delete delete-todo">Delete</button>
+				<div class="card card--todo card--todo-${data.priority}" data-id='${doc.id}'>
+					<div class='card--${data.priority}__line'></div>
+					<div class='card__container card-toggle'>
+						<div class='card__header'>
+								<p class='card__header--label'>To Do's</p>
+								<p class='card__header--date'>${data.priority} Priority</p>
+						</div>
+						
+						<div class='card-content'>
+							<div class='card-content__details'>
+								<h4 class='card-content__details--title'>${data.title}</h4>
+								<div id='description' class="card-content__details--description">
+									<p>${data.list}</p>
+									<button class="edit-todo btn-circle--edit"></button>
+								</div>
+							</div>
+					
+							<div class='card-content__footer'>
+								<button class="delete-todo btn-circle--complete"></button>
+								<div class='avatar'><p>${data.assign}</p></div>
+							</div>	
+						</div>
 					</div>
 				</div>
+
 			`;
   
   			todoList.insertAdjacentHTML('beforeend', todoItem);
