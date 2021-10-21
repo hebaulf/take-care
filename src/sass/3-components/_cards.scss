@@ -1,13 +1,17 @@
 .card {
+  @include border-card;
   background-color: $color-white;
   display: flex;
   flex-direction: column;
   width: 100%;
-  border: 1px solid;
   padding: 16px;
   width: 100%;
-  border-radius: $border-radius-card;
+  max-width: 400px;
 
+  &:hover {
+    cursor: pointer;
+  }
+  // Color value for each card type - color mapping
   @each $label, $card-color in $card-colors {
     &-#{$label} {
       border-color: $card-color;
@@ -22,10 +26,14 @@
       }
     }
   }
-  &-top {
-    @include text-xs;
-    display: flex;
+
+  &__container {
+    background: grey;
+
+    
+
   }
+  
 }
 
 .card-title {

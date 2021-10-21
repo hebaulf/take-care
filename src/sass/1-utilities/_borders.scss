@@ -5,7 +5,9 @@ $border-radius-card: 16px;
 @mixin border-btn {
   border: 2px solid;
   border-color: $color-black;
-  border-radius: $border-radius-8;
+  border-bottom-right-radius: $border-radius-16;
+  border-top-left-radius: $border-radius-16;
+
 }
 
 @mixin border-input {
