@@ -233,6 +233,45 @@ h2 {
   }
 }
 
+@media (min-width: 1024px) {
+  .wrapper {
+    max-width: 100vw;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+    'navbar content';
+
+    .content {
+      grid-area: content;
+      overflow: auto;
+
+      .page {
+        grid-template-columns: auto;
+        grid-template-rows: 1fr 400px;
+        grid-template-areas: 
+        'head',
+        'main';
+
+      }
+      .head {
+        grid-area: head;
+        position: fixed;
+        
+      }
+
+      .main {
+        grid-area: main;
+      
+      }
+     
+    }
+
+    
+
+  }
+ 
+}
+
 .hide {
   visibility: hidden;
   opacity: 0;

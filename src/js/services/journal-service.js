@@ -100,8 +100,8 @@ class JournalService {
            <div class="card card--journal" data-id='${doc.id}'>
               <div class='card__container'>
                 <div class='card__header'>
-                    <hr hidden></hr>
-                    <p class='card__header--date'>${formattedDate}</p>
+                  <hr hidden></hr>
+                  <p class='card__header--date'>${formattedDate}</p>
                 </div>
                 
                 <div class='card-content'>
@@ -112,16 +112,20 @@ class JournalService {
                   <div id='description' class="card-content__entry">
                     <div>
                       <p>${data.entry}</p>
-                      <div class='avatar'><p>${data.user}</p></div>
-											<button class="edit-journal btn-circle--edit"></button>
                     </div>
-                    </div>
+                  </div>
                 </div>
        
                 <div class='see-more'>
-                <hr></hr>
-                  <button class="btn btn-secondary btn-open">See more</button>
+                	<hr></hr>
+                  <!--<button class="btn btn-secondary btn-open">See more</button>-->
+									<div class='button-flex'>
+										<div class='avatar'><p>${data.user}</p></div>
+										<button class="delete-journal btn-circle--delete"></button>
+										<button class="edit-journal btn-circle--edit"></button>
+									</div>
                 </div>
+
               </div>
             </div>
 			`;
