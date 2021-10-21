@@ -5,14 +5,14 @@ export default class JournalPage {
 
   template() {
 
-    // DELETE THIS - PROTO DATA
+    /* DELETE THIS - DUMMY DATA
     const data = {
       id: 'id',
       feeling: 'good',
       date: '12 Nov 2021',
       entry: 'Grandma felt good today she enjoyed going out for a walk. We walked around the neighbourhood for about 30 minutes. We ended up going to the cafe for cake and tea.',
       user: 'AV'
-    };
+    }; */
 
     document.pageTitle = 'Journal'
     document.querySelector('#content').innerHTML += /*html*/ `
@@ -28,37 +28,30 @@ export default class JournalPage {
         </header>
         <main class="main">
           <div class="journal__list card__list" title='Journal entries'>
-
          <!-- DUMMY CARD
             <div class="card card--journal" data-id='${data.id}'>
-             
               <div class='card__container'>
                 <div class='card__header'>
                     <hr hidden></hr>
                     <p class='card__header--date'>${data.date}</p>
                 </div>
-                
                 <div class='card-content'>
                   <div title='Feeling ${data.feeling}' class='card-content__feeling'>
                       <i class='tc-icons-${data.feeling}'></i>
                   </div>
-                  
                   <div id='description' class="card-content__entry">
                     <div>
                       <p>${data.entry}</p>
                       <div class='avatar'><p>${data.user}</p></div> 
                     </div>
-                  
                     </div>
                 </div>
-       
                 <div class='see-more'>
                 <hr></hr>
                   <button class="btn btn-secondary btn-open">See more</button>
                 </div>
               </div>
             </div>  -->
-           
           </div>
         </main>
          

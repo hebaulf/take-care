@@ -6,7 +6,7 @@ export default class EventsPage {
   template() {
     document.pageTitle = 'Events';
 
-    // DELETE THIS - PROTO DATA
+    /* DELETE THIS - PROTO DATA
     const data = {
       id: 'id',
       label: 'meetup',
@@ -15,18 +15,7 @@ export default class EventsPage {
       location: 'Kjartansgata',
       description: 'Grandma is having Sunday roast with us.',
       assign: 'AV'
-    };
-
-  /*   const clickCards = document.querySelector('.card__container.card-toggle');
-			const description = document.querySelector('#description');
-			
-			clickCards.forEach(function (clickCard, index) {
-				clickCard.addEventListener('click', () => {
-					description[index].classList.toggle('open-card');
-				});
-					console.log('hello');
-      }); */
-    
+    }; */
 
     document.querySelector('#content').innerHTML += /*html*/ `
       <div id="events" class="page page-event">
@@ -45,11 +34,9 @@ export default class EventsPage {
           </div>
         </header>
         <main class="main">
-        
         <!-- add class='event__list' for functioning -->
           <div class="event__list card__list">
-
-          <!-- START test card -->
+          <!-- START test card 
             <div class="card card--event card--${data.label}" data-id='${data.id}'>
               <div class='card--${data.label}__line'></div>
               <div class='card__container card-toggle'>
@@ -75,7 +62,7 @@ export default class EventsPage {
                 </div>
               </div>
             </div>
-            <!--END test card -->
+          END test card -->
           </div>
         </main>
       

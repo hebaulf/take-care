@@ -82,7 +82,6 @@ class TodoService {
 			});
 
 
-
 			const todoItem = /*html*/`
 				<div class="card card--todo card--todo-${data.priority}" data-id='${doc.id}'>
 					<div class='card--${data.priority}__line'></div>
