@@ -2,10 +2,17 @@
 [Link to the live page](https://hebaulf.github.io/take-care/)<br>
 [Link to Figma](https://www.figma.com/file/6yntcytnVlyZRwXZiDUdt5/Take-Care?node-id=0%3A1)
 
-We wanted to make an app that solved a problem. We came up with an idea for an app that helps caregiver groups get organised and share information, when taking care of the elderly.<br>  
+We wanted to make an app that solved a problem. We came up with an idea for an app that helps caregiver groups get organised and share information, when taking care of the elderly.   
+<br>
+
+![Project Image](assets/img/front.jpg)
+
+<br> 
+
 ### Users
 - Carers: Family members, relatives or friends that need to get organised as a group caring for elderly people.
 - The Elderly: As an ongoing project, we would have liked to add an interface for the elderly.
+
 <br>
 
 ### In the app you can:
@@ -14,12 +21,23 @@ We wanted to make an app that solved a problem. We came up with an idea for an a
 - Create todos with priority tags
 - Write updates in a journal
 - Track mood in the journal entries
+
 <br>
+
 ### Project management 
+- Agile methods for workflow
+- Daily meetings
+- Asana for workflow
+- Slack for communication
+
+<br>
 
 ### Design tools used
+- Figma
+- FigJam
 
 <br>
+
 ### Coding Tools used
 - VS Code
 - Github for hosting and managing git repos
@@ -29,6 +47,7 @@ We wanted to make an app that solved a problem. We came up with an idea for an a
 - Firebase for managing and storing data
 
 <br>
+
 ### Folder setup
 
 #### components
