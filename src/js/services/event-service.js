@@ -79,18 +79,6 @@ class EventService {
 				avatar.style.backgroundColor = avatarColors[numberFromInitials(text) % avatarColors.length];
 			});
 
-			// Show / hide description on Toggle/Click
-
-		/* 	const clickCards = document.querySelector('.card__container.card-toggle');
-			const description = document.querySelector('#description');
-			
-			clickCards.forEach(function (clickCard, index) {
-				clickCard.addEventListener('click', () => {
-					description[index].classList.toggle('open-card');
-				});
-					console.log('hello');
-			}); */
-		
 
 			const eventItem = /*html*/`
 				<div class="card card--event card--${data.label}" data-id='${doc.id}'>
