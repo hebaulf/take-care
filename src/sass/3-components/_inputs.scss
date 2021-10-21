@@ -1,11 +1,13 @@
 .form {
   display: flex;
   flex-direction: column;
-  color: #6d6d6d;
+  color: $color-grey-70;
 }
 
 input[type="text"],
 input[type="date"],
+input[type="email"],
+input[type="password"],
 textarea,
 select {
   height: 48px;
@@ -16,7 +18,7 @@ select {
 
 label {
   display: block;
-  padding-bottom: 6px;
+  @include text-base;
 }
 
 fieldset {

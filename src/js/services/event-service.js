@@ -35,55 +35,21 @@ class EventService {
 			addModal.style.display = 'flex';
 			addModalInner.style.cssText = 'animation: slideUp .5s ease; animation-fill-mode: forwards;';
 		}
-
 		const closeAddModal = () => {
 			addModalInner.style.cssText = 'animation: slideDown .5s ease; animation-fill-mode: forwards;';
-			setTimeout(() => {
-				addModal.style.display = 'none';
-			}, 500);
+			setTimeout(() => { addModal.style.display = 'none'; }, 500);
 		}
 		const openEditModal = () => {
 			editModal.style.display = 'flex';
 			editModalInner.style.cssText = 'animation: slideUp .5s ease; animation-fill-mode: forwards;';
 		}
-
 		const closeEditModal = () => {
 			editModalInner.style.cssText = 'animation: slideDown .5s ease; animation-fill-mode: forwards;';
-			setTimeout(() => {
-				editModal.style.display = 'none';
-			}, 500);
-		}
-		const closeModal = () => {
-			modalInner.style.cssText = 'animation: slideDown .5s ease; animation-fill-mode: forwards;';
-			setTimeout(() => {
-				modalWrapper.style.display = 'none';
-			}, 500);
+			setTimeout(() => { editModal.style.display = 'none'; }, 500);
 		}
 
-		const days = [
-		'Sun',
-		'Mon',
-		'Tue',
-		'Wed',
-		'Thu',
-		'Fri',
-		'Sat'
-		];
-
-		const months = [
-		'Jan',
-		'Feb',
-		'Mar',
-		'Apr',
-		'Mai',
-		'Jun',
-		'Jul',
-		'Aug',
-		'Sep',
-		'Oct',
-		'Nov',
-		'Dec'
-		];
+		const days = [ 'Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat' ];
+        const months = [ 'Jan', 'Feb', 'Mar', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec' ];
 
 		// Create element and render users
 		const renderEvent = doc => {
@@ -203,7 +169,9 @@ class EventService {
 		eventsCollection.onSnapshot(snapshot => {
 			snapshot.docChanges().forEach(change => {
 				if(change.type === 'added') {
-					renderEvent(change.doc);
+					setTimeout(() => {
+						renderEvent(change.doc);
+					}, 500);
 				}
 				if(change.type === 'removed') {
 					let eventItem = document.querySelector(`[data-id='${change.doc.id}']`); // .event__item with this data-id
@@ -246,7 +214,7 @@ class EventService {
 			});
 			closeEditModal();
 		});
-  }
+  	}
 }
 
 const eventService = new EventService();

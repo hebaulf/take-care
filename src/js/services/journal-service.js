@@ -102,8 +102,8 @@ class JournalService {
 					<p class='card-date'>${formattedDate}</p>
 					<div>${data.user}</div>
 					<div>
-							<button class="btn btn-edit edit-journal">Edit</button>
-							<button class="btn btn-delete delete-journal">Delete</button>
+						<button class="btn btn-edit edit-journal">Edit</button>
+						<button class="btn btn-delete delete-journal">Delete</button>
 					</div>
 				</div>
 			`;
@@ -177,7 +177,9 @@ class JournalService {
 		journalCollection.onSnapshot(snapshot => {
 			snapshot.docChanges().forEach(change => {
 				if(change.type === 'added') {
-					renderJournalEntry(change.doc);
+					setTimeout(() => {
+						renderJournalEntry(change.doc);
+					}, 500);
 				}
 				if(change.type === 'removed') {
 					let journalItem = document.querySelector(`[data-id='${change.doc.id}']`); // .journal__item with this data-id

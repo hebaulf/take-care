@@ -136,39 +136,6 @@ table {
   border-spacing: 0;
 }
 
-:root {
-  --primary-color: #955df4;
-  --secondary-color: #ff816c;
-}
-
-.container {
-  max-width: 50rem;
-  margin: 2rem auto;
-  padding-bottom: 2rem;
-  -webkit-box-shadow: 0px 4px 22px -6px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 0px 4px 22px -6px rgba(0, 0, 0, 0.75);
-  box-shadow: 0px 4px 22px -6px rgba(0, 0, 0, 0.75);
-}
-
-.table-users {
-  width: 90%;
-  margin: 2rem auto;
-  border-collapse: collapse;
-}
-
-.table-users th,
-.table-users td {
-  text-align: left;
-  border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
-  padding: 0.5rem;
-}
-
-.table-users th {
-  background: #fafafa;
-  padding: 1rem auto;
-}
-
 /// IMPORTS
 // 1-Theme
 @import "./0-theme/theme";
@@ -190,5 +157,4 @@ table {
 @import "./3-components/navbar";
 @import "./3-components/topbar";
 @import "./3-components/modal";
-@import "stylestoberemoved";
 // @use "calendar";

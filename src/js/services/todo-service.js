@@ -73,7 +73,7 @@ class TodoService {
 				
 					<div>${data.assign}</div>
 					<!-- <div>${data.priority}</div> -->
-					<div hidden>
+					<div>
 						<button class="btn btn-edit edit-todo">Edit</button>
 						<button class="btn btn-delete delete-todo">Delete</button>
 					</div>
@@ -142,8 +142,13 @@ class TodoService {
 		//   })
 		// });
 
+
+		let tooSoon = false; //the first time it is not too soon
 		// Real time listener
 		todosCollection.onSnapshot(snapshot => {
+			if(tooSoon) return;
+            tooSoon = true;
+            setTimeout(() => { tooSoon = false });
 			snapshot.docChanges().forEach(change => {
 				if(change.type === 'added') {
 					renderTodo(change.doc);

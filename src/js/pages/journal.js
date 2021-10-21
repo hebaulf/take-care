@@ -39,7 +39,7 @@ export default class JournalPage {
               <form class="form" autocomplete="off">
                 <fieldset class="radio-btns">
                   <h4 class="font-light">How are they feeling today?</h4>
-                  <input id="journalAddGood" type="radio" name="feeling" value="Good">
+                  <input id="journalAddGood" type="radio" name="feeling" value="Good" checked>
                   <label for="journalAddGood">Good</label>
                   <input id="journalAddMedium" type="radio" name="feeling" value="Medium">
                   <label for="journalAddMedium">Medium</label>
