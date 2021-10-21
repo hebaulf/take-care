@@ -5,6 +5,17 @@ export default class EventsPage {
 
   template() {
     document.pageTitle = 'Events';
+
+    const data = {
+      id: 'id',
+      label: 'meetup',
+      date: '12 Nov 2021',
+      title: 'Dinner with family',
+      location: 'Kjartansgata',
+      description: 'Grandma is having Sunday roast with us.',
+      assign: 'AV'
+    };
+
     document.querySelector('#content').innerHTML += /*html*/ `
       <div id="events" class="page page-event">
         <header id='head' class='head'>
@@ -22,7 +33,35 @@ export default class EventsPage {
           </div>
         </header>
         <main class="main">
+          <!--test card -->
+        
+        <!-- add class='event__list' for functioning -->
           <div class="event__list card__list">
+            <div class="card card--event card--${data.label}" data-id='${doc.id}'>
+              <div class='card--${data.label}__line'></div>
+              <div class='card__container card-toggle'>
+                <div class='card__header'>
+                    <p class='card__header--label'>${data.label}</p>
+                    <p class='card__header--date'>${data.date}</p>
+                </div>
+              
+                <div class='card-content'>
+                  <div class='card-content__details'>
+                    <h4 class='card-content__details--title'>${data.title}</h4>
+                    <p class='card-content__details--location'>${data.location}</p>
+                    <div id='description' class="card-content__details--description">
+                      <p>${data.description}</p>
+                      <button class="edit-event btn-circle--edit"></button>
+                    </div>
+                  </div>
+              
+                  <div class='card-content__footer'>
+                    <button class="delete-event btn-circle--complete"></button>
+                    <div class='avatar'><p>${data.assign}</p></div>
+                  </div>	
+                </div>
+              </div>
+            </div>
           </div>
         </main>
       
