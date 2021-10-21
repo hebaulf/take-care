@@ -121,12 +121,13 @@
     content: "";
     color: inherit;
   }
+
+  :hover {
+    background: $color-red;
+    color: $color-white;
+  }
 }
 
-.btn-delete:hover {
-  background: $color-red;
-  color: $color-white;
-}
 
 .btn-circle {
   padding: 0;
