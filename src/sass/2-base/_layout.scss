@@ -120,6 +120,7 @@ h2 {
           position: absolute;
           top: -20px;
           right: 24px;
+          height: auto;
         }
 
         .tabs {
@@ -145,10 +146,17 @@ h2 {
       height: 100%;
       padding-top: 218px;
       overflow: auto;
+      background: $bg-main;
 
+      .event__list,
+      .todo__list,
+      .journal__list,
       .card__list {
-        padding: 20px;
-      
+        padding: 24px;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
       }
     };
   }
@@ -201,8 +209,6 @@ h2 {
     }
   }
 }
-
-
 
 
 .hide {
