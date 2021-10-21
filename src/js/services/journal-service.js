@@ -96,7 +96,6 @@ class JournalService {
 			const formattedDate = `${day} ${monthDate}.${month} ${year}`;
 			
 			const journalItem = /*html*/`
-				 <div class="journal__list card__list" title='Journal entries'>
           <!-- START test card -->
            <div class="card card--journal" data-id='${doc.id}'>
               <div class='card__container'>
@@ -125,7 +124,6 @@ class JournalService {
                 </div>
               </div>
             </div>
-        </div>
 			`;
 
       		journalList.insertAdjacentHTML('beforeend', journalItem);

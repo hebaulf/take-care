@@ -114,16 +114,17 @@
 }
 
 
+
 .card--journal {
   border: none;
-  padding: 0;
+  padding: 0px;
   background: none;
   height: auto;
   display: flex;
   width: 100%;
   max-width: 400px;
   min-height: 96px;
-  margin: 24px 0;
+  padding-top: 16px;
 
   .card-container {
     display: flex;
@@ -131,7 +132,6 @@
     width: 100%;
     height: auto;
   }
-
 
   .card__header {
     padding: 0;
