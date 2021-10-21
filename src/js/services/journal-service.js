@@ -96,20 +96,36 @@ class JournalService {
 			const formattedDate = `${day} ${monthDate}.${month} ${year}`;
 			
 			const journalItem = /*html*/`
-				<div class="journal__item" data-id='${doc.id}'>
-					<div>${data.feeling}</div>
-					<p class='card-description'>${data.entry}</p>
-					<p class='card-date'>${formattedDate}</p>
-					<div>${data.user}</div>
-					<div>
-						<button class="btn btn-edit edit-journal">Edit</button>
-						<button class="btn btn-delete delete-journal">Delete</button>
-					</div>
-				</div>
+          <!-- START test card -->
+           <div class="card card--journal" data-id='${doc.id}'>
+              <div class='card__container'>
+                <div class='card__header'>
+                    <hr hidden></hr>
+                    <p class='card__header--date'>${formattedDate}</p>
+                </div>
+                
+                <div class='card-content'>
+                  <div title='Feeling ${data.feeling}' class='card-content__feeling'>
+                      <i class='tc-icons-${data.feeling}'></i>
+                  </div>
+                  
+                  <div id='description' class="card-content__entry">
+                    <div>
+                      <p>${data.entry}</p>
+                      <div class='avatar'><p>${data.user}</p></div>
+											<button class="edit-journal btn-circle--edit"></button>
+                    </div>
+                    </div>
+                </div>
+       
+                <div class='see-more'>
+                <hr></hr>
+                  <button class="btn btn-secondary btn-open">See more</button>
+                </div>
+              </div>
+            </div>
 			`;
 
-			
-  
       		journalList.insertAdjacentHTML('beforeend', journalItem);
 
 			// Click edit user

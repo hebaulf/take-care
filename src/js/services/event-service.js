@@ -71,7 +71,7 @@ class EventService {
 					.split('')
 					.map(char => char.charCodeAt(0))
 					.join('')
-				return parseInt(charCodes, 10);
+				return parseInt(charCodes, 17);
 			};
 			const avatars = document.querySelectorAll('.avatar');
 			avatars.forEach(avatar => {
@@ -79,22 +79,42 @@ class EventService {
 				avatar.style.backgroundColor = avatarColors[numberFromInitials(text) % avatarColors.length];
 			});
 
+			// Show / hide description on Toggle/Click
+
+		/* 	const clickCards = document.querySelector('.card__container.card-toggle');
+			const description = document.querySelector('#description');
+			
+			clickCards.forEach(function (clickCard, index) {
+				clickCard.addEventListener('click', () => {
+					description[index].classList.toggle('open-card');
+				});
+					console.log('hello');
+			}); */
+		
 
 			const eventItem = /*html*/`
-				<div class="card card-event card-${data.label}" data-id='${doc.id}'>
-					<div class='card-${data.label}-line'></div>
-					<div class='card__container'>
-						<div class='card__container--top'>
-							<h4 class='card-title'>${data.title}</h4>
-							<p class='card-description'>${data.description}</p>
-							<p class='card-location'>${data.location}</p>
-							<p class='card-date'> ${formattedDate}</p>
+				<div class="card card--event card--${data.label}" data-id='${doc.id}'>
+					<div class='card--${data.label}__line'></div>
+					<div class='card__container card-toggle'>
+						<div class='card__header'>
+								<p class='card__header--label'>${data.label}</p>
+								<p class='card__header--date'>${formattedDate}</p>
 						</div>
-					<!-- <div>${data.label}</div> -->
-						<div class='card__container--bottom'>
-							<button class="btn btn-edit edit-event btn-circle">e</button>
-							<button class="btn btn-delete delete-event btn-circle">d</button>
-							<div class='btn avatar'>${data.assign}</div>
+						
+						<div class='card-content'>
+							<div class='card-content__details'>
+								<h4 class='card-content__details--title'>${data.title}</h4>
+								<p class='card-content__details--location'>${data.location}</p>
+								<div id='description' class="card-content__details--description">
+									<p>${data.description}</p>
+									<button class="edit-event btn-circle--edit"></button>
+								</div>
+							</div>
+					
+							<div class='card-content__footer'>
+								<button class="delete-event btn-circle--complete"></button>
+								<div class='avatar'><p>${data.assign}</p></div>
+							</div>	
 						</div>
 					</div>
 				</div>

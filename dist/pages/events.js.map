@@ -1,1 +1,1 @@
-{"version":3,"sources":["pages/events.js"],"names":["EventsPage","constructor","this","template","document","pageTitle","querySelector","innerHTML"],"mappings":"eAAe,MAAMA,WACnBC,cACEC,KAAKC,WAGPA,WACEC,SAASC,UAAY,SACrBD,SAASE,cAAc,YAAYC,WAAsB,uLAIRH,SAASC","file":"pages/events.js"}
+{"version":3,"sources":["pages/events.js"],"names":["EventsPage","constructor","this","template","document","pageTitle","querySelector","innerHTML"],"mappings":"eAAe,MAAMA,WACnBC,cACEC,KAAKC,WAGPA,WACEC,SAASC,UAAY,SAarBD,SAASE,cAAc,YAAYC,WAAsB,uLAIRH,SAASC","file":"pages/events.js"}

@@ -5,6 +5,18 @@ export default class EventsPage {
 
   template() {
     document.pageTitle = 'Events';
+
+    /* DELETE THIS - PROTO DATA
+    const data = {
+      id: 'id',
+      label: 'meetup',
+      date: '12 Nov 2021',
+      title: 'Dinner with family',
+      location: 'Kjartansgata',
+      description: 'Grandma is having Sunday roast with us.',
+      assign: 'AV'
+    }; */
+
     document.querySelector('#content').innerHTML += /*html*/ `
       <div id="events" class="page page-event">
         <header id='head' class='head'>
@@ -22,6 +34,7 @@ export default class EventsPage {
           </div>
         </header>
         <main class="main">
+        <!-- add class='event__list' for functioning -->
           <div class="event__list card__list">
           </div>
         </main>

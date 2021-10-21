@@ -4,6 +4,18 @@ export default class TodosPage {
   }
 
   template() {
+
+     const data = {
+      id: 'id',
+      label: 'ToDo',
+      priority: 'Low',
+      date: '12 Nov 2021',
+      title: 'Dinner with family',
+      list: 'Grandma is having Sunday roast with us.',
+      assign: 'AV'
+     };
+    
+     
     document.pageTitle = "ToDo's"
     document.querySelector('#content').innerHTML += /*html*/ `
       <div id="todos" class="page page-todo">
@@ -21,8 +33,36 @@ export default class TodosPage {
             </div>
           </div>
         </header>
-          <main class="main">
+        <main class="main">
           <div class="todo__list card__list">
+         
+             <!-- START test card 
+          <div class="card card--todo card--todo-${data.priority}" data-id='${data.id}'>
+					<div class='card--${data.priority}__line'></div>
+					<div class='card__container card-toggle'>
+						<div class='card__header'>
+								<p class='card__header--label'>To Do's</p>
+								<p class='card__header--date'>${data.priority} Priority</p>
+						</div>
+						
+						<div class='card-content'>
+							<div class='card-content__details'>
+								<h4 class='card-content__details--title'>${data.title}</h4>
+								<div id='description' class="card-content__details--description">
+									<p>${data.list}</p>
+									<button class="edit-todo btn-circle--edit"></button>
+								</div>
+							</div>
+					
+							<div class='card-content__footer'>
+								<button class="delete-todo btn-circle--complete"></button>
+								<div class='avatar'><p>${data.assign}</p></div>
+							</div>	
+						</div>
+					</div>
+				</div>
+         -->
+
           </div>
         </main>
         

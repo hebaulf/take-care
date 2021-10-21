@@ -59,7 +59,7 @@ $font-text: $font-family;
 }
 
 @mixin text-xs {
-  font-family: $font-headings;
+  font-family: $font-text;
   font-size: 12px;
   line-height: 16px; //133%
   font-weight: 300;

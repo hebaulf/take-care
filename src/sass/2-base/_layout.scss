@@ -70,7 +70,8 @@ h2 {
     overflow: auto;
 
     .page {
-      display: none;
+      height: 100%;
+      overflow: auto;
       animation: fadeIn 0.3s;
       background: $bg-main;
       display: grid;
@@ -79,6 +80,9 @@ h2 {
       grid-template-areas:
         "head head"
         "main main";
+
+      // for SPA routing
+      display: none;
     }
 
     .head {
@@ -178,8 +182,13 @@ h2 {
         display: flex;
         flex-direction: column;
         gap: 24px;
+        height: 100%;
       }
     }
+  }
+
+  .page-journal .main {
+    padding-top: 160px;
   }
 
   .navbar {

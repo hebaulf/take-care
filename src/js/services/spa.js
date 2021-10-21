@@ -1,5 +1,6 @@
 class SpaService {
   constructor() {
+    // changed for working
     this.defaultPage = "landing";
   }
 

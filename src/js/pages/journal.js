@@ -3,8 +3,17 @@ export default class JournalPage {
     this.template();
   }
 
-
   template() {
+
+    /* DELETE THIS - DUMMY DATA
+    const data = {
+      id: 'id',
+      feeling: 'Good',
+      date: '12 Nov 2021',
+      entry: 'Grandma felt good today she enjoyed going out for a walk. We walked around the neighbourhood for about 30 minutes. We ended up going to the cafe for cake and tea.',
+      user: 'AV'
+    }; */
+
     document.pageTitle = 'Journal'
     document.querySelector('#content').innerHTML += /*html*/ `
       <div id="journal" class="page page-journal">
@@ -14,20 +23,14 @@ export default class JournalPage {
             <a role='navigation' href="#dashboard" class='btn-home'><i class='tc-icons-home-filled'></i></a>
           </div>
           <div class='page__tabs journal-tabs'>
-            <button class='btn  btn-add add-journal btn-primary-add'>New</button> 
-            <div class='tabs'>
-              <button class='tabs__link'>Appointments</button>
-              <button class='tabs__link'>Meetups</button>
-              <button class='tabs__link'>All</button>
-            </div>
+            <button class='btn btn-add add-journal btn-primary-add'>New</button> 
           </div>
         </header>
         <main class="main">
-          <div class="journal__list card__list">
+          <div class="journal__list card__list" title='Journal entries'>
           </div>
         </main>
          
-      
       <!-- Add Modal -->
         <div class="add-modal add-journal-modal modal-wrapper journal-modal-wrapper">
           <div class="modal">

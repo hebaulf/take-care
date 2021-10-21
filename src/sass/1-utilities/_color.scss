@@ -29,9 +29,9 @@ $color-appointment: $color-tertiary-100; //orange
 $color-meetup: $color-secondary-100; //purple
 
 // Journal labels
-$color-happy: $color-green;
-$color-ok: $color-yellow;
-$color-sad: $color-red;
+$color-good: $color-green;
+$color-medium: $color-yellow;
+$color-bad: $color-red;
 
 /* FORM COLORS */
 
@@ -52,9 +52,9 @@ $card-event: (
 );
 
 $card-journal: (
-  happy: $color-happy,
-  ok: $color-ok,
-  sad: $color-sad,
+  good: $color-good,
+  medium: $color-medium,
+  bad: $color-bad,
 );
 
 // ALL CARDS MAP
@@ -65,7 +65,7 @@ $card-colors: (
   todo-Low: $color-low,
   todo-Medium: $color-medium,
   todo-High: $color-high,
-  happy: $color-happy,
-  ok: $color-ok,
-  sad: $color-sad,
+  Good: $color-good,
+  Medium: $color-medium,
+  Bad: $color-bad,
 );
