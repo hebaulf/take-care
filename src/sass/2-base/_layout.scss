@@ -187,6 +187,7 @@ h2 {
       }
     }
   }
+  
 
   .page-journal .main {
     padding-top: 160px;
@@ -240,7 +241,7 @@ h2 {
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 768px) {
   .wrapper {
     width: 100%;
     grid-template-columns: 80px 1fr;
@@ -255,7 +256,6 @@ h2 {
 
       .page {
         width: 100%;
-        
         grid-template-columns: 1fr;
         grid-template-rows: 1fr auto;
         grid-template-areas: 
@@ -277,8 +277,10 @@ h2 {
         flex-wrap: wrap;
         
         .event__list,
+        .journal__list,
+        .card__list,
         .todo__list {
-          flex-direction: column;
+          padding: 48px;
 
         }
       }
@@ -290,23 +292,47 @@ h2 {
       height: auto;
       width: auto;
       border: none;
-       border-top: 1px solid $color-grey-50;
 
       &__links {
         height: 100%;
         flex-direction: column;
         align-items: center;
         justify-content: space-around;
-        padding-top: 160px;
+        padding-top: 180px;
+        padding-bottom: 64px;
+
+        a {
+        width: 100%;
+        padding-top: 16px;
+        padding-bottom: 16px;
+        color: $color-grey-70;
+
+        &:hover,
+        &:active {
+          color: $color-black;
+
+          &:before {
+            content: "";
+            position: absolute;
+            right: 0;
+            border-top: none;
+            border-right: 2px solid black;
+            height: 100%;
+          }
+        }
+
+        i {
+          font-size: 28px;
+          height: auto;
+        }
 
       }
 
     }
 
-    
-
   }
- 
+}
+
 }
 
 .hide {
@@ -315,58 +341,6 @@ h2 {
   transition: visibility 0s 0.4s, opacity 0.4s linear;
 }
 
-/* .wrapper {
-  width: 100vw;
-  display: grid;
-  height: 100vh;
-  grid-template-rows: auto 64px;
-  grid-template-columns: '180px auto';
-  grid-template-areas: 
-   'main main'
-   'navbar navbar';
-}
-main {
-  width: 100vw;
-  grid-area: main;
-  display: grid;
-  grid-template-rows: 118px auto 64px;
-  grid-template-areas: 
-   'topbar topbar'
-   'main-content main-content';
-  overflow: scroll;
-}
-
-.main-content {
-
-  background-color: $bg-main;
-  grid-area: main-content;
-  padding: 16px;
-  overflow-y: scroll;
-}
-
-.topbar {
-  grid-area: topbar;
-  position: sticky;
-  top: 0;
-  width: 100vw;
-  min-height: 120px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
- 
-  h1 {
-    @include heading-1;
-    padding-left: 16px;
-  }
-}
-
-.page-content {
-    box-shadow: 0px -32px 0px $color-primary-80;
-    @include border-content;
-    margin-top: 64px;
-    width: 100%;
-}
- */
 
 #landing,
 #login {
