@@ -4,7 +4,6 @@ export default class DashboardPage {
   }
 
   template() {
-    document.pageTitle = 'Hi, Guðrún';
     const userName = 'Smári';
     document.querySelector('#content').innerHTML += /*html*/ `
 
@@ -15,7 +14,8 @@ export default class DashboardPage {
             <!-- <a role='navigation' href="#dashboard" class='btn-home'><i class='tc-icons-home-filled'></i></a> -->
           </div> 
           <div class='page__tabs event-tabs'>
-            <button class='btn  btn-add add-event btn-primary-add'>New</button> 
+            <div class="tabs"></div>
+            <!-- <button class='btn btn-add add-event btn-primary-add'>New</button> --> 
           </div>
         </header>
         <main class="main">
@@ -23,26 +23,31 @@ export default class DashboardPage {
             <div class="dashboard__lists">
               <div class="dashboard__lists__itemwrap"> 
                 <div class="dashboard__eventlist dashboard__list  card__list">
-                  <p>Events</p>  
+                  <div class="dashboard__list__top">
+                    <p>Events</p>
+                    <a href="#events" class="btn btn-primary-dashboard">See All</a>
+                  </div>
                 </div>
-                <a href="#events" class="btn">See All</a>
               </div>
               <div class="dashboard__lists__itemwrap">
                 <div class="dashboard__todolist dashboard__list  card__list">
-                  <p>Todos</p>
+                  <div class="dashboard__list__top">
+                    <p>Todos</p>
+                    <a href="#todos" class="btn btn-primary-dashboard">See All</a>
+                  </div>
                 </div>
-                <a href="#todos" class="btn">See All</a>
               </div>
               <div class="dashboard__lists__itemwrap">
                 <div class="dashboard__journallist dashboard__list  card__list">
-                  <p>Journal</p>
+                  <div class="dashboard__list__top">
+                    <p>Journal</p>
+                    <a href="#journal" class="btn btn-primary-dashboard">See All</a>
+                  </div>
                 </div>
-                <a href="#journal" class="btn">See All</a>
               </div>
             </div>
           </div>
         </div>
-      
       </div>
     `;  
   }

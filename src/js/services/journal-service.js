@@ -113,7 +113,8 @@ class JournalService {
                     <div>
                       <p>${data.entry}</p>
                       <div class='avatar'><p>${data.user}</p></div>
-											<button class="edit-journal btn-circle--edit"></button>
+							<button class="edit-journal btn-circle--edit"></button>
+							<button class="delete-journal btn-circle--delete"></button>
                     </div>
                     </div>
                 </div>
