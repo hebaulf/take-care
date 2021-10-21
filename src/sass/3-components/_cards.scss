@@ -34,7 +34,6 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-
   }
 
   &__header {
@@ -56,6 +55,8 @@
     justify-content: space-between;
 
     &__details {
+
+     
       &--title {
         @include heading-3;
         width: 100%;
@@ -110,4 +111,91 @@
 .card-description {
   @include text-xs;
   color: $color-black;
+}
+
+
+.card--journal {
+  border: none;
+  padding: 0;
+  background: none;
+  height: auto;
+  display: flex;
+  width: 100%;
+  max-width: 400px;
+  min-height: 96px;
+  margin: 24px 0;
+
+  .card-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+  }
+
+
+  .card__header {
+    padding: 0;
+    padding-bottom: 1.5rem;
+    display: flex;
+    justify-content: flex-end;
+
+    hr {
+      height: 1px;
+      width: 30%;
+      color: $color-grey-70;
+      display: none;
+    }
+  }
+
+  .card-content {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    align-items: center;
+   
+     &__feeling {
+        @include heading-3;
+        width: 100%;
+        padding: 8px 0;
+        flex: 0;
+        
+        i {
+          font-size: 80px;
+        }
+
+    }
+
+    &__entry {
+      width: 100%;
+      flex: 1;
+
+      div {
+        @include text-base;
+         overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        /* truncate to 3 lines */
+        -webkit-line-clamp: 2;
+
+        .avatar {
+          margin-top: 16px;
+        }
+      }
+    }
+
+
+  }
+  .see-more {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding-top: 16px;
+    height: 100%;
+
+    hr {
+      height: 1px;
+      width: 30%;
+      color: $color-grey-70;
+    }
+  }
 }

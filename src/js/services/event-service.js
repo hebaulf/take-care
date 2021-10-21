@@ -81,7 +81,7 @@ class EventService {
 
 			// Show / hide description on Toggle/Click
 
-			const clickCards = document.querySelector('.card__container.card-toggle');
+		/* 	const clickCards = document.querySelector('.card__container.card-toggle');
 			const description = document.querySelector('#description');
 			
 			clickCards.forEach(function (clickCard, index) {
@@ -89,7 +89,7 @@ class EventService {
 					description[index].classList.toggle('open-card');
 				});
 					console.log('hello');
-			});
+			}); */
 		
 
 			const eventItem = /*html*/`
