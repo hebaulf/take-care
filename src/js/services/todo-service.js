@@ -96,11 +96,11 @@ class TodoService {
 								<h4 class='card-content__details--title'>${data.title}</h4>
 								<div id='description' class="card-content__details--description">
 									<p>${data.list}</p>
-									<button class="edit-todo btn-circle--edit"></button>
 								</div>
 							</div>
 					
 							<div class='card-content__footer'>
+								<button class="edit-todo btn-circle--edit"></button>
 								<button class="delete-todo btn-circle--complete"></button>
 								<div class='avatar'><p>${data.assign}</p></div>
 							</div>	

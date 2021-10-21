@@ -6,7 +6,7 @@
   width: 100%;
   padding: 16px;
   width: 100%;
-  max-width: 400px;
+  max-width: 640px;
 
 
   &:hover {
@@ -87,9 +87,10 @@
     &__footer {
       display: flex;
       justify-content: space-between;
-      align-items: flex-end;
+      align-items: center;
       gap: 8px;
       margin-top: 24px;
+      padding-bottom: 0;
       
     }
   }
@@ -172,19 +173,21 @@
         }
     }
 
+
     &__entry {
       width: 100%;
       flex: 1;
 
       div {
+        p {
         @include text-base;
-        //overflow: hidden;
-        //display: -webkit-box;
-        //-webkit-box-orient: vertical;
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
         /* truncate to 3 lines */
-        //-webkit-line-clamp: 2;
+        -webkit-line-clamp: 3;
         }
-        
+      } 
     }
   }
   .see-more {
