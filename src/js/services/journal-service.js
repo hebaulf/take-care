@@ -128,8 +128,6 @@ class JournalService {
         </div>
 			`;
 
-			
-  
       		journalList.insertAdjacentHTML('beforeend', journalItem);
 
 			// Click edit user
