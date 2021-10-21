@@ -11,15 +11,14 @@ export default class SettingsPage {
   template() {
     document.pageTitle = 'Settings'
     document.querySelector('#content').innerHTML += /*html*/ `
-      <section id="settings" class="page">
-       <div class='topbar'>
-          <h1>${document.pageTitle}</h1>
-          <a href="#dashboard" class='btn-home'><i class='tc-icons-home-filled'></i></a>
-        </div>
-        <div class="main-content">
-          <div class='content-top'>
-            <a href='#' class='btn btn-primary-add'>new</a>
+      <div id='settings' class='page'>
+        <header id='head' class='head'>
+          <div class='head__title'>
+            <h1 id='page-title' class='page-title'>${document.pageTitle}</h1>
+            <a role='navigation' href="#dashboard" class='btn-home'><i class='tc-icons-home-filled'></i></a>
           </div>
+        </header>
+        <main class='main'>
           <div class="form-user-profile">
             <form>
             <label for='username'>Username</label>
@@ -27,9 +26,8 @@ export default class SettingsPage {
             </form>
           </div>
           <button class="btn btn-primary-add">New user</button>
-        </div>
-      </section>
-  
+        </main>
+      </div>
     `;  
   }
 }

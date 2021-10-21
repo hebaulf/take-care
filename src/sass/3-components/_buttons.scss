@@ -9,6 +9,7 @@
   display: inline-flex;
   justify-content: center;
   align-items: center;
+  height: 100%;
 
   a {
     text-decoration: none;
@@ -21,6 +22,8 @@
   border: 2px solid $color-black;
   background-color: $color-black;
   color: $color-white;
+  height: 100%;
+
 
   &:hover {
     background-color: $color-white;
@@ -31,12 +34,33 @@
 .btn-primary-add {
   @extend .btn-primary;
   padding-left: 8px;
+  height: 100%;
+
   
   &:before {
     @include icon;
     content: "\e907";
     font-size: 20px;
     padding-right: 8px;
+    color: $color-white;
+    transition: color 0.4s ease;
+  }
+
+  &:hover:before {
+    color: $color-black;
+  }
+
+}
+
+.btn-secondary {
+  @extend .btn;
+  background-color: $color-white;
+  border-color: $color-black;
+  color: $color-black;
+  height: 100%;
+
+  &:hover {
+    background-color: $color-black;
     color: $color-white;
   }
 }
@@ -46,24 +70,29 @@
   background: none;
   padding-left: 8px;
   padding-right: 32px;
-  padding: 10px 32px 8px 8px;
+  padding: 8px 32px 7px 8px;
   border: 1px solid $color-black;
   border-right: none;
   border-top-left-radius: $border-radius-8;
   border-bottom-left-radius: $border-radius-8;
   text-decoration: none;
+  transition: color 0.4s ease;
 
   i {
     color: $color-black;
     font-size: 20px;
-  }
-}
+    line-height: 20px;
+    transition: color 0.4s ease;
 
-.btn-secondary {
-  @extend .btn;
-  background-color: $color-white;
-  border-color: $color-black;
-  color: $color-black;
+    &:hover {
+      color: $color-white;
+    }
+  }
+
+  &:hover {
+    background-color: $color-black;
+    color: $color-white;
+  }
 }
 
 .btn-edit {
@@ -76,13 +105,18 @@
 }
 
 .btn-delete {
-  color: var(--secondary-color);
-  border: 1px solid var(--secondary-color);
+  color: $color-red;
+  border: 1px solid $color-red;
+
+  :before {
+    content: '';
+    color: inherit;
+  }
 }
 
 .btn-delete:hover {
-  background: var(--secondary-color);
-  color: #fff;
+  background: $color-red;
+  color: $color-white;
 }
 
 

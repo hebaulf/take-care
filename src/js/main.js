@@ -15,7 +15,6 @@ import TodosPage from "./pages/todos.js";
 import SettingsPage from './pages/settings.js';
 
 // Declare and init
-//let topbar = new TopBar();
 let navbar = new NavBar();
 let landingPage = new LandingPage();
 let loginPage = new LoginPage();

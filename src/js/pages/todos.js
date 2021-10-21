@@ -6,22 +6,26 @@ export default class TodosPage {
   template() {
     document.pageTitle = "ToDo's"
     document.querySelector('#content').innerHTML += /*html*/ `
-      <section id="todos" class="page page-todo">
-        <div class='topbar'>
-          <h1>${document.pageTitle}</h1>
-          <a href="#dashboard" class='btn-home'><i class='tc-icons-home-filled'></i></a>
-        </div>
-        <div class="main-content">
-          <div class='content-top'>
-            <a href='#' class='btn btn-primary-add'>new</a>
+      <div id="todos" class="page page-todo">
+        <header id='head' class='head'>
+          <div class='head__title'>
+            <h1 id='page-title' class='page-title'>${document.pageTitle}</h1>
+            <a role='navigation' href="#dashboard" class='btn-home'><i class='tc-icons-home-filled'></i></a>
           </div>
-
-          <div class="todo__list table-users">
+          <div class='page__tabs todo-tabs--low'>
+            <button class='btn  btn-add add-todo btn-primary-add'>New</button> 
+            <div class='tabs'>
+              <button class='tabs__link'>Low</button>
+              <button class='tabs__link'>Medium</button>
+              <button class='tabs__link'>High</button>
+            </div>
           </div>
-          <button class="btn btn-add add-todo">Add Todo</button>
-        </div>
+        </header>
+          <main class="main">
+          <div class="todo__list card__list">
+          </div>
+        </main>
         
-
       <!-- Add Modal -->
         <div class="add-modal add-todo-modal modal-wrapper todo-modal-wrapper">
           <div class="modal">
@@ -115,7 +119,7 @@ export default class TodosPage {
             </div>
           </div>
         </div>
-      </section>
+      </div>
     `;
   }
 }

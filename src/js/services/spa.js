@@ -6,6 +6,7 @@ class SpaService {
   init() {
     this.pages = document.querySelectorAll(".page");
     this.navItems = document.querySelectorAll(".navbar-links a");
+    
     window.addEventListener("hashchange", () => this.pageChange());
     this.pageChange();
   }
@@ -48,6 +49,7 @@ class SpaService {
       page = window.location.hash.slice(1);
     }
     this.showPage(page);
+    
   }
 }
 
