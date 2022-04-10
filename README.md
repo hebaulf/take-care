@@ -2,7 +2,7 @@
 [Link to the live page](https://hebaulf.github.io/take-care/)<br>
 [Link to Figma](https://www.figma.com/file/6yntcytnVlyZRwXZiDUdt5/Take-Care?node-id=0%3A1)
 
-We wanted to make an app that solved a problem. We came up with an idea for an app that helps caregiver groups get organised and share information, when taking care of the elderly.   
+We wanted to make an app that solved a problem. We came up with an idea for an app that helps caregiver groups get organised and share information, when taking care of their loved ones.   
 <br>
 
 ![Project Image](assets/img/front.jpg)
@@ -10,8 +10,8 @@ We wanted to make an app that solved a problem. We came up with an idea for an a
 <br> 
 
 ### Users
-- Carers: Family members, relatives or friends that need to get organised as a group caring for elderly people.
-- The Elderly: As an ongoing project, we would have liked to add an interface for the elderly.
+- Carers: Family members, relatives or friends that need to get organised as a group caring for a loved one.
+- The cared for: As an ongoing project, we would have liked to add an interface for the people being cared for.
 
 <br>
 
